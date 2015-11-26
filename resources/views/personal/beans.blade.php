@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="/css/project_menu.css">
 
 </head>
-
-
 <body>
 
 <div class="container conPrj">
