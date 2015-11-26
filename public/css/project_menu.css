@@ -1,0 +1,131 @@
+@font-face {
+    font-family: "Glyphicons Halflings";
+    src: url('fonts/glyphicons-halflings-regular.svg');
+}
+
+body {
+    background-color: #EEEEEE;
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+
+
+p {
+    margin:0px 0px 10px 10px;
+    line-height: 1.5;
+    color: #888;
+}
+
+
+.userImage {
+    height: 64px;
+    border-radius: 32px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+}
+
+.userName {
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.userNum {
+    margin: 5px 0px 0px 16px;
+}
+
+.userCop {
+    margin: 0px 0px 0px 16px;
+}
+
+.qrCode {
+    font-size: 32px;
+    margin-right: 32px;
+    color: black;
+}
+
+.userInfo {
+    background-color: #ffffff;
+    padding: 10px 0px 0px 10px ;
+    margin-bottom: 15px !important;
+    /*border-bottom: 5px solid #EEEEEE;*/
+}
+
+.littlePic {
+    top: 2px;
+    padding-right: 2px;
+}
+
+
+
+.row {
+    margin-bottom: 2px;
+}
+
+.col-heading {
+    font-size: 20px;
+}
+
+.col-body {
+    margin-right: 25px;
+}
+
+.date {
+    color: #79bbe7;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+
+}
+.col-arrow {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    color: #444;
+}
+
+
+.conPrj {
+    /*padding-top: 10px;*/
+}
+
+.project-1,.project-2,.project-3,.project-4,.project-5,.project-6,.project-7 {
+    background-color: #ffffff;
+    border-left: 5px solid ;
+}
+
+.project-1 {
+    border-color : #16a085 ;
+    color: #16a085;
+}
+
+.project-2 {
+    border-color: #f39c12;
+    color: #f39c12;
+}
+
+.project-3 {
+    border-color:  #2980b9;
+    color:  #2980b9;
+}
+
+.project-4 {
+    border-color: #8e44ad;
+    color: #8e44ad;
+}
+
+.project-5 {
+    border-color:  #2c3e50;
+    color: #2c3e50;
+}
+
+.project-6 {
+
+    border-color: #27ae60;
+    color: #27ae60;
+}
+
+.project-7 {
+    border-color: #d35400;
+    color: #d35400;
+}
