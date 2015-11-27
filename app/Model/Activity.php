@@ -15,6 +15,6 @@ class Activity extends Model
 
     protected function unit()
     {
-        return $this->hasOne('App\Model\Unit');
+        return $this->belongsTo('App\Model\Unit');
     }
 }
