@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Activity;
 use App\Model\Volunteer;
 use Illuminate\Http\Request;
 

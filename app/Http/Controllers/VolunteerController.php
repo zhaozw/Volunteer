@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Unit;
+use App\Model\Volunteer;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -28,13 +29,6 @@ class VolunteerController extends Controller
     public function create()
     {
         $units = Unit::all();
-        if (0 == $units->count()) {
-            $units = [
-                'abbreviation'  => \App\Constants\DefaultValue::DEFAULT_UNIT_ABBREVIATION,
-                'fullname'      => \App\Constants\DefaultValue::DEFAULT_UNIT_FULLNAME,
-            ];
-            $units = collect($units);
-        } /*if>*/
         return view('volunteer.create')->with(['units' => $units]);
     }
 
@@ -48,9 +42,9 @@ class VolunteerController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'name'      => 'required',
-            'phone'     => 'required|unique:volunteers, phone',
-            'email'     => 'required',
-            'unit_id'   => 'required'
+            'phone'     => 'required|digits:11|unique:volunteers,phone',
+            'email'     => 'required|unique:volunteers,email',
+            'unit_id'   => 'required|exists:units,id'
         ]);
 
         /* redirect to error page.*/
@@ -64,6 +58,8 @@ class VolunteerController extends Controller
         $volunteer->email   = $request->email;
         $volunteer->unit_id = $request->unit_id;
         $volunteer->save();
+
+        return redirect('/personal/index');//TODO 弹到注册成功
     }
 
     /**

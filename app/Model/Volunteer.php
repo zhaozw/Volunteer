@@ -11,5 +11,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Volunteer extends Model
 {
-    //
+    protected $table = 'volunteers';
+
+    protected function unit()
+    {
+        return $this->BelongsTo('App\Model\Unit');
+    }
+
+    protected function beans()
+    {
+        return $this->hasMany('App\Model\VolunteerBean');
+    }
 }
