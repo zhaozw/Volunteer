@@ -18,7 +18,7 @@ class Volunteer extends Model
         return $this->BelongsTo('App\Model\Unit');
     }
 
-    protected function beans()
+    protected function volunteerBeans()
     {
         return $this->hasMany('App\Model\VolunteerBean');
     }
