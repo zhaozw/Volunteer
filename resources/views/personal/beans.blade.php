@@ -26,7 +26,7 @@
         <p class="userCop">{{$volunteer->unit->full_name}}</p>
     </div>
     <div class="media-right media-middle text-primary">
-        <h1>320</h1>
+        <h2 style="width: 150%">320<small style="font-size: 40%;padding-left:5px">迈豆</small></h2>
     </div>
 </div>
 
@@ -38,9 +38,12 @@
     @foreach($volunteer->volunteerBeans->sortByDesc('valid_time') as $bean)
         <div class="row project-{{++$i}}">
             <div class="col-xs-12 " style="position: relative">
-                <div class="col-body">
-                    <h4 class="col-heading"><span class="littlePic glyphicon glyphicon-phone "></span>{{$bean->activityBeanRate->activity_name}}</h4>
-                    <p class=""></p>
+                <div class="col-xs-4 projPoint" style="padding-left: 5px;">
+                    <h2>50<small style="font-size: 40%;padding-left:5px">迈豆</small></h2>
+                </div>
+                <div class="col-xs-8 projDetil">
+                    <p class="">{{$bean->activityBeanRate->activity_name}}</p>
+                    <p class="">{{$bean->activityBeanRate->action}}</p>
                     <p class="date">{{$bean->valid_time->format('Y-m-d H:i')}}</p>
                 </div>
             </div>
