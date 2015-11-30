@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Model\Volunteer;
 use App\Model\Volunteer_bean;
 use App\Model\Volunteer_doctor;
-use App\Model\VolunteerBean;
 use App\Model\VolunteerDoctor;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class PersonalController extends Controller
 {
@@ -18,9 +15,9 @@ class PersonalController extends Controller
     /*
      * get all beans by volunteer
      * */
-    public function beans(Request $request) {
-        $volunteerId = $request->input('volunteer_id');
-        $volunteer = Volunteer::find($volunteerId);
+    public function beans(Request $request, $id)
+    {
+        $volunteer = Volunteer::find($id);
 
         return view('personal.beans')->with([
             'volunteer' => $volunteer
