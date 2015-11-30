@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Model\Volunteer;
 use App\Model\Volunteer_bean;
 use App\Model\Volunteer_doctor;
-use App\Model\VolunteerBean;
 use App\Model\VolunteerDoctor;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class PersonalController extends Controller
 {
@@ -42,8 +39,13 @@ class PersonalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function show(Request $request)
     {
-        return('注册成功');
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
+
+        return view('personal.show')->with([
+            'volunteer' => $volunteer
+        ]);
     }
 }

@@ -2,134 +2,45 @@ body {
     background-color: #EEEEEE;
     font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
-
-
-
 p {
-    margin:0px 0px 10px 10px;
+    margin:0px 0px 10px 0px;
     line-height: 1.5;
     color: #888;
 }
 
-
-.userImage {
-    height: 64px;
-    border-radius: 32px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-
-}
-
-.userName {
-    font-weight: bold;
-    margin-left: 15px;
-}
-
-.userNum {
-    margin: 5px 0px 0px 16px;
-}
-
-.userCop {
-    margin: 0px 0px 0px 16px;
-}
-
-.qrCode {
-    font-size: 32px;
-    margin-right: 32px;
-    color: black;
-}
-
-.userInfo {
+.projHead {
     position: fixed;
-    background-color: #ffffff;
+    background-color: #181818;
     top: 0px;
-    padding: 10px 0px 0px 10px ;
     z-index: 1;
     border-bottom: 1px solid #EEEEEE;
 }
+.projName {
+    text-align: center;
+    color: #eeeeee;
+    padding: 10px;
 
-.littlePic {
-    top: 2px;
-    padding-right: 2px;
 }
-
-
 
 .row {
-    margin-bottom: 2px;
+    margin-bottom: 15px;
+    max-width: 500px;
 }
-
 .col-heading {
-    font-size: 20px;
-}
-
-.col-body {
-    margin-right: 25px;
-}
-
-.date {
-    color: #79bbe7;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-
+    margin-top: 10px;
 }
 .col-arrow {
     position: absolute;
     right: 10px;
-    top: 45%;
+    top: 35%;
     color: #444;
 }
-
-
 .conPrj {
+    margin-top: 100px;
     /*padding-top: 10px;*/
 }
 
-.project-1,.project-2,.project-3,.project-4,.project-5,.project-6,.project-7 {
+.project-1,.project-2,.project-3,.projInfo {
     background-color: #ffffff;
-    border-left: 5px solid ;
-}
-
-.project-1 {
-    border-color : #16a085 ;
-    color: #16a085;
-    margin-top: 90px;
-    /*box-shadow: 0px -1px 1px #fff;*/
-}
-
-.project-2 {
-    border-color: #f39c12;
-    color: #f39c12;
-}
-
-.project-3 {
-    border-color:  #2980b9;
-    color:  #2980b9;
-}
-
-.project-4 {
-    border-color: #8e44ad;
-    color: #8e44ad;
-}
-
-.project-5 {
-    border-color:  #2c3e50;
-    color: #2c3e50;
-}
-
-.project-6 {
-
-    border-color: #27ae60;
-    color: #27ae60;
-}
-
-.project-7 {
-    border-color: #d35400;
-    color: #d35400;
-}
-
-.media-right {
-    padding-right: 40px;
 }
 

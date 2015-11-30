@@ -26,6 +26,8 @@ Route::get('wdf', 'WDFController@index');
  * xsm, add, 20151123.
  * for volunteer register, volunteer info.
  * */
+
+//TODO heqilai
 Route::resource('volunteer', 'VolunteerController', ['only' => ['show', 'create', 'store', 'edit', 'update']]);
 
 
@@ -40,7 +42,7 @@ Route::group([
     Route::get('/doctors', 'PersonalController@doctors');
 
     //TODO 个人信息，显示／编辑 个人头像(不能改)，电话，邮箱
-    Route::get('/index', 'PersonalController@index');
+    Route::get('/show', 'PersonalController@show');
 });
 
 /*
