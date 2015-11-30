@@ -15,9 +15,10 @@ class PersonalController extends Controller
     /*
      * get all beans by volunteer
      * */
-    public function beans(Request $request, $id)
+    public function beans(Request $request)
     {
-        $volunteer = Volunteer::find($id);
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
 
         return view('personal.beans')->with([
             'volunteer' => $volunteer

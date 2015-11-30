@@ -36,7 +36,7 @@ Route::group([
 //    'middleware' => 'auth.personal'
 ], function () {
     /* 个人中心 - 迈豆积分 */
-    Route::get('/beans/{id}', 'PersonalController@beans');
+    Route::get('/beans', 'PersonalController@beans');
 
     /* 个人中心 - 医师列表 */
     Route::get('/doctors', 'PersonalController@doctors');
