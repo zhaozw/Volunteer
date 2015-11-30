@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(UnitTableSeeder::class);
-        $this->call(ActivityTableSeeder::class);
+//        $this->call(UnitTableSeeder::class);
+//        $this->call(ActivityTableSeeder::class);
         $this->call(DoctorOfficeTableSeeder::class);
         $this->call(DoctorTitleTableSeeder::class);
         $this->call(ActivityBeanRateTableSeeder::class);
