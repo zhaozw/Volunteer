@@ -39,8 +39,8 @@ class CreateVolunteerBeansTable extends Migration
     public function down()
     {
         Schema::table('volunteer_beans', function(Blueprint $table) {
-            $table->dropForeign('volunteer_id');
-            $table->dropForeign('bean_rate_id');
+            $table->dropForeign('volunteer_beans_volunteer_id_foreign');
+            $table->dropForeign('volunteer_beans_bean_rate_id_foreign');
         });
         Schema::drop('volunteer_beans');
     }

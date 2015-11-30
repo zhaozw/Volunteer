@@ -36,8 +36,8 @@ class CreateVolunteerDoctorsTable extends Migration
     {
         Schema::table('volunteer_doctors', function (Blueprint $table) {
             //
-            $table->dropForeign('volunteer_id');
-            $table->dropForeign('doctor_id');
+            $table->dropForeign('volunteer_doctors_volunteer_id_foreign');
+            $table->dropForeign('volunteer_doctors_doctor_id_foreign');
         });
 
         Schema::drop('volunteer_doctors');

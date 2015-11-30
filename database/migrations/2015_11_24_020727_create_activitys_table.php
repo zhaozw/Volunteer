@@ -36,7 +36,7 @@ class CreateActivitysTable extends Migration
     public function down()
     {
         Schema::table('activitys', function(Blueprint $table) {
-            $table->dropForeign('unit_id');
+            $table->dropForeign('activitys_unit_id_foreign');
         });
         Schema::drop('activitys');
     }

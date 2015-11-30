@@ -33,7 +33,7 @@ class CreateActivityBeanRatesTable extends Migration
     public function down()
     {
         Schema::table('activity_bean_rates', function(Blueprint $table) {
-            $table->dropForeign('activity_id');
+            $table->dropForeign('activity_bean_rates_activity_id_foreign');
         });
         Schema::drop('activity_bean_rates');
     }
