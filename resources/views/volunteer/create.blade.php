@@ -55,7 +55,8 @@
                         </button>
                         <ul class="dropdown-menu cop-list" aria-labelledby="drop1">
                             @foreach($units as $unit)
-                                <li><a class="unit_data" id="unit_{{$unit->id}}" href="#">{{$unit->full_name}}</a></li>
+                                <li><a class="unit_data" id="unit_{{$unit->id}}"
+                                       href="javascript:void(0);">{{$unit->full_name}}</a></li>
                             @endforeach
                         </ul>
                     </div>

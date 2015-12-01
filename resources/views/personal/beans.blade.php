@@ -31,11 +31,10 @@
             <p class="userCop">{{$volunteer->unit->full_name}}</p>
         </div>
         <div class="col userPoint">
-            <div>
-                <p>320
-                    <small class="md">迈豆</small>
-                </p>
-            </div>
+            <p style="white-space: normal">
+                320
+                <small class="md">迈豆</small>
+            </p>
         </div>
     </div>
 
