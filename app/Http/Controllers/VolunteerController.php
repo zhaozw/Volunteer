@@ -151,7 +151,7 @@ class VolunteerController extends Controller
         $volunteer = Volunteer::find($volunteerId);
 
         $validator = \Validator::make($request->all(), [
-            'phone' => 'required|numbers:11|unique:volunteers,phone,' . $volunteer->id,
+            'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
             'email' => 'required',
         ]);
 

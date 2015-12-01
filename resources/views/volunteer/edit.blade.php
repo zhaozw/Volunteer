@@ -18,20 +18,18 @@
 <div class="container-fluid">
     <div class="row" id="login-div">
         <form class="form-horizontal" id="login-from">
-
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
-
-
                 <div class="div-position">
                     <input name="phone" type="text" class="form-control" id="inputPhone" placeholder="请输入新的手机号"
-                           value="{{$volunteer->phone}}">
+                           value="{{$volunteer->phone}}" required>
                     <label for="inputPhone" class="pos login-field-icon"><span
                                 class=" glyphicon glyphicon-phone"></span></label>
                 </div>
 
                 <div class="div-position">
                     <input name="email" type="email" class="form-control" id="inputEmail" placeholder="请输入新的邮箱"
-                           value="{{$volunteer->email}}">
+                           value="{{$volunteer->email}}" required>
                     <label for="inputEmail" class="pos login-field-icon"><span
                                 class=" glyphicon glyphicon-envelope"></span></label>
                 </div>
