@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use App\Model\Volunteer;
 use Closure;
 
-class PersonalMiddleware
+class VolunteerAuthMiddleware
 {
     /**
      * Handle an incoming request.

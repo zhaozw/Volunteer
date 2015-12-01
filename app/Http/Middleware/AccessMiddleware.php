@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Model\Volunteer;
 use Closure;
 
 class AccessMiddleware

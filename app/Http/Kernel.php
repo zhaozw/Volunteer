@@ -40,6 +40,6 @@ class Kernel extends HttpKernel
          * xsm, add, 20151125.
          * shortcut for wdf wechat personal personal verify.
          * */
-        'auth.personal' => \App\Http\Middleware\PersonalMiddleware::class,
+        'auth.volunteer' => \App\Http\Middleware\VolunteerAuthMiddleware::class,
     ];
 }

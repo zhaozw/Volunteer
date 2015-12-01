@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use App\Model\Unit;
 use App\Model\Volunteer;
+use App\Model\VolunteerDoctor;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
 class VolunteerController extends Controller
 {
+    public function __construct()
+    {
+//        $this->middleware('auth.volunteer');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +30,7 @@ class VolunteerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $units = Unit::all();
         return view('volunteer.create')->with(['units' => $units]);
@@ -70,12 +74,23 @@ class VolunteerController extends Controller
      */
     public function show($id)
     {
-        $volunteer = \App\Model\Volunteer::where('openid', '=', $id)->first();
-        if (null == $volunteer) {
-            return redirect('volunteer/create');
-        } /*if>*/
+        //
+    }
 
-        return view('volunteer.show')->with(['volunteer' => $volunteer]);
+    /**
+     * Display the specified resource.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showSelf(Request $request)
+    {
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
+
+        return view('volunteer.show')->with([
+            'volunteer' => $volunteer
+        ]);
     }
 
     /**
@@ -84,15 +99,23 @@ class VolunteerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
         //
-        $volunteer = \App\Model\Volunteer::where('openid', '=', $id)->first();
+    }
+
+    public function editSelf(Request $request)
+    {
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
+
         if (null == $volunteer) {
             return view('volunteer.edit_error');
         } /*if>*/
 
-        return view('volunteer.edit')->with(['volunteer' => $volunteer]);
+        return view('volunteer.edit')->with([
+            'volunteer' => $volunteer
+        ]);
     }
 
     /**
@@ -104,10 +127,9 @@ class VolunteerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $validator = \Validator::make($request->all(), [
-            'phone'     => 'required|unique:volunteers, phone',
-            'email'     => 'required',
+            'phone' => 'required|unique:volunteers, phone',
+            'email' => 'required',
         ]);
         if ($validator->fails()) {
             return view('volunteer.update_error');
@@ -123,6 +145,29 @@ class VolunteerController extends Controller
         $volunteer->save();
     }
 
+    public function updateSelf(Request $request)
+    {
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
+
+        $validator = \Validator::make($request->all(), [
+            'phone' => 'required|numbers:11|unique:volunteers,phone,' . $volunteer->id,
+            'email' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return view('volunteer.update_error');
+        }
+
+        if (null == $volunteer) {
+            return view('volunteer.update_error');
+        }
+
+        $volunteer->phone = $request->phone;
+        $volunteer->email = $request->email;
+        $volunteer->save();
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -132,5 +177,29 @@ class VolunteerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /*
+     * get all beans by volunteer
+     * */
+    public function beans(Request $request)
+    {
+        $volunteerId = $request->input('volunteer_id');
+        $volunteer = Volunteer::find($volunteerId);
+
+        return view('personal.beans')->with([
+            'volunteer' => $volunteer
+        ]);
+    }
+
+    /*
+     * get all doctors by volunteer
+     * */
+    public function doctors(Request $request)
+    {
+        $volunteerId = $request->input('volunteer_id');
+        $doctors = VolunteerDoctor::where('volunteer_id', '=', $volunteerId);
+
+        return view('personal.doctors');
     }
 }

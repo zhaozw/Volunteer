@@ -27,47 +27,27 @@ Route::get('wdf', 'WDFController@index');
  * for volunteer register, volunteer info.
  * */
 
-//TODO heqilai
-Route::resource('volunteer', 'VolunteerController', ['only' => ['show', 'create', 'store', 'edit', 'update']]);
 
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('/beans', 'VolunteerController@beans');//个人中心 - 迈豆积分
+    Route::get('/doctors', 'VolunteerController@doctors'); //个人中心 - 医师列表
 
-Route::group([
-    'prefix' => 'personal',
-//    'middleware' => 'auth.personal'
-], function () {
-    /* 个人中心 - 迈豆积分 */
-    Route::get('/beans', 'PersonalController@beans');
-
-    /* 个人中心 - 医师列表 */
-    Route::get('/doctors', 'PersonalController@doctors');
-
-    //TODO 个人信息，显示／编辑 个人头像(不能改)，电话，邮箱
-    Route::get('/show', 'PersonalController@show');
+    Route::get('edit-self', 'VolunteerController@editSelf');//个人中心 - 编辑信息。区别于资源管理。使用该路由只能管理自己的信息。
+    Route::get('show-self', 'VolunteerController@showSelf');//个人中心 - 个人信息。区别于资源管理。使用该路由只能查看自己的信息。
 });
+
+Route::resource('volunteer', 'VolunteerController');
 
 /*
  * xsm, add, 20151124.
  * for activity route.
  * */
 Route::group(['prefix' => 'activity', 'middleware' => 'auth.access'], function () {
-    /* 活动列表主页 */
-    Route::get('/index', 'ActivityController@index');
-
-    /* 空中课堂 */
-    Route::get('/kzkt/index', 'KZKTController@index');
-
-    /* 千院科教 */
-    Route::get('/qykj/index', 'QYKJController@index');
-
-    /* 黄埔学堂 */
-    Route::get('/hpxt/index', 'HPXTController@index');
-
-    /* 医师助手 */
-    Route::get('/yszs/index', 'YSZSController@index');
-
-    /* 甲状腺书院 */
-    Route::get('/jzxsy/index', 'JZXSYController@index');
-
-    /* E名医 */
-    Route::get('/emy/index', 'EMYController@index');
+    Route::get('/index', 'ActivityController@index');//活动列表主页
+    Route::get('/kzkt/index', 'KZKTController@index');//空中课堂
+    Route::get('/qykj/index', 'QYKJController@index');//千院科教
+    Route::get('/hpxt/index', 'HPXTController@index');//黄埔学堂
+    Route::get('/yszs/index', 'YSZSController@index');//医师助手
+    Route::get('/jzxsy/index', 'JZXSYController@index');//甲状腺书院
+    Route::get('/emy/index', 'EMYController@index');//E名医
 });
