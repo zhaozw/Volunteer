@@ -2,15 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Activity;
-use App\Model\Volunteer;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Model\Activity;
+use Illuminate\Http\Request;
 
 class ActivityController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth.volunteer');
+    }
+
     /**
      * Display a listing of the resource.
      *

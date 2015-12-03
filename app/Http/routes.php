@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::any('/wechat', 'WechatController@serve');
+Route::controller('/debug', 'DebugController');
 
 
 /*
@@ -42,7 +41,7 @@ Route::resource('volunteer', 'VolunteerController');
  * xsm, add, 20151124.
  * for activity route.
  * */
-Route::group(['prefix' => 'activity', 'middleware' => 'auth.access'], function () {
+Route::group(['prefix' => 'activity'], function () {
     Route::get('/index', 'ActivityController@index');//活动列表主页
     Route::get('/kzkt/index', 'KZKTController@index');//空中课堂
     Route::get('/qykj/index', 'QYKJController@index');//千院科教

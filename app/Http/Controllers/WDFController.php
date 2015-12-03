@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class WDFController extends Controller
 {
@@ -16,8 +14,7 @@ class WDFController extends Controller
      */
     public function index()
     {
-        //
-        return view('wdf.wdf_index');
+        return view('constructing');
     }
 
     /**

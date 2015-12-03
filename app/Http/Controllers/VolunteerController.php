@@ -12,7 +12,12 @@ class VolunteerController extends Controller
 {
     public function __construct()
     {
-//        $this->middleware('auth.volunteer');
+        $this->middleware('auth.volunteer', [
+            'except' => [
+                'create',
+                'store'
+            ]
+        ]);
     }
 
     /**
@@ -47,7 +52,7 @@ class VolunteerController extends Controller
         $validator = \Validator::make($request->all(), [
             'name'      => 'required',
             'phone'     => 'required|digits:11|unique:volunteers,phone',
-            'email'     => 'required|unique:volunteers,email',
+            'email' => 'required|email|unique:volunteers,email',
             'unit_id'   => 'required|exists:units,id'
         ]);
 
@@ -63,7 +68,7 @@ class VolunteerController extends Controller
         $volunteer->unit_id = $request->unit_id;
         $volunteer->save();
 
-        return redirect('/personal/index');//TODO 弹到注册成功
+        return view('register_succeed');//TODO 弹到注册成功
     }
 
     /**
@@ -129,7 +134,7 @@ class VolunteerController extends Controller
     {
         $validator = \Validator::make($request->all(), [
             'phone' => 'required|unique:volunteers, phone',
-            'email' => 'required',
+            'email' => 'required|email',
         ]);
         if ($validator->fails()) {
             return view('volunteer.update_error');
@@ -152,7 +157,7 @@ class VolunteerController extends Controller
 
         $validator = \Validator::make($request->all(), [
             'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
-            'email' => 'required',
+            'email' => 'required|email|unique:volunteers,email,' . $volunteer->id,
         ]);
 
         if ($validator->fails()) {
