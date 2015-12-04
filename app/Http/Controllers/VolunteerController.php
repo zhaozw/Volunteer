@@ -145,7 +145,7 @@ class VolunteerController extends Controller
             'email' => 'required|email',
         ]);
         if ($validator->fails()) {
-            return view('volunteer.update_error');
+            return redirect()->back()->withErrors($validator)->withInput();
         } /*if>*/
 
         $volunteer = \App\Model\Volunteer::where('openid', '=', $id)->first();
@@ -167,18 +167,15 @@ class VolunteerController extends Controller
             'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
             'email' => 'required|email|unique:volunteers,email,' . $volunteer->id,
         ]);
-
         if ($validator->fails()) {
-            return view('volunteer.update_error');
-        }
-
-        if (null == $volunteer) {
-            return view('volunteer.update_error');
+            return redirect()->back()->withErrors($validator)->withInput();
         }
 
         $volunteer->phone = $request->phone;
         $volunteer->email = $request->email;
         $volunteer->save();
+
+        return redirect('/volunteer/show-self');
     }
 
     /**

@@ -13,7 +13,7 @@
 
 <body>
 
-<input type="button" class="btn btn-warning" value="关闭本窗口" onclick="WeixinJSBridge.call('closeWindow');"/>
+<input type="button" class="btn btn-warning btn-block" value="注册成功，点击关闭" onclick="WeixinJSBridge.call('closeWindow');"/>
 
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

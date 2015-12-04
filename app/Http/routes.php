@@ -33,6 +33,7 @@ Route::group(['prefix' => 'volunteer'], function () {
 
     Route::get('edit-self', 'VolunteerController@editSelf');//个人中心 - 编辑信息。区别于资源管理。使用该路由只能管理自己的信息。
     Route::get('show-self', 'VolunteerController@showSelf');//个人中心 - 个人信息。区别于资源管理。使用该路由只能查看自己的信息。
+    Route::post('update-self', 'VolunteerController@updateSelf');
 });
 
 Route::resource('volunteer', 'VolunteerController');

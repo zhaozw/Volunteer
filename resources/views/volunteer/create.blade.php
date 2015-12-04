@@ -12,21 +12,20 @@
 </head>
 
 <body class="sign-body">
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>错误！</strong> 请检查您的输入。<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container-fluid">
     <div class="row" id="login-div">
         <form class="form-horizontal" id="login-form" action="{{url('/volunteer')}}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <strong>错误！</strong> 请检查您的输入。<br><br>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
 
             <div class="form-group">
 
