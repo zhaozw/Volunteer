@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Login</title>
+    <title>修改资料</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -36,7 +36,8 @@
 
             </div>
             <div class="form-group">
-                <button href="#" class="btn btn-block btn-success btn-lg active" role="button" id="login-btn">确认修改
+                <button type="submit" href="#" class="btn btn-block btn-success btn-lg active" role="button"
+                        id="login-btn">确认修改
                 </button>
             </div>
         </form>

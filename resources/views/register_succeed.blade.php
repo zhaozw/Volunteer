@@ -13,13 +13,7 @@
 
 <body>
 
-<div class="text-warning text-center" style="position: absolute;
-    margin: auto;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 500px;"><img src="/image/errors/success.png" class="img-responsive"></div>
+<input type="button" class="btn btn-warning" value="关闭本窗口" onclick="WeixinJSBridge.call('closeWindow');"/>
 
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

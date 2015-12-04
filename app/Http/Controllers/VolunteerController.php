@@ -12,7 +12,9 @@ class VolunteerController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth.volunteer', [
+        $this->middleware('auth.volunteer');
+
+        $this->middleware('auth.access', [
             'except' => [
                 'create',
                 'store'
@@ -62,10 +64,16 @@ class VolunteerController extends Controller
         } /*if>*/
 
         $volunteer = new Volunteer();
+        $user = \Session::get('logged_user');
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
         $volunteer->email   = $request->email;
         $volunteer->unit_id = $request->unit_id;
+
+        $volunteer->headimgurl = $user['headimgurl'];
+        $volunteer->nickname = $user['nickname'];
+        $volunteer->openid = $user['openid'];
+
         $volunteer->save();
 
         return view('register_succeed');//TODO 弹到注册成功
@@ -90,8 +98,8 @@ class VolunteerController extends Controller
      */
     public function showSelf(Request $request)
     {
-        $volunteerId = $request->input('volunteer_id');
-        $volunteer = Volunteer::find($volunteerId);
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
 
         return view('volunteer.show')->with([
             'volunteer' => $volunteer
@@ -111,8 +119,8 @@ class VolunteerController extends Controller
 
     public function editSelf(Request $request)
     {
-        $volunteerId = $request->input('volunteer_id');
-        $volunteer = Volunteer::find($volunteerId);
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
 
         if (null == $volunteer) {
             return view('volunteer.edit_error');
@@ -152,8 +160,8 @@ class VolunteerController extends Controller
 
     public function updateSelf(Request $request)
     {
-        $volunteerId = $request->input('volunteer_id');
-        $volunteer = Volunteer::find($volunteerId);
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
 
         $validator = \Validator::make($request->all(), [
             'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
@@ -189,10 +197,10 @@ class VolunteerController extends Controller
      * */
     public function beans(Request $request)
     {
-        $volunteerId = $request->input('volunteer_id');
-        $volunteer = Volunteer::find($volunteerId);
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
 
-        return view('personal.beans')->with([
+        return view('volunteer.beans')->with([
             'volunteer' => $volunteer
         ]);
     }
@@ -202,8 +210,9 @@ class VolunteerController extends Controller
      * */
     public function doctors(Request $request)
     {
-        $volunteerId = $request->input('volunteer_id');
-        $doctors = VolunteerDoctor::where('volunteer_id', '=', $volunteerId);
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        $doctors = VolunteerDoctor::where('volunteer_id', '=', $volunteer->id);
 
         return view('personal.doctors');
     }

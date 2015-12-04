@@ -87,7 +87,7 @@ class DebugController extends Controller
         $curl = new Curl();
         $curl->setOpt(CURLOPT_HTTPHEADER, ["content-type: application/x-www-form-urlencoded;charset=UTF-8"]);
         $url = 'https://api.weixin.qq.com/cgi-bin/menu/create?access_token=';
-        $access_token = 'svIBWS7MIcxqB3LhcHBghFXubxAgtd_1YsPTdVzEvQ4RAAnJoFnMZnD8qKs2BtQOz--amSLaROjRfMGbwA07v9ABons-stmq8UNH-6tjXt8QPSdAJAJIL';
+        $access_token = 'tcaP56mMSn9q-E-5tBVJLNi6fqWb7pgKijXqV2bhHGk8SkhQ3gAxV_5aHM7JbA3oh75_aBSotE_b39Yt2xyKCCJ3Xyoilj4jfx0EXVfQCZYHZHgADAOGO';
         $curl->post($url . $access_token, $json);
 
         return $curl->response;

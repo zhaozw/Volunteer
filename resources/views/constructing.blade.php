@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 500px;"><img src="/image/errors/constructing.png" class="img-responsive"></div>
+    height: 500px;"><img src="/image/errors/constructing.png" class="img-responsive center-block"></div>
 
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <title>Id Card</title>
+    <title>志愿者名片</title>
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -14,7 +14,7 @@
 <body>
 <div class="container">
     <div class="row header ">
-        <img class="userPic" src="/image/pic01.jpg" alt="">
+        <img class="userPic" src="{{$volunteer->headimgurl}}" alt="">
     </div>
     <div class="row footer">
         <div class="user-info">
@@ -34,7 +34,7 @@
                 {{$volunteer->unit->full_name}}
             </h4>
             <hr>
-            <button class="btn btn-warning" style="float: right">修改个人信息</button>
+            <a class="btn btn-warning" style="float: right" href="{{url('/volunteer/edit-self')}}">修改个人信息</a>
         </div>
     </div>
 </div>

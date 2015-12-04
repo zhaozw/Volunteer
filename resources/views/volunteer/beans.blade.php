@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>project</title>
+    <title>我的迈豆</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
 
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -14,47 +14,32 @@
 
 <body>
 
-
-<div class="container conPrj">
-
+<div class="container-fluid">
     <div class="row userBlock">
-        <div class="col-xs-3 userPic">
-            <a href="#">
-                <img class="userImage" src="/image/pic01.jpg" alt="...">
-            </a>
-        </div>
-        <div class="col-xs-6 userInfo">
-            <h4 class="userName">{{$volunteer->name}}</h4>
-
-            <p class="userNum">{{$volunteer->phone}}</p>
-
-            <p class="userCop">{{$volunteer->unit->full_name}}</p>
-        </div>
-        <div class="col userPoint">
-            <p style="white-space: normal">
-                320
-                <small class="md">迈豆</small>
-            </p>
-        </div>
+        <img class="userPic" src="{{$volunteer->headimgurl}}" alt=""/>
+        <ul class="list-unstyled">
+            <li class="userPoint">{{$volunteer->beans_total}}</li>
+            <li>迈豆积分</li>
+        </ul>
     </div>
 
     @foreach($volunteer->volunteerBeans->sortByDesc('valid_time') as $bean)
-        <div class="row project-x">
-            <div class="col-xs-4 projPoint">
-                <p>50
-                    <small class="md">迈豆</small>
-                </p>
-            </div>
-            <div class="col projDetil">
-                <h5 class=""><span>项目：</span>{{$bean->activityBeanRate->activity_name}}</h5>
-                <h5 class=""><span>操作：</span>{{$bean->activityBeanRate->action_chs}}</h5>
-
-                <p class="date">{{$bean->valid_time->format('m-d')}}</p>
-            </div>
+        <div class="row project-x ">
+            <div class="col-xs-6 ">
+                <ul class="list-unstyled ">
+                    <li>项目名称：{{$bean->activityBeanRate->activity_name}}</li>
+                    <li>奖励来源：{{$bean->activityBeanRate->action_chs}}</li>
+                    <li class="date">{{$bean->valid_time->format('Y-m-d')}}</li>
+                </ul>
         </div>
+            <div class="col-xs-6 projPoint">
+                <span>500</span><span class="md">&nbsp;迈豆</span>
+        </div>
+    </div>
     @endforeach
 
 </div>
+
 
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

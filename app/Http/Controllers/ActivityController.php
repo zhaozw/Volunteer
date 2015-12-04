@@ -11,6 +11,7 @@ class ActivityController extends Controller
     public function __construct()
     {
         $this->middleware('auth.volunteer');
+        $this->middleware('auth.access');
     }
 
     /**

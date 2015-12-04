@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use App\Model\Volunteer;
+use Carbon\Carbon;
 use Closure;
 
 class AccessMiddleware
@@ -16,17 +17,23 @@ class AccessMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $inputOpenId = $request->input('openid');
+        $user = \Session::get('logged_user');
 
-        if ($inputOpenId and $user = Volunteer::where('openid', '=', $inputOpenId)->first()) {
-            $inputArray = $request->all();
-            $inputArray['volunteer_id'] = $user->id;
-            $inputArray['unit_id'] = $user->unit_id;
-            $request->replace($inputArray);
+        if ($volunteer = Volunteer::where('openid', $user['openid'])->first()) {
+            //如果该openid已经注册过
 
+            //如果距离上次更新超过30分钟则更新数据
+            if (Carbon::now()->diffInMinutes($volunteer->updated_at) > 30) {
+                $volunteer->openid = $user['openid'];
+                $volunteer->headimgurl = $user['headimgurl'];
+                $volunteer->nickname = $user['nickname'];
+
+                $volunteer->save();
+            }
             return $next($request);
-        } /*if>*/
-
-        return redirect()->route('volunteer/create');
+        } else {
+            //如果openid未被注册过，则重定向到注册页
+            return redirect('/volunteer/create');
+        }
     }
 }

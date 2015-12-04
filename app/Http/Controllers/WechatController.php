@@ -11,10 +11,10 @@ class WechatController extends Controller
 {
     public function serve(Request $request)
     {
-        $appId = 'wxa9e89e54e2bf14e8';
-        $secret = '1acbf1817fc4b541fd5689792b0030d4';
-        $token = 'Med123456';
-        $encodingASEKey = 'pIXMRDPcrBwwcSa61JjBuSelaCdJV6oWmlkxuFqxyN5';
+        $appId = env('WX_APPID');
+        $secret = env('WX_SECRET');
+        $token = env('WX_TOKEN');
+        $encodingASEKey = env('WX_ENCODING_ASEKEY');
 
 
         $server = new Server($appId, $token, $encodingASEKey);
