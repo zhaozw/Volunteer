@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use App\Model\Activity;
+use App\Model\Volunteer;
 use Illuminate\Http\Request;
 
 class ActivityController extends Controller
@@ -21,15 +22,18 @@ class ActivityController extends Controller
      */
     public function index(Request $request)
     {
-        $volunteerId    = $request->input('volunteer_id');
-        $unitId         = $request->input('unit_id');
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        $activities = $volunteer->unit->activities;
 
-        $activities = Activity::where('unit_id', '=', $unitId);
         if (0 == $activities->count()) {
             return view('activity.no_activities');
         } /*if>*/
 
-        return view('activity.all_activities')->with(['activities' => $activities]);
+        return view('activity.all_activities')->with([
+            'volunteer' => $volunteer,
+            'activities' => $activities
+        ]);
     }
 
     /**
