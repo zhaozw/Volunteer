@@ -1,0 +1,87 @@
+body {
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #2980B9;
+}
+
+h3 {
+    color: #2980B9;
+}
+
+.huangpu-body {
+    background-color: #EEEEEE;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #eeeeee;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.col-heading span {
+    float: right;
+    font-size: 80%;
+}
+
+.col-heading span:first-child {
+    margin-right: -5px;
+    color: #888;
+}
+
+.col-heading span:last-child {
+    color: #5bc0de;
+}
+
+.projText {
+    height: 6em;
+}
+
+.project-head {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+}
+
+.project-x {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    border-left: 5px solid;
+    border-color: #5bc0de;
+}
+
+.huangpu-pic {
+    margin-top: 15px;
+    float: center;
+    width: 100%;
+}
+
+/*.littlepic{*/
+/*position: absolute;*/
+/*margin-top: 8px;*/
+/*width: 25px;*/
+/*}*/
+/*.col-heading{*/
+/*padding-left: 30px;*/
+/*}*/
+
+
