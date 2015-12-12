@@ -9,6 +9,13 @@ use App\Http\Controllers\Controller;
 
 class HPXTController extends Controller
 {
+    function __construct()
+    {
+        // TODO: Implement __construct() method.
+        $this->middleware('auth.volunteer');
+        $this->middleware('auth.access');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +24,27 @@ class HPXTController extends Controller
     public function index()
     {
         //
+        return view('activity.hpxt.index');
+    }
+
+    public function introduction() {
+        return view('activity.hpxt.introduction');
+    }
+
+    public function procedure() {
+        return view('activity.hpxt.introduction');
+    }
+
+    public function document() {
+        return view('activity.hpxt.document');
+    }
+
+    public function documentFilm() {
+        return view('activity.hpxt.document_film');
+    }
+
+    public function documentAgreement() {
+        return view('activity.hpxt.document_agreement');
     }
 
     /**
