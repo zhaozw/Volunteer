@@ -51,7 +51,7 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/hpxt/introduction', 'HPXTController@introduction');
     Route::get('/hpxt/procedure', 'HPXTController@procedure');
     Route::get('/hpxt/document', 'HPXTController@document');
-    Route::get('/hpxt/document-film', 'HPXTController@documentFilm');
+    Route::get('/hpxt/document-ppt', 'HPXTController@documentPpt');
     Route::get('/hpxt/document-agreement', 'HPXTController@documentAgreement');
 
     Route::get('/yszs/index', 'YSZSController@index');//医师助手

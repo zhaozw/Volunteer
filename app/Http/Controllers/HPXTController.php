@@ -24,27 +24,27 @@ class HPXTController extends Controller
     public function index()
     {
         //
-        return view('activity.hpxt.index');
+        return view('activity.hpxt.huangpu_index');
     }
 
     public function introduction() {
-        return view('activity.hpxt.introduction');
+        return view('activity.hpxt.huangpu_profile');
     }
 
     public function procedure() {
-        return view('activity.hpxt.introduction');
+        return view('activity.hpxt.huangpu_profile');
     }
 
     public function document() {
-        return view('activity.hpxt.document');
+        return view('activity.hpxt.huangpu_document');
     }
 
-    public function documentFilm() {
-        return view('activity.hpxt.document_film');
+    public function documentPpt() {
+        return view('activity.hpxt.huangpu_ppt');
     }
 
     public function documentAgreement() {
-        return view('activity.hpxt.document_agreement');
+        return view('activity.hpxt.huangpu_agreement');
     }
 
     /**
