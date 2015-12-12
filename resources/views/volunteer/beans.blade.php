@@ -28,6 +28,9 @@
             <div class="col-xs-6 ">
                 <ul class="list-unstyled ">
                     <li>项目名称：{{$bean->activityBeanRate->activity_name}}</li>
+
+
+
                     <li>奖励来源：{{$bean->activityBeanRate->action_chs}}</li>
                     <li class="date">{{$bean->valid_time->format('Y-m-d')}}</li>
                 </ul>
