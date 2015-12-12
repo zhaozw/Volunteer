@@ -12,12 +12,16 @@
 <body class="huangpu-body">
 <div class="container-fluid">
   <br>
-  <div class="row project-x" onclick="window.open('huangpu_ppt.blade.php')">
-    <h4 class="col-heading">班级宣讲PPT<span class="glyphicon glyphicon-menu-right"></span></h4>
-  </div>
-  <div class="row project-x" onclick="window.open('huangpu_agreement.html')">
-    <h4 class="col-heading">导师服务协议<span class="glyphicon glyphicon-menu-right"></span></h4>
-  </div>
+  <a href="/hpxt/document-ppt">
+    <div class="row project-x">
+      <h4 class="col-heading">班级宣讲PPT<span class="glyphicon glyphicon-menu-right"></span></h4>
+    </div>
+  </a>
+  <a href="/hpxt/document-agreement">
+    <div class="row project-x">
+      <h4 class="col-heading">导师服务协议<span class="glyphicon glyphicon-menu-right"></span></h4>
+    </div>
+  </a>
   <div class="row">
     <br>
     <p>&emsp;请前往 <a href="http://www.itangyi.com">www.itangyi.com</a>下载项目资料</p>
