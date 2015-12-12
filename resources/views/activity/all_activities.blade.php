@@ -13,10 +13,12 @@
 <div class="container">
     @foreach($activities as $activity)
         <div class="col-xs-4" style="margin: 30px auto;">
-            <div>
-                <img class="img-responsive" src="{{$activity->icon_url}}">
-            </div>
-            <p style="text-align: center; margin-top: 10px;">{{$activity->title}}</p>
+            <a href="{{$activity->index_url}}">
+                <div>
+                    <img class="img-responsive" src="{{$activity->icon_url}}">
+                </div>
+                <p style="text-align: center; margin-top: 10px;">{{$activity->title}}</p>
+            </a>
         </div>
     @endforeach
 </div>
