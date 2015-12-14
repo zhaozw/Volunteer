@@ -19,13 +19,13 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad1.png">
+      <img class="img-responsive" src="/image/huangpu_ad1.png">
     </div>
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad2.jpg">
+      <img class="img-responsive" src="/image/huangpu_ad2.jpg">
     </div>
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad3.jpg">
+      <img class="img-responsive" src="/image/huangpu_ad3.jpg">
     </div>
   </div>
   <div class="swiper-pagination"></div>
