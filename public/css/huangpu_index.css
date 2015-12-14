@@ -80,6 +80,39 @@ h3 {
     width: 100%;
 }
 
+.form-label {
+    margin-right: -10px;
+    padding-right: 0px;
+    font-size:120%;
+}
+
+.form-horizontal {
+    background-color: #fff;
+}
+
+.float-right {
+    float: right;
+    color: #5bc0de;
+    margin-right: 10px;
+}
+
+.docpic {
+    width: 40px;
+}
+
+.inputdate {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.btn-float{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 1;
+}
+
+
+
 /*.littlepic{*/
 /*position: absolute;*/
 /*margin-top: 8px;*/

@@ -53,6 +53,8 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/hpxt/document', 'HPXTController@document');
     Route::get('/hpxt/document-ppt', 'HPXTController@documentPpt');
     Route::get('/hpxt/document-agreement', 'HPXTController@documentAgreement');
+    Route::get('/hpxt/classmanage', 'HPXTController@classmanage');
+    Route::get('/hpxt/classapplication', 'HPXTController@classapplication');
 
     Route::get('/yszs/index', 'YSZSController@index');//医师助手
     Route::get('/jzxsy/index', 'JZXSYController@index');//甲状腺书院

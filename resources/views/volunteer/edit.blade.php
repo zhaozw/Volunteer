@@ -31,7 +31,7 @@
             {{csrf_field()}}
             <div class="form-group">
                 <div class="formDiv">
-                    <input name="phone" value="{{$volunteer->phone}}" type="number" class="form-control" id="inputPhone" placeholder="请输入新的手机号">
+                    <input name="phone" value="{{$volunteer->phone}}" type="text" class="form-control" id="inputPhone" placeholder="请输入新的手机号">
                     <label for="inputPassword3" class="formIcon login-field-icon"><span class="glyphicon glyphicon-phone"></span></label>
                 </div>
                 <div class="formDiv">

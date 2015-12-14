@@ -47,6 +47,13 @@ class HPXTController extends Controller
         return view('activity.hpxt.huangpu_agreement');
     }
 
+    public function classmanage() {
+        return view('activity.hpxt.classmanage');
+    }
+
+    public function classapplication() {
+        return view('activity.hpxt.classapplication');
+    }
     /**
      * Show the form for creating a new resource.
      *
