@@ -19,13 +19,13 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad1.png">
+      <img class="img-responsive" src="/image/huangpu_ad1.png">
     </div>
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad2.jpg">
+      <img class="img-responsive" src="/image/huangpu_ad2.jpg">
     </div>
     <div class="swiper-slide">
-      <img class="img-responsive" src="../image/huangpu_ad3.jpg">
+      <img class="img-responsive" src="/image/huangpu_ad3.jpg">
     </div>
   </div>
   <div class="swiper-pagination"></div>
@@ -52,7 +52,7 @@
     <h4 class="col-heading">项目资料<span class="glyphicon glyphicon-menu-right"></span></h4>
   </div>
   </a>
-  <a href="  </a>classmanage">
+  <a href="/activity/hpxt/classmanage">
   <div class="row project-x">
     <!--<img class="littlepic" src="image/huangpu_3.png" alt="图标">-->
     <h4 class="col-heading">班级招募<span class="glyphicon glyphicon-menu-right"></span></h4>
