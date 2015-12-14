@@ -10,7 +10,6 @@
 <body>
 <div class="container">
   <br>
-
   <form action="" class="form-horizontal">
     <div class="form-group">
       <label class="form-label col-xs-4">班级名称</label>
