@@ -51,7 +51,7 @@ class HPXTController extends Controller
 
     public function classManage() {
         $user = \Session::get('logged_user');
-        dd($user);
+//        dd($user);
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         dd($volunteer);
 //        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
