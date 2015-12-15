@@ -11,7 +11,7 @@
 <body class="huangpu-body">
 
 <div class="container-fluid">
-    <a href="/activity/hpxt/classapplication" class="btn btn-primary btn-lg btn-float">申请班级</a>
+    <a href="/activity/hpxt/class-application" class="btn btn-primary btn-lg btn-float">申请班级</a>
 
     @if($classes)
         <h3>已申请班级:</h3>

@@ -52,7 +52,7 @@
     <h4 class="col-heading">项目资料<span class="glyphicon glyphicon-menu-right"></span></h4>
   </div>
   </a>
-  <a href="/activity/hpxt/classmanage">
+  <a href="/activity/hpxt/class-manage">
   <div class="row project-x">
     <!--<img class="littlepic" src="image/huangpu_3.png" alt="图标">-->
     <h4 class="col-heading">班级招募<span class="glyphicon glyphicon-menu-right"></span></h4>
