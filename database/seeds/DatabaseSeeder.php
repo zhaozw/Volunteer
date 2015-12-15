@@ -22,6 +22,9 @@ class DatabaseSeeder extends Seeder
         $this->call(ActivityBeanRateTableSeeder::class);
         $this->call(VolunteerBeanTableSeeder::class);
 
+        $this->call(HPXTClassScaleTableSeeder::class);
+        $this->call(HPXTClassModeTableSeeder::class);
+
         Model::reguard();
     }
 }
