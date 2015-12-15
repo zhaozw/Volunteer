@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\HPXTClassMode;
+use App\Model\HPXTClassScale;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -47,12 +49,24 @@ class HPXTController extends Controller
         return view('activity.hpxt.huangpu_agreement');
     }
 
-    public function classmanage() {
-        return view('activity.hpxt.classmanage');
+    public function classManage() {
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
+        dd($classes);
+        return view('activity.hpxt.class_manage')->with([
+            'classes' => $classes
+        ]);
     }
 
-    public function classapplication() {
-        return view('activity.hpxt.classapplication');
+    public function classApplication() {
+        $classModes = HPXTClassMode::all();
+        $classScales = HPXTClassScale::all();
+
+        return view('activity.hpxt.class_application')->with([
+            'modes'=>$classModes,
+            'scales'=>$classScales
+        ]);
     }
     /**
      * Show the form for creating a new resource.
