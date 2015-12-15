@@ -7,6 +7,7 @@ use App\Model\HPXTClassScale;
 use Illuminate\Http\Request;
 
 use App\Model\Volunteer;
+use App\Model\HPXTClass;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -55,9 +56,9 @@ class HPXTController extends Controller
         $user = \Session::get('logged_user');
 //        dd($user);
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
-        dd($volunteer);
-//        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
-//        dd($classes);
+//        dd($volunteer);
+        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
+        dd($classes);
         return view('activity.hpxt.class_manage')->with([
             'classes' => $classes
         ]);
