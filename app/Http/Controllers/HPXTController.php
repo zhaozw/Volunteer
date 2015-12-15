@@ -6,6 +6,8 @@ use App\Model\HPXTClassMode;
 use App\Model\HPXTClassScale;
 use Illuminate\Http\Request;
 
+use App\Model\Volunteer;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
