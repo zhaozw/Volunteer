@@ -19,7 +19,7 @@
 <div class="swiper-container">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <img class="img-responsive" src="/image/huangpu_ad1.png">
+      <img class="img-responsive" src="/image/huangpu_ad1.jpg">
     </div>
     <div class="swiper-slide">
       <img class="img-responsive" src="/image/huangpu_ad2.jpg">
