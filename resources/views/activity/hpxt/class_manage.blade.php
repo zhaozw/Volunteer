@@ -13,9 +13,7 @@
 <div class="container-fluid">
     <a href="/activity/hpxt/class-application" class="btn btn-primary btn-lg btn-float">申请班级</a>
 
-    @if($classes)
-        <h3>已申请班级:</h3>
-    @endif
+    <h3>已申请班级:</h3>
 
     @foreach($classes as $class)
         <div class="row project-x">

@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\Model\Volunteer;
 use App\Model\HPXTClass;
+use App\Model\HPXTClassMode;
+use App\Model\HPXTClassScale;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
