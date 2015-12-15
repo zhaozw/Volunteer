@@ -54,8 +54,8 @@ class HPXTController extends Controller
         dd($user);
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         dd($volunteer);
-        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
-        dd($classes);
+//        $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
+//        dd($classes);
         return view('activity.hpxt.class_manage')->with([
             'classes' => $classes
         ]);
