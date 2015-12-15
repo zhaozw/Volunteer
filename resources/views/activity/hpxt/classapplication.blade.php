@@ -54,7 +54,7 @@
     <div><label class="form-label">班级导师</label><span class="float-right">点击添加导师</span></div>
     <div>
       <div class="media-left media-middle">
-        <img class="docpic" src="../image/private.png" alt="...">
+        <img class="docpic" src="/image/icons/private.png" alt="...">
       </div>
       <div class="media-body">
         <br>
@@ -66,7 +66,7 @@
     </div>
     <div>
       <div class="media-left media-middle">
-        <img class="docpic" src="/image/private.png" alt="...">
+        <img class="docpic" src="/image/icons/private.png" alt="...">
       </div>
       <div class="media-body">
         <br>
@@ -80,7 +80,7 @@
     <div><label class="form-label">班级助教</label><span class="float-right">点击添加助教</span></div>
     <div>
       <div class="media-left media-middle">
-        <img class="docpic" src="/image/private.png" alt="...">
+        <img class="docpic" src="/image/icons/private.png" alt="...">
       </div>
       <div class="media-body">
         <br>
