@@ -68,6 +68,20 @@ class HPXTController extends Controller
             'scales'=>$classScales
         ]);
     }
+
+    public function classStore(Request $request) {
+        $user = \Session::get('logged_user');
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
+
+        $validator = \Validator::make($request->all(), [
+
+        ]);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        } /*if>*/
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
