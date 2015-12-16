@@ -8,7 +8,16 @@
     <link rel="stylesheet" href="/css/huangpu_index.css">
 </head>
 <body>
-
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <strong>错误！</strong> 请检查您的输入。<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="container">
     <br>
 
@@ -28,9 +37,9 @@
 
             <div class="col-xs-8">
                 <select class="form-control" name="{{old('scale_id')}}">
-                    @foreach($classsSales as $classsSale)
-                        <option value="{{$classsSale->id}}">{{$classsSale->scale}}</option>
-                    @endforeach
+                    {{--@foreach($classsSales as $classsSale)--}}
+                        {{--<option value="{{$classsSale->id}}">{{$classsSale->scale}}</option>--}}
+                    {{--@endforeach--}}
                 </select>
             </div>
         </div>
@@ -40,9 +49,9 @@
 
             <div class="col-xs-8">
                 <select class="form-control" name="{{old('mode_id')}}">
-                    @foreach($classModes as $classMode)
-                        <option value="{{$classMode->id}}">{{$classMode->mode}}</option>
-                    @endforeach
+                    {{--@foreach($classModes as $classMode)--}}
+                        {{--<option value="{{$classMode->id}}">{{$classMode->mode}}</option>--}}
+                    {{--@endforeach--}}
                 </select>
             </div>
         </div>
