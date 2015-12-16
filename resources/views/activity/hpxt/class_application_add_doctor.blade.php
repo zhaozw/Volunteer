@@ -76,7 +76,7 @@
             <label class="form-label col-xs-4">导师科室</label>
             <div class="col-xs-8">
                 <select class="form-control">
-                    <option selected hidden>请选择医院</option>
+                    <option selected hidden>请选择科室</option>
                     <option>模式1</option>
                     <option>模式2</option>
                     <option>模式3</option>
@@ -99,10 +99,9 @@
                 </select>
             </div>
         </div>
+        <br>
         <button class="btn btn-block btn-primary btn-lg" type="submit">添加导师</button>
     </form>
-    <br>
-
     <br>
 </div>
 

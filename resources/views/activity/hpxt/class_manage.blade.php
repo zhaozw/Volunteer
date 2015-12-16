@@ -19,11 +19,11 @@
         <h3>已申请班级:</h3>
     @endif
 
-        @foreach($classes as $class)
-            <div class="row project-x">
-                <h4 class="col-heading">{{$class->name}}<span class="float-right">{{$class->state}}</span></h4>
-            </div>
-        @endforeach
+    @foreach($classes as $class)
+        <div class="row project-x">
+            <h4 class="col-heading">{{$class->name}}<span class="float-right">{{$class->state}}</span></h4>
+        </div>
+    @endforeach
 
 </div>
 <script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>

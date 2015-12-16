@@ -25,10 +25,10 @@
                 <input type="text" class="form-control" placeholder="请输入助教电话">
             </div>
         </div>
-    </form>
     <br>
     <button type="submit" class="btn btn-block btn-primary btn-lg">添加助教</button>
     <br>
+    </form>
 </div>
 
 
