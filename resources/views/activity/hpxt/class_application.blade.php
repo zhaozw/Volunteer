@@ -37,8 +37,8 @@
 
             <div class="col-xs-8">
                 <select class="form-control" name="{{old('scale_id')}}">
-                    @foreach($classsScales as $classsScale)
-                        <option value="{{$classsScale->id}}">{{$classsScale->scale}}</option>
+                    @foreach($Scales as $Scale)
+                        <option value="{{$Scale->id}}">{{$Scale->scale}}</option>
                     @endforeach
                 </select>
             </div>
