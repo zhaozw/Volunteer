@@ -99,7 +99,7 @@
                 </select>
             </div>
         </div>
-        <br>
+        <hr>
         <button class="btn btn-block btn-primary btn-lg" type="submit">添加导师</button>
     </form>
     <br>
