@@ -55,6 +55,8 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/hpxt/document-agreement', 'HPXTController@documentAgreement');
     Route::get('/hpxt/class-manage', 'HPXTController@classManage');
     Route::get('/hpxt/class-application', 'HPXTController@classApplication');
+    Route::get('/hpxt/class-application-add-doctor', 'HPXTController@classApplicationAddDoctor');
+    Route::get('/hpxt/class-application-add-assistant', 'HPXTController@classApplicationAddAssistant');
     Route::get('/hpxt/class-store', 'HPXTController@classStore');
 
     Route::get('/yszs/index', 'YSZSController@index');//医师助手

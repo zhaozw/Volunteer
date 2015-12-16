@@ -54,11 +54,8 @@ class HPXTController extends Controller
 
     public function classManage() {
         $user = \Session::get('logged_user');
-//        dd($user);
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
-//        dd($volunteer);
         $classes = HPXTClass::where('volunteer_id', $volunteer->id)->get();
-//        dd($classes);
         return view('activity.hpxt.class_manage')->with([
             'classes' => $classes
         ]);
@@ -66,13 +63,20 @@ class HPXTController extends Controller
 
     public function classApplication() {
         $classModes = HPXTClassMode::all();
-//        dd($classModes);
         $classScales = HPXTClassScale::all();
 
         return view('activity.hpxt.class_application')->with([
             'modes'=>$classModes,
             'scales'=>$classScales
         ]);
+    }
+
+    public function classApplicationAddDoctor() {
+        return view('activity.hpxt.class_application_add_doctor');
+    }
+
+    public function classApplicationAddAssistant() {
+        return view('activity.hpxt.class_application_add_assistant');
     }
 
     public function classStore(Request $request) {
