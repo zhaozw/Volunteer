@@ -49,9 +49,9 @@
 
             <div class="col-xs-8">
                 <select class="form-control" name="{{old('mode_id')}}">
-                    {{--@foreach($classModes as $classMode)--}}
-                        {{--<option value="{{$classMode->id}}">{{$classMode->mode}}</option>--}}
-                    {{--@endforeach--}}
+                    @foreach($modes as $mode)
+                        <option value="{{$mode->id}}">{{$mode->mode}}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
