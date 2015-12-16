@@ -65,7 +65,6 @@ class HPXTController extends Controller
     }
 
     public function classApplication() {
-        dd('xsm---');
 //        $classModes = HPXTClassMode::all();
 //        dd($classModes);
 //        $classScales = HPXTClassScale::all();
