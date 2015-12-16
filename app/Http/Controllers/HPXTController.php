@@ -65,10 +65,8 @@ class HPXTController extends Controller
     }
 
     public function classApplication() {
-//        $classModes = HPXTClassMode::all();
-//        dd($classModes);
-//        $classScales = HPXTClassScale::all();
-//        dd($classScales);
+        $classModes = HPXTClassMode::all();
+        $classScales = HPXTClassScale::all();
 
         return view('activity.hpxt.class_application')->with([
             'modes'=>$classModes,
