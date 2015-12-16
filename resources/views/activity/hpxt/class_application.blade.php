@@ -66,7 +66,7 @@
             </div>
         </div>
         <hr>
-        <div><label class="form-label">班级导师</label><a href="activity/hpxt/class-application-add-doctor class="float-right">点击添加导师</a></div>
+        <div><label class="form-label">班级导师</label><a href="class-application-add-doctor"  class="float-right">点击添加导师</a></div>
         <div>
             <div class="media-left media-middle">
                 <img class="docpic" src="/image/icons/private.png" alt="...">
@@ -92,7 +92,7 @@
             </div>
         </div>
         <hr>
-        <div><label class="form-label">班级助教</label><a href="activity/hpxt/class-application-add-assistant" class="float-right">点击添加助教</a></div>
+        <div><label class="form-label">班级助教</label><a href="class-application-add-assistant" class="float-right">点击添加助教</a></div>
         <div>
             <div class="media-left media-middle">
                 <img class="docpic" src="/image/icons/private.png" alt="...">
