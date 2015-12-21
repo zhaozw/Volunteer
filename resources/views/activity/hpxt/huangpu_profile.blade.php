@@ -31,7 +31,7 @@
     <p>旨在建立线上和线下相结合的高端学术服务平台，以帮助内分泌进修医生提高 临床治疗水平。</p>
     <hr>
     <h3 id="huangpu_flow"><br>项目流程</h3>
-    <img class="huangpu-pic" src="/image/huangpu_flow.png" alt="项目流程">
+    <img class="img-responsive"  src="/image/huangpu_flow.png" alt="项目流程">
     <br><br><br>
   </div>
 </body>
