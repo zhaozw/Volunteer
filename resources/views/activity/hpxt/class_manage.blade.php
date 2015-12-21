@@ -12,7 +12,7 @@
 
 <div class="container-fluid">
     <br>
-    <a href="/activity/hpxt/class-application" class="btn btn-primary btn-lg btn-bolck">申请班级</a>
+    <a href="/activity/hpxt/class-application" class="btn btn-primary btn-lg btn-block">申请班级</a>
     @if(0==$classes->count())
     @else
         <h3>已申请班级:</h3>
