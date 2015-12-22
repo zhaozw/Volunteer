@@ -60,7 +60,7 @@
   </a>
   <div class="row">
     <div class="col-xs-12">
-      <div class="center-block">
+      <div class="col-xs-6 center-block">
         <img class="huangpu-pic" src="/image/huangpu_qrcode1.jpg" alt="二维码">
       </div>
     </div>
