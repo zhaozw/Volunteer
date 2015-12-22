@@ -74,6 +74,12 @@ h3 {
     border-color: #5bc0de;
 }
 
+.huangpu-qrcode {
+    margin-top: 15px;
+    float: center;
+    width: 50%;
+}
+
 .huangpu-pic {
     margin-top: 15px;
     float: center;
