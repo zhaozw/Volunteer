@@ -59,8 +59,8 @@
   </div>
   </a>
   <div class="row">
-    <div class="col-xs-12">
-      <div class="col-xs-6 center-block">
+    <div class="col-xs-12 text-center">
+      <div class="col-xs-6">
         <img class="huangpu-pic" src="/image/huangpu_qrcode1.jpg" alt="二维码">
       </div>
     </div>
@@ -68,8 +68,8 @@
       {{--<img class="center-block huangpu-pic" src="/image/huangpu_qrcode2.jpg" alt="二维码2">--}}
     {{--</div>--}}
   </div>
-  <h4>客服电话&emsp;<strong>400-864-8883</strong></h4>
-  <h4>医师助手QQ群&emsp;<strong>497630169</strong></h4>
+  <h4 class="text-center">客服电话&emsp;<strong>400-864-8883</strong></h4>
+  <h4 class="text-center">医师助手QQ群&emsp;<strong>497630169</strong></h4>
 </div>
 
 <script src="https://cdn.bootcss.com/Swiper/3.2.0/js/swiper.min.js"></script>
