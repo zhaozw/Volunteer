@@ -20,6 +20,7 @@
 
     @foreach($classes as $class)
         <div class="row project-x">
+            <img class=" littlepic" src="/image/svg/huangpu_class.svg" alt="图标">
             <h4 class="col-heading">{{$class->name}}<span class="float-right">{{$class->state}}</span></h4>
         </div>
     @endforeach
