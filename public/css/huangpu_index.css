@@ -46,11 +46,11 @@ h3 {
 
 .col-heading span:first-child {
     margin-right: -5px;
-    color: #888;
+    color: #666;
 }
 
 .col-heading span:last-child {
-    color: #5bc0de;
+    color: #666;
 }
 
 .projText {
@@ -71,7 +71,7 @@ h3 {
     background-color: #ffffff;
     margin-top: 15px;
     border-left: 5px solid;
-    border-color: #5bc0de;
+    border-color: #2980B9;
 }
 
 .huangpu-qrcode {
@@ -97,7 +97,7 @@ h3 {
 
 .float-right {
     float: right;
-    color: #5bc0de;
+    color: #2980B9;
     margin-right: 10px;
 }
 
