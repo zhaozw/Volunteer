@@ -332,7 +332,7 @@
                     var department = $("#select_department").val();
                     var title = $("#select_title").val();
                     var mail = $("#mail").val();
-                    var oicq = $("#OICQ").val();
+                    var oicq = $("#text_qq").val();
                     document.getElementById('txt_warn').innerText = '正在提交！';
                     var requestUrl = '/activity/kzkt/addClassroom';
                     $.ajax({
@@ -525,7 +525,7 @@
                         <label id="inputQQ" for="" class="weui_label">QQ（选填）</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
-                        <input name="OICQ" id="OICQ" type="text" class="weui_input" placeholder="请填写QQ">
+                        <input name="text_qq" id="text_qq" type="text" class="weui_input" placeholder="请填写QQ">
                     </div>
                 </div>
             </div>

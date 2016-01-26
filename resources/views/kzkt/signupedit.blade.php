@@ -46,7 +46,7 @@
                         $("#name").val(json.data.name);
                         $("#phone").val(json.data.phone);
                         $("#mail").val(json.data.mail);
-                        $("#QICQ").val(json.data.oicq);
+                        $("#text_qq").val(json.data.oicq);
                         $("#select_class").val(json.data.course_type);
                         $("#select_title").val(json.data.title);
                         $("#text_province").val(json.data.province);
@@ -491,7 +491,7 @@
                     var department = $("#select_department").val();
                     var title = $("#select_title").val();
                     var mail = $("#mail").val();
-                    var oicq = $("#OICQ").val();
+                    var oicq = $("#text_qq").val();
                     document.getElementById('txt_warn').innerText = '正在提交！';
                     console.log('456');
                     var requestUrl = '/activity/kzkt/updateClassroom';
@@ -682,7 +682,7 @@
                         <label id="inputQQ" for="" class="weui_label">QQ（选填）</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
-                        <input name="OICQ" id="OICQ" type="text" class="weui_input" placeholder="请填写QQ">
+                        <input name="text_qq" id="text_qq" type="text" class="weui_input" placeholder="请填写QQ">
                     </div>
                 </div>
             </div>
