@@ -230,6 +230,7 @@
                 $('#text_location').val('');
                 $('#text_location').val(location);
                 $('#text_province').val(branchId);
+                $('#text_province_view').val(location);
                 console.log("ready" + branchId + location);
                 var requestCity = '/activity/kzkt/city';
                 $.ajax({
@@ -266,9 +267,11 @@
             $(function () {
                 var branchId = $('#' + id).attr('value');
                 var location = document.getElementById(id).innerText;
-                var tmp = $('#text_location').val();
-                $('#text_location').val(tmp + "-" + location);
+                $('#text_location').val('');
                 $('#text_city').val(branchId);
+                $('#text_city_view').val(location);
+                var tmp = $('#text_province_view').val() + '-' + $('#text_city_view').val();
+                $('#text_location').val(tmp);
                 //alert(branchId);
                 console.log("ready" + branchId);
                 var requestCountry = '/activity/kzkt/country';
@@ -312,8 +315,12 @@
                 var branchId = $('#' + id).attr('value');
                 var location = document.getElementById(id).innerText;
                 var tmp = $('#text_location').val();
-                $('#text_location').val(tmp+"-"+location);
+                $('#text_location').val('');
                 $('#text_country').val(branchId);
+                $('#text_country_view').val(location);
+                var tmp = $('#text_province_view').val() + '-' + $('#text_city_view').val()
+                        + '-' + $('#text_country_view').val();
+                $('#text_location').val(tmp);
                 var requestHospital = '/activity/kzkt/hospital';
                 $.ajax({
                     url : requestHospital,
@@ -695,6 +702,9 @@
             <input type="hidden" id="text_province">
             <input type="hidden" id="text_city">
             <input type="hidden" id="text_country">
+            <input type="hidden" id="text_province_view">
+            <input type="hidden" id="text_city_view">
+            <input type="hidden" id="text_country_view">
         </form>
     </div>
 </div>
