@@ -50,4 +50,20 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/yszs/index', 'YSZSController@index');//医师助手
     Route::get('/jzxsy/index', 'JZXSYController@index');//甲状腺书院
     Route::get('/emy/index', 'EMYController@index');//E名医
+
+    Route::get('/kzkt/province', 'KZKTController@getProvince');
+    Route::get('/kzkt/city', 'KZKTController@getCity');
+    Route::get('/kzkt/country', 'KZKTController@getCountry');
+    Route::get('/kzkt/hospital', 'KZKTController@getHospital');
+    Route::get('/kzkt/department', 'KZKTController@getDepartment');
+    Route::post('/kzkt/addClassroom', 'KZKTController@addClassroom');
+    Route::post('/kzkt/updateClassroom', 'KZKTController@updateClassroom');
+    Route::post('/kzkt/checkIn', 'KZKTController@checkIn');
+    Route::get('/kzkt/findPreRegister', 'KZKTController@findPreRegister');
+    Route::get('/kzkt/findSingleRegister', 'KZKTController@findSingleRegister');
+    Route::get('/kzkt/findAllRegister', 'KZKTController@findAllRegister');
+    Route::get('/kzkt/signup', 'KZKTController@signup');
+    Route::get('/kzkt/editClassroom', 'KZKTController@editClassroom');
+    Route::get('/kzkt/viewCard', 'KZKTController@viewCard');
+
 });
