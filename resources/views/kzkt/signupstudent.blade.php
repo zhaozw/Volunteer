@@ -35,7 +35,7 @@
                         }
                         if (json.result == '1') {
                             document.getElementById('txt_warn').innerText = '提交成功！';
-                            window.location.href = '/findAllRegister';
+                            window.location.href = '/activity/kzkt/findAllRegister';
                         }
                     },
                     error: function (xhr, status, errorThrown) {

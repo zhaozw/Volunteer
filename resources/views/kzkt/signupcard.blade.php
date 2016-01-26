@@ -77,7 +77,7 @@
         <div class="weui_cell ">
             <div class="weui_cell_bd">
                 <p>听课证</p>
-                <img src="../image/kzkt/class.png" alt="">
+                <img src="/image/kzkt/class.png" alt="">
             </div>
         </div>
         <div class="weui_cell ">
