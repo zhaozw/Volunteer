@@ -127,6 +127,17 @@ class KZKTController extends Controller
 
     function addClassroom(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name'      => 'required',
+            'phone'     => 'required|digits:11|unique:airclassroom,phone',
+            'mail' => 'required|email|unique:airclassroom,email',
+        ]);
+
+        /* redirect to error page.*/
+        if ($validator->fails()) {
+            return response()->json(['result' => '-1']);
+//            return redirect('volunteer/create')->withErrors($validator)->withInput();
+        } /*if>*/
 
         $openid = \Session::get('logged_user');
         $data = AirClassroom::where('phone', $request->input('phone'))->first();
@@ -155,6 +166,18 @@ class KZKTController extends Controller
 
     function updateClassroom(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'name'      => 'required',
+            'phone'     => 'required|digits:11|unique:airclassroom,phone',
+            'mail' => 'required|email|unique:airclassroom,email',
+        ]);
+
+        /* redirect to error page.*/
+        if ($validator->fails()) {
+            return response()->json(['result' => '-1']);
+//            return redirect('volunteer/create')->withErrors($validator)->withInput();
+        } /*if>*/
+
         $airClassroom = AirClassroom::where('id', $request->input(['id']))->first();
         if (!$airClassroom) {
             return response()->json(['result' => '-1']);
