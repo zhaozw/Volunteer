@@ -97,7 +97,7 @@ class KZKTController extends Controller
 
     function getCity(Request $request)
     {
-        $id = $request->input(['id']);
+        $id = $request->input('id');
         $list = DB::select('select distinct SA_CITY_ID,SA_CITY from bz_sys_area where SA_PRIOVINCE_ID = :id
               order by SA_CITY_ID', ['id' => $id]);
         return response()->json(['list'=>$list]);
@@ -105,7 +105,7 @@ class KZKTController extends Controller
 
     function getCountry(Request $request)
     {
-        $id = $request->input(['id']);
+        $id = $request->input('id');
         $list = DB::select('select distinct SA_COUNTRY_ID,SA_COUNTRY from bz_sys_area where SA_CITY_ID = :id
               order by SA_COUNTRY_ID', ['id' => $id]);
         return response()->json(['list'=>$list]);
@@ -113,7 +113,7 @@ class KZKTController extends Controller
 
     function getHospital(Request $request)
     {
-        $id = $request->input(['id']);
+        $id = $request->input('id');
         $list = DB::select('select SA_HOSPITAL_ID,SA_HOSPITAL from bz_sys_area where SA_COUNTRY_ID= :id
               order by SA_HOSPITAL_ID', ['id' => $id]);
         return response()->json(['list'=>$list]);
@@ -129,24 +129,24 @@ class KZKTController extends Controller
     {
 
         $openid = \Session::get('logged_user');
-        $data = AirClassroom::where('phone', $request->input(['phone']))->first();
+        $data = AirClassroom::where('phone', $request->input('phone'))->first();
         if ($data) {
             return response()->json(['result' => '-1']);
         }
 
         $airClassroom = new AirClassroom();
-        $airClassroom->name = $request->input(['name']);
-        $airClassroom->phone = $request->input(['phone']);
-        $airClassroom->password = substr($request->input(['phone']), 5);
-        $airClassroom->course_type = $request->input(['classType']);
-        $airClassroom->province = $request->input(['province']);
-        $airClassroom->city = $request->input(['city']);
-        $airClassroom->country = $request->input(['country']);
-        $airClassroom->hospital = $request->input(['hospital']);
-        $airClassroom->department = $request->input(['department']);
-        $airClassroom->title = $request->input(['title']);
-        $airClassroom->mail = $request->input(['mail']);
-        $airClassroom->oicq = $request->input(['oicq']);
+        $airClassroom->name = $request->input('name');
+        $airClassroom->phone = $request->input('phone');
+        $airClassroom->password = substr($request->input('phone'), 5);
+        $airClassroom->course_type = $request->input('classType');
+        $airClassroom->province = $request->input('province');
+        $airClassroom->city = $request->input('city');
+        $airClassroom->country = $request->input('country');
+        $airClassroom->hospital = $request->input('hospital');
+        $airClassroom->department = $request->input('department');
+        $airClassroom->title = $request->input('title');
+        $airClassroom->mail = $request->input('mail');
+        $airClassroom->oicq = $request->input('oicq');
         $airClassroom->status = 1;
         $airClassroom->openid = $openid['openid'];
         $airClassroom->save();
@@ -160,18 +160,18 @@ class KZKTController extends Controller
             return response()->json(['result' => '-1']);
         } else {
 
-            $airClassroom->name = $request->input(['name']);
-            $airClassroom->phone = $request->input(['phone']);
-            $airClassroom->password = substr($request->input(['phone']), 5);
-            $airClassroom->course_type = $request->input(['classType']);
-            $airClassroom->province = $request->input(['province']);
-            $airClassroom->city = $request->input(['city']);
-            $airClassroom->country = $request->input(['country']);
-            $airClassroom->hospital = $request->input(['hospital']);
-            $airClassroom->department = $request->input(['department']);
-            $airClassroom->title = $request->input(['title']);
-            $airClassroom->mail = $request->input(['mail']);
-            $airClassroom->oicq = $request->input(['oicq']);
+            $airClassroom->name = $request->input('name');
+            $airClassroom->phone = $request->input('phone');
+            $airClassroom->password = substr($request->input('phone'), 5);
+            $airClassroom->course_type = $request->input('classType');
+            $airClassroom->province = $request->input('province');
+            $airClassroom->city = $request->input('city');
+            $airClassroom->country = $request->input('country');
+            $airClassroom->hospital = $request->input('hospital');
+            $airClassroom->department = $request->input('department');
+            $airClassroom->title = $request->input('title');
+            $airClassroom->mail = $request->input('mail');
+            $airClassroom->oicq = $request->input('oicq');
             $airClassroom->save();
             return response()->json(['result' => '1']);
         }
@@ -218,7 +218,7 @@ class KZKTController extends Controller
 
     function findSingleRegister(Request $request)
     {
-        $id = $request->input(['id']);
+        $id = $request->input('id');
         $airClassroom = AirClassroom::where('id', $id)->first();
         if ($airClassroom) {
             $province = DB::select('select distinct SA_PROVINCE from bz_sys_area where SA_PRIOVINCE_ID = :id',
