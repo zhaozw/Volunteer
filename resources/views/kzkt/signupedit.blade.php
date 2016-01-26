@@ -519,7 +519,7 @@
                             }
                             if (json.result == '1') {
                                 document.getElementById('txt_warn').innerText = '提交成功！';
-                                window.location.href = '/findPreRegister';
+                                window.location.href = '/activity/kzkt/findPreRegister';
                             }
                         },
                         error: function (xhr, status, errorThrown) {
