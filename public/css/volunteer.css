@@ -1,15 +1,5 @@
-@font-face {
-  font-family: 'STHeiti';
-  src: url("../fonts/STHeiti-Light.ttc");
-}
-
-@font-face {
-  font-family: 'huawenzhongsong';
-  src: url("../fonts/huawenzhongsong.ttf");
-}
-
 body {
-  font-family: "STHeiti", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "SimHei", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 17px;
   color: #585858;
 }
@@ -147,7 +137,7 @@ select {
 .learning_card .weui_cell:nth-child(1) p {
   font-size: 20px;
   font-weight: bold;
-  font-family: 'huawenzhongsong';
+  font-family: 'SimSun-ExtB',"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   color: #2a86bf;
 }
 
@@ -161,7 +151,7 @@ select {
 .learning_card .weui_cell:nth-child(2) p {
   margin-bottom: -5px;
   font-size: 17px;
-  font-family: 'huawenzhongsong';
+  font-family: 'SimSun-ExtB',"Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   color: #585858;
 }
 
