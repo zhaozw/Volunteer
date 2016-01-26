@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container index_pic">
-    <img src="/image/main.png" alt="">
+    <img src="/image/kzkt/main.png" alt="">
     <a type="button" class="weui_btn" onclick="goSignup()" >确&emsp;认</a>
 </div>
 

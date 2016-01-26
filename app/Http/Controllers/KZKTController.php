@@ -19,6 +19,7 @@ class KZKTController extends Controller
     public function index()
     {
         //
+        \Log::info('kzkt index');
         return view('kzkt.signupindex');
     }
 
