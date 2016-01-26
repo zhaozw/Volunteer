@@ -60,13 +60,13 @@
                     <p class="text_center">{{$index['className']}}</p>
                 </div>
                 <div class="weui_cell_ft">
-                    <img src="/image/edit.png" alt="编辑" onclick="goEdit({{$index['id']}})">
+                    <img src="/image/kzkt/edit.png" alt="编辑" onclick="goEdit({{$index['id']}})">
                 </div>
             </div>
         @endforeach
 
     </div>
-    <img src="/image/add.png" alt="继续添加新学员" onclick="goSignUp()">
+    <img src="/image/kzkt/add.png" alt="继续添加新学员" onclick="goSignUp()">
 
     <p id="txt_warn" class="warning">请输入。。。。</p>
     {{--<a class="weui_btn">确&emsp;认</a>--}}

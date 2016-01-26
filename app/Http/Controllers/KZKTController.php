@@ -154,7 +154,7 @@ class KZKTController extends Controller
 
     function updateClassroom(Request $request)
     {
-        $airClassroom = AirClassroom::where('id', $request->input(['id']))->first();
+        $airClassroom = AirClassroom::where('id', $request->input('id'))->first();
         if (!$airClassroom) {
             return response()->json(['result' => '-1']);
         } else {

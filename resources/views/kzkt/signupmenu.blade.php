@@ -26,8 +26,8 @@
             @foreach($data as $index)
                 <div class="weui_cell student_card">
                     <div class="weui_cell_hd">
-                        <img src="/image/classicon.png" alt="">
-                        <img src="/image/classphoto.png" alt="">
+                        <img src="/image/kzkt/classicon.png" alt="">
+                        <img src="/image/kzkt/classphoto.png" alt="">
                     </div>
                     <div class="weui_cell_bd">
                         <a onclick="goEdit({{$index['id']}})">
