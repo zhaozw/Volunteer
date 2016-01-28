@@ -16,7 +16,7 @@
 <body>
 <div class="container index_pic">
     <img src="/image/kzkt/main.png" alt="">
-    <a type="button" class="weui_btn" onclick="goSignup()" >确&emsp;认</a>
+    <a type="button" class="weui_btn" onclick="goSignup()" >报&emsp;名</a>
 </div>
 
 </body>

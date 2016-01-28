@@ -695,7 +695,7 @@
             </div>
 
             <p class="tips">为保证及时收到课程通知和课件信息，建议填写QQ号！</p>
-            <p id="txt_warn" class="warning">请输入。。。。</p>
+            <p id="txt_warn" class="warning"></p>
             {{--<label id="label" class="warning">请输入。。。。</label>--}}
             {{--<a class="weui_btn">确&emsp;认</a>--}}
             <button id="btn_save" type="button" class="weui_btn" style="width: 90%;">确&emsp;认</button>

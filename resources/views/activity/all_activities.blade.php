@@ -12,8 +12,16 @@
 
 <div class="container">
 
-    <div class="row">
-        <img src="/image/icons/kongkebanner.png" alt="banner" class="img-responsive">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="img-responsive" src="/image/icons/kongkebanner.png">
+            </div>
+            <div class="swiper-slide">
+                <img class="img-responsive" src="/image/huangpu_ad3.jpg">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
     </div>
 
     @foreach($activities as $activity)
@@ -31,5 +39,19 @@
 
 </div>
 
+<script src="https://cdn.bootcss.com/Swiper/3.2.0/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        visiblilityFullfit: true,
+        autoplay: 5000,
+    });
+</script>
 </body>
 </html>
