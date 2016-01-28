@@ -4,9 +4,8 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的活动</title>
 
+    <link rel="stylesheet" href="http://cdn.bootcss.com/Swiper/3.2.0/css/swiper.min.css">
     <link href="//cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
-    <script src="//cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body style="background-color: #ecf0f1">
 
@@ -50,7 +49,7 @@
         paginationClickable: true,
         loop: true,
         visiblilityFullfit: true,
-        autoplay: 5000,
+        autoplay: 5000
     });
 </script>
 </body>
