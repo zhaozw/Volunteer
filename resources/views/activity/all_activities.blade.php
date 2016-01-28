@@ -12,10 +12,10 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img class="img-responsive" src="/image/icons/kongkebanner.png">
+            <img class="img-responsive" src="/image/icons/kongkebanner.png" onclick="goAirClass()">
         </div>
         <div class="swiper-slide">
-            <img class="img-responsive" src="/image/huangpu_ad3.jpg">
+            <img class="img-responsive" src="/image/huangpu_ad3.jpg" onclick="goHuangpu()">
         </div>
     </div>
     <div class="swiper-pagination"></div>
@@ -50,6 +50,14 @@
         visiblilityFullfit: true,
         autoplay: 5000
     });
+
+    function goAirClass() {
+        window.location.href = '/activity/kzkt/index';
+    }
+
+    function goHuangpu() {
+        window.location.href = '/activity/hpxt/index';
+    }
 </script>
 </body>
 </html>
