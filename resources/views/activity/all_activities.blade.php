@@ -10,15 +10,35 @@
 </head>
 <body style="background-color: #ecf0f1">
 
+{{--<div class="container">--}}
+    {{--@foreach($activities as $activity)--}}
+        {{--<div class="col-xs-4" style="margin: 30px auto;">--}}
+            {{--<div>--}}
+                {{--<img class="img-responsive" src="{{$activity->icon_url}}">--}}
+            {{--</div>--}}
+            {{--<p style="text-align: center; margin-top: 10px;">{{$activity->title}}</p>--}}
+        {{--</div>--}}
+    {{--@endforeach--}}
+{{--</div>--}}
 <div class="container">
+
+    <div class="row">
+        <img src="image/icons/kongkebanner.png" alt="" class="img-responsive">
+    </div>
+
     @foreach($activities as $activity)
-        <div class="col-xs-4" style="margin: 30px auto;">
-            <div>
-                <img class="img-responsive" src="{{$activity->icon_url}}">
-            </div>
-            <p style="text-align: center; margin-top: 10px;">{{$activity->title}}</p>
+        <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border: 1px solid #eeeeee";>
+            <a href="{{$activity->index_url}}">
+                <div style="text-align: center">
+                    <img width="80px" src="{{$activity->icon_url}}">
+                    <p style="display: inline-block;font-size: 16px;color: #333333;font-family: 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;">
+                        {{$activity->title}}
+                    </p>
+                </div>
+            </a>
         </div>
     @endforeach
 </div>
+
 </body>
 </html>
