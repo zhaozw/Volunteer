@@ -11,16 +11,49 @@
 <body style="background-color: #ecf0f1">
 
 <div class="container">
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img class="img-responsive" src="/image/huangpu_ad1.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img class="img-responsive" src="/image/huangpu_ad3.jpg">
+            </div>
+            <div class="swiper-slide">
+                <img class="img-responsive" src="/image/huangpu_ad2.jpg">
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </div>
+
     @foreach($activities as $activity)
-        <div class="col-xs-4" style="margin: 30px auto;">
+        <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border: 1px solid #eeeeee";>
             <a href="{{$activity->index_url}}">
-                <div>
-                    <img class="img-responsive" src="{{$activity->icon_url}}">
+                <div style="text-align: center">
+                    <img width="80px" src="{{$activity->icon_url}}">
+                    <p style="display: inline-block;font-size: 16px;color: #333333;font-family: 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;">
+                        {{$activity->title}}
+                    </p>
                 </div>
-                <p style="text-align: center; margin-top: 10px;">{{$activity->title}}</p>
             </a>
         </div>
     @endforeach
 </div>
+
+<script src="https://cdn.bootcss.com/Swiper/3.2.0/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        visiblilityFullfit: true,
+        autoplay: 5000,
+    });
+</script>
 </body>
 </html>
