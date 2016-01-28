@@ -46,7 +46,19 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/index', 'ActivityController@index');//活动列表主页
     Route::get('/kzkt/index', 'KZKTController@index');//空中课堂
     Route::get('/qykj/index', 'QYKJController@index');//千院科教
+
     Route::get('/hpxt/index', 'HPXTController@index');//黄埔学堂
+    Route::get('/hpxt/introduction', 'HPXTController@introduction');
+    Route::get('/hpxt/procedure', 'HPXTController@procedure');
+    Route::get('/hpxt/document', 'HPXTController@document');
+    Route::get('/hpxt/document-ppt', 'HPXTController@documentPpt');
+    Route::get('/hpxt/document-agreement', 'HPXTController@documentAgreement');
+    Route::get('/hpxt/class-manage', 'HPXTController@classManage');
+    Route::get('/hpxt/class-application', 'HPXTController@classApplication');
+    Route::get('/hpxt/class-application-add-doctor', 'HPXTController@classApplicationAddDoctor');
+    Route::get('/hpxt/class-application-add-assistant', 'HPXTController@classApplicationAddAssistant');
+    Route::get('/hpxt/class-store', 'HPXTController@classStore');
+
     Route::get('/yszs/index', 'YSZSController@index');//医师助手
     Route::get('/jzxsy/index', 'JZXSYController@index');//甲状腺书院
     Route::get('/emy/index', 'EMYController@index');//E名医
