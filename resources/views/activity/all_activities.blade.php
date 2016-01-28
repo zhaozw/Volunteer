@@ -9,20 +9,19 @@
 </head>
 <body style="background-color: #ecf0f1">
 
-<div class="container">
-
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <img class="img-responsive" src="/image/icons/kongkebanner.png">
-            </div>
-            <div class="swiper-slide">
-                <img class="img-responsive" src="/image/huangpu_ad3.jpg">
-            </div>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <img class="img-responsive" src="/image/icons/kongkebanner.png">
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-slide">
+            <img class="img-responsive" src="/image/huangpu_ad3.jpg">
+        </div>
     </div>
+    <div class="swiper-pagination"></div>
+</div>
 
+<div class="container">
     @foreach($activities as $activity)
         <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border: 1px solid #eeeeee";>
             <a href="{{$activity->index_url}}">
