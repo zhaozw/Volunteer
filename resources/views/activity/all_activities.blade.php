@@ -24,7 +24,7 @@
 <div class="container">
     <div class="row">
     @foreach($activities as $activity)
-        <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border: 1px solid #eeeeee";>
+        <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border-bottom: 1px solid #eeeeee;border-right: 1px solid #eeeeee;">
             <a href="{{$activity->index_url}}">
                 <div style="text-align: center">
                     <img width="80px" src="{{$activity->icon_url}}">
