@@ -13,7 +13,7 @@
 <div class="container">
 
     <div class="row">
-        <img src="image/icons/kongkebanner.png" alt="" class="img-responsive">
+        <img src="image/icons/kongkebanner.png" alt="banner" class="img-responsive">
     </div>
 
     @foreach($activities as $activity)
