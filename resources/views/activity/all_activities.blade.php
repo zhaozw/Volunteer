@@ -22,6 +22,7 @@
 </div>
 
 <div class="container">
+    <div class="row">
     @foreach($activities as $activity)
         <div class="col-xs-6" style="padding: 20px 0px 20px 0px;border: 1px solid #eeeeee";>
             <a href="{{$activity->index_url}}">
@@ -34,7 +35,7 @@
             </a>
         </div>
     @endforeach
-
+    </div>
 </div>
 
 <script src="https://cdn.bootcss.com/Swiper/3.2.0/js/swiper.min.js"></script>
