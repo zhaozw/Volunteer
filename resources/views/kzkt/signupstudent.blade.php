@@ -68,7 +68,7 @@
     </div>
     <img src="/image/kzkt/add.png" alt="继续添加新学员" onclick="goSignUp()">
 
-    <p id="txt_warn" class="warning">请输入。。。。</p>
+    <p id="txt_warn" class="warning"></p>
     {{--<a class="weui_btn">确&emsp;认</a>--}}
     <button id="btn_save" type="button" class="weui_btn" style="width: 90%;">确&emsp;认</button>
 

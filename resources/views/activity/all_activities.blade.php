@@ -27,7 +27,7 @@
             <a href="{{$activity->index_url}}">
                 <div style="text-align: center">
                     <img width="80px" src="{{$activity->icon_url}}">
-                    <p style="display: inline-block;font-size: 16px;color: #333333;font-family: 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;">
+                    <p style="display: inline-block; width:64px;font-size: 16px;color: #333333;font-family: 'Microsoft YaHei', 'WenQuanYi Micro Hei', sans-serif;">
                         {{$activity->title}}
                     </p>
                 </div>
