@@ -21,7 +21,6 @@ class AccessMiddleware
 
         if ($volunteer = Volunteer::where('openid', $user['openid'])->first()) {
             //如果该openid已经注册过
-
             //如果距离上次更新超过30分钟则更新数据
             if (Carbon::now()->diffInMinutes($volunteer->updated_at) > 30) {
                 $volunteer->openid = $user['openid'];
