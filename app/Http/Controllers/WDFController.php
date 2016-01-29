@@ -14,7 +14,7 @@ class WDFController extends Controller
      */
     public function index()
     {
-        return view('constructing');
+        return view('wdf.wdf_index');
     }
 
     /**

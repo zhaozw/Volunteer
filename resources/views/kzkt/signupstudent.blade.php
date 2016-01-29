@@ -70,7 +70,7 @@
 
     <p id="txt_warn" class="warning"></p>
     {{--<a class="weui_btn">确&emsp;认</a>--}}
-    <button id="btn_save" type="button" class="weui_btn" style="width: 90%;">确&emsp;认</button>
+    <button id="btn_save" type="button" class="weui_btn" style="width: 90%;">报&emsp;名</button>
 
 </div>
 
