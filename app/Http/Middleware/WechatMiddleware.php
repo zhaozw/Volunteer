@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Overtrue\Wechat\Auth;
 
-class VolunteerAuthMiddleware
+class WechatMiddleware
 {
     /**
      * Handle an incoming request.
