@@ -522,7 +522,7 @@
                         dataType: "json",
                         success: function (json) {
                             if (json.result == '-1') {
-                                document.getElementById('txt_warn').innerText = '该手机号已被注册过！';
+                                document.getElementById('txt_warn').innerText = '该手机号已被报名过！';
                             }
                             if (json.result == '1') {
                                 document.getElementById('txt_warn').innerText = '提交成功！';
