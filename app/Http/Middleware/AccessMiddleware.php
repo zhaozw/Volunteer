@@ -17,6 +17,7 @@ class AccessMiddleware
      */
     public function handle($request, Closure $next)
     {
+        \Log::info('AccessMiddleware');
         $user = \Session::get('logged_user');
 
         if ($volunteer = Volunteer::where('openid', $user['openid'])->first()) {
@@ -26,6 +27,7 @@ class AccessMiddleware
                 $volunteer->nickname    = $user['nickname'];
                 $volunteer->save();
             } /*if>>*/
+            \Log::info('$volunteer'.$volunteer->openid);
             return $next($request);
         } else {
             return redirect('/volunteer/create');
