@@ -63,21 +63,21 @@ class DebugController extends Controller
                 [
                     'name' => '个人中心',
                     'sub_button' => [
+//                        [
+//                            'name' => '个人信息',
+//                            'type' => 'view',
+//                            'url' => url('/volunteer/show-self')
+//                        ],
                         [
                             'name' => '个人信息',
                             'type' => 'view',
-                            'url' => url('/volunteer/show-self')
+                            'url' => url('/volunteer/messages')
                         ],
                         [
                             'name' => '我的迈豆',
                             'type' => 'view',
                             'url' => url('/volunteer/beans')
                         ],
-                        [
-                            'name' => '迈豆商城',
-                            'type' => 'view',
-                            'url' => url('/store')
-                        ]
                     ]
                 ]
             ]
