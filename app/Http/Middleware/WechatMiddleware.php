@@ -21,9 +21,11 @@ class WechatMiddleware
             \Log::info('has logged_user session');
             return $next($request);
         } else {
+            \Log::info('no logged_user session');
             $appId  = env('WX_APPID');
             $secret = env('WX_SECRET');
             $auth = new Auth($appId, $secret);
+            \Log::info('auth:'.$auth);
             $user = $auth->authorize(url($request->fullUrl()));
             \Log::info('user:'.$user);
             \Session::put('logged_user', $user->all());
