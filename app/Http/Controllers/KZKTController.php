@@ -177,7 +177,11 @@ class KZKTController extends Controller
     function findAllRegister(Request $request)
     {
         $openid = \Session::get('logged_user');
-        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 2)->get();
+        $airClassrooms = AirClassroom::where('openid', $openid['openid'])
+            ->where('status', 2)
+            ->orderBy('id', 'desc')
+            ->get();
+
         $array = array();
         $count = 0;
         foreach ($airClassrooms as $airClassroom) {
