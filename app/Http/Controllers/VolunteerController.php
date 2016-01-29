@@ -12,24 +12,13 @@ class VolunteerController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth.volunteer');
-
+        $this->middleware('auth.wechat');
         $this->middleware('auth.access', [
             'except' => [
                 'create',
                 'store'
             ]
         ]);
-    }
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
     }
 
     /**
@@ -77,17 +66,6 @@ class VolunteerController extends Controller
         $volunteer->save();
 
         return view('register_succeed');//TODO 弹到注册成功
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
     }
 
     /**
@@ -178,13 +156,10 @@ class VolunteerController extends Controller
         return redirect('/volunteer/show-self');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    /*
+     * get all information
+     * */
+    public function information(Request $request)
     {
         //
     }
@@ -200,18 +175,6 @@ class VolunteerController extends Controller
         return view('volunteer.beans')->with([
             'volunteer' => $volunteer
         ]);
-    }
-
-    /*
-     * get all doctors by volunteer
-     * */
-    public function doctors(Request $request)
-    {
-        $user = \Session::get('logged_user');
-        $volunteer = Volunteer::where('openid', $user['openid'])->first();
-        $doctors = VolunteerDoctor::where('volunteer_id', '=', $volunteer->id);
-
-        return view('personal.doctors');
     }
 
     function findAllAirClass(Request $request)
