@@ -6,6 +6,8 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use Overtrue\Wechat\Message;
 use Overtrue\Wechat\Server;
+use Overtrue\Wechat\Menu;
+use Overtrue\Wechat\MenuItem;
 
 class WechatController extends Controller
 {
@@ -41,6 +43,13 @@ class WechatController extends Controller
             ]),
         ];
         $menuService->set($menus);
+
+        try {
+            $menuService->set($menus);
+            echo '设置成功!';
+        } catch (\Exception $e) {
+            echo '设置失败!' . $e->getMessage();
+        } /*catch>*/
     }
 
 } /*class*/

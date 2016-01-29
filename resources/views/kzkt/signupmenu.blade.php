@@ -19,7 +19,7 @@
 
     <form action="" method="post">
 
-        <div class="weui_cells_title">您本次为{{$count}}名学员报名成功，请将空中课堂听课证转发给学员。</div>
+        <div class="weui_cells_title">您总共为{{$count}}名学员报名成功，请将空中课堂听课证转发给学员。</div>
 
         <div class="">
 
