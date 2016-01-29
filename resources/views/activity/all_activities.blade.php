@@ -12,7 +12,7 @@
 <div class="swiper-container">
     <div class="swiper-wrapper">
         <div class="swiper-slide">
-            <img class="img-responsive" src="/image/icons/kongkebanner.png" onclick="goAirClass()">
+            <img class="img-responsive" src="/image/icons/airclassbanner.png" onclick="goAirClass()">
         </div>
         <div class="swiper-slide">
             <img class="img-responsive" src="/image/huangpu_ad3.jpg" onclick="goHuangpu()">

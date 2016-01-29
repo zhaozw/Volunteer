@@ -213,4 +213,31 @@ class VolunteerController extends Controller
 
         return view('personal.doctors');
     }
+
+    function findAllAirClass(Request $request)
+    {
+        $openid = \Session::get('logged_user');
+        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 2)->get();
+        $array = array();
+        $count = 0;
+        foreach ($airClassrooms as $airClassroom) {
+            $count = $count + 1;
+            $name = $airClassroom->name;
+            $id = $airClassroom->id;
+            $phone = $airClassroom->phone;
+            $className = null;
+            if ($airClassroom->course_type == 1) {
+                $className = '基础班';
+            } else if ($airClassroom->course_type == 2) {
+                $className = '高级班';
+            } else {
+                $className = '精品班';
+            }
+
+            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone);
+            array_push($array, $row);
+        }
+
+        return view('volunteer.activitydetail', ['count'=>$count, 'data' => $array]);
+    }
 }
