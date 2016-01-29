@@ -11,21 +11,18 @@ class WechatController extends Controller
 {
     public function serve(Request $request)
     {
-        $appId = env('WX_APPID');
+        $appId  = env('WX_APPID');
         $secret = env('WX_SECRET');
-        $token = env('WX_TOKEN');
+        $token  = env('WX_TOKEN');
         $encodingASEKey = env('WX_ENCODING_ASEKEY');
 
-
         $server = new Server($appId, $token, $encodingASEKey);
-
         $server->on('message', function ($message) {
-            \Log::info('ppp' . $message);
+            \Log::info('wechat' . $message);
             return Message::make('text')->content('您好！');
         });
 
         $result = $server->serve();
-
         return $result;
     }
 
@@ -39,11 +36,11 @@ class WechatController extends Controller
             $buttonWDF,
             $buttonActivity,
             $buttonPersonal->buttons([
-                new MenuItem('个人信息', 'view', url('/personal/information')),
-                new MenuItem('我的迈豆', 'view', url('/personal/beans')),
+                new MenuItem('个人信息', 'view', url('/volunteer/information')),
+                new MenuItem('我的迈豆', 'view', url('/volunteer/beans')),
             ]),
         ];
         $menuService->set($menus);
     }
 
-}
+} /*class*/
