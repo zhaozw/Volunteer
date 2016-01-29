@@ -32,14 +32,14 @@ class Kernel extends HttpKernel
 
         /*
          * xsm, add, 20151124.
-         * shortcut for wdf wechat volunteer access verify.
+         * shortcut for wdf volunteer access verify.
          * */
         'auth.access' => \App\Http\Middleware\AccessMiddleware::class,
 
         /*
          * xsm, add, 20151125.
-         * shortcut for wdf wechat personal personal verify.
+         * shortcut for wdf wechat personal verify.
          * */
-        'auth.volunteer' => \App\Http\Middleware\VolunteerAuthMiddleware::class,
+        'auth.wechat' => \App\Http\Middleware\WechatMiddleware::class,
     ];
 }
