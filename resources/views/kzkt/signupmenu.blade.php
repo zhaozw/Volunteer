@@ -86,7 +86,7 @@
                     alert('已取消');
                 },
                 fail: function (res) {
-                    alert(JSON.stringify(res));
+                    alert("fail:"+JSON.stringify(res));
                 }
             });
             alert('已注册获取“发送给朋友”状态事件');
@@ -95,7 +95,7 @@
     });
 
     wx.error(function (res) {
-        alert(res.errMsg);
+        alert("error:"+res.errMsg);
     });
 </script>
 </body>
