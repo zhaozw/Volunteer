@@ -73,7 +73,7 @@ Route::group(['prefix' => 'activity'], function () {
     Route::post('/kzkt/checkIn', 'KZKTController@checkIn');
     Route::get('/kzkt/findPreRegister', 'KZKTController@findPreRegister');
     Route::get('/kzkt/findSingleRegister', 'KZKTController@findSingleRegister');
-    Route::post('/kzkt/findAllRegister', 'KZKTController@findAllRegister');
+    Route::any('/kzkt/findAllRegister', 'KZKTController@findAllRegister');
     Route::get('/kzkt/signup', 'KZKTController@signup');
     Route::get('/kzkt/editClassroom', 'KZKTController@editClassroom');
     Route::get('/kzkt/viewCard', 'KZKTController@viewCard');
