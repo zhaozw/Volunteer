@@ -100,9 +100,57 @@
         <img class="img_100" src="/image/kzkt/introduce.png" alt="">
     </div>
     <div class="click_button">
-        <img class="img_100" src="/image/kzkt/forward.png" alt="">
+        <img class="img_100" src="/image/kzkt/forward.png" alt="" id="onMenuShareAppMessage">
     </div>
 </div>
 
+<button class="weui_btn" id="checkJsApi">checkJsApi</button>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
+
+
+    wx.ready(function () {
+        // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
+        document.querySelector('#checkJsApi').onclick = function () {
+            wx.checkJsApi({
+                jsApiList: [
+                    'onMenuShareAppMessage',
+                ],
+                success: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+        };
+
+        document.querySelector('#onMenuShareAppMessage').onclick = function () {
+            wx.onMenuShareAppMessage({
+                title: '空中课堂报名',
+                desc: '学员报名账户信息',
+                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id=1',
+                imgUrl: '',
+                trigger: function (res) {
+                    alert('用户点击发送给朋友');
+                },
+                success: function (res) {
+                    alert('已分享');
+                },
+                cancel: function (res) {
+                    alert('已取消');
+                },
+                fail: function (res) {
+                    alert("fail:" + JSON.stringify(res));
+                }
+            });
+            alert('已注册获取“发送给朋友”状态事件');
+        };
+
+    });
+
+    wx.error(function (res) {
+        alert("error:" + res.errMsg);
+    });
+</script>
 </body>
 </html>

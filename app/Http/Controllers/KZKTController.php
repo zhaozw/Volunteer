@@ -204,17 +204,18 @@ class KZKTController extends Controller
             array_push($array, $row);
         }
 
+
+        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array]);
+    }
+
+    function viewCard(Request $request)
+    {
         $appId  = env('WX_APPID');
         $secret = env('WX_SECRET');
 
         $js = new Js($appId, $secret);
 
-        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array, 'js' => $js]);
-    }
-
-    function viewCard(Request $request)
-    {
-        return view('kzkt.signupcard');
+        return view('kzkt.signupcard',['js' => $js]);
     }
 
     function signup(Request $request)
