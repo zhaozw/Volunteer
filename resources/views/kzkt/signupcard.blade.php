@@ -108,6 +108,8 @@
 
 <button class="weui_btn" id="chooseImage">chooseImage</button>
 
+<button class="weui_btn" id="onMenuShareTimeline">onMenuShareTimeline</button>
+
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
     wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage','chooseImage'), true, true) ?>);
@@ -180,6 +182,24 @@
                     alert('已选择 ' + res.localIds.length + ' 张图片');
                 }
             });
+        };
+
+        document.querySelector('#onMenuShareTimeline').onclick = function() {
+            var id = request("id");
+            wx.onMenuShareTimeline({
+                title: '空中课堂报名', // 分享标题
+                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
+                imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                    alert('已分享');
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                    alert('已取消');
+                }
+            });
+            alert('已注册获取“发送给朋友圈”状态事件');
         };
 
     });
