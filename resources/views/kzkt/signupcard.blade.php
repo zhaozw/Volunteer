@@ -125,11 +125,12 @@
         };
 
         document.querySelector('#onMenuShareAppMessage').onclick = function () {
+            var id = request("id");
             wx.onMenuShareAppMessage({
                 title: '空中课堂报名',
                 desc: '学员报名账户信息',
-                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id=1',
-                imgUrl: '',
+                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id,
+                imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg',
                 trigger: function (res) {
                     alert('用户点击发送给朋友');
                 },
