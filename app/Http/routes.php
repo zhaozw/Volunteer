@@ -76,5 +76,5 @@ Route::group(['prefix' => 'activity'], function () {
     Route::get('/kzkt/findAllRegister', 'KZKTController@findAllRegister');
     Route::get('/kzkt/signup', 'KZKTController@signup');
     Route::get('/kzkt/editClassroom', 'KZKTController@editClassroom');
-    Route::post('/kzkt/viewCard', 'KZKTController@viewCard');
+    Route::any('/kzkt/viewCard', 'KZKTController@viewCard');
 });
