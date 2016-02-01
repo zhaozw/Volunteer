@@ -112,7 +112,7 @@
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage','chooseImage'), true, true) ?>);
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage','chooseImage','onMenuShareTimeline'), true, true) ?>);
 
 
     wx.ready(function () {
@@ -121,7 +121,8 @@
             wx.checkJsApi({
                 jsApiList: [
                     'onMenuShareAppMessage',
-                    'chooseImage'
+                    'chooseImage',
+                    'onMenuShareTimeline'
                 ],
                 success: function (res) {
                     alert(JSON.stringify(res));
