@@ -75,7 +75,7 @@
                 title: '空中课堂报名',
                 desc: '学员报名账户信息',
                 link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id=1',
-                imgUrl: 'http://volunteers.mime.org.cn/image/kzkt/4.png',
+                imgUrl: '',
                 trigger: function (res) {
                     alert('用户点击发送给朋友');
                 },
