@@ -8,6 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use \App\Model\AirClassroom;
 use DB;
+use Overtrue\Wechat\Js;
+
 
 class KZKTController extends Controller
 {
@@ -202,7 +204,12 @@ class KZKTController extends Controller
             array_push($array, $row);
         }
 
-        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array]);
+        $appId  = env('WX_APPID');
+        $secret = env('WX_SECRET');
+
+        $js = new Js($appId, $secret);
+
+        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array, 'js' => $js]);
     }
 
     function viewCard(Request $request)
