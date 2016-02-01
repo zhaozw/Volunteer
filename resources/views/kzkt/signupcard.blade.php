@@ -106,6 +106,8 @@
 
 <button class="weui_btn" id="checkJsApi">checkJsApi</button>
 
+<button class="weui_btn" id="chooseImage">chooseImage</button>
+
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
     wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
@@ -145,6 +147,19 @@
                 }
             });
             alert('已注册获取“发送给朋友”状态事件');
+        };
+
+        var images = {
+            localId: [],
+            serverId: []
+        };
+        document.querySelector('#chooseImage').onclick = function () {
+            wx.chooseImage({
+                success: function (res) {
+                    images.localId = res.localIds;
+                    alert('已选择 ' + res.localIds.length + ' 张图片');
+                }
+            });
         };
 
     });
