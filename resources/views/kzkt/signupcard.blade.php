@@ -100,108 +100,43 @@
         <img class="img_100" src="/image/kzkt/introduce.png" alt="">
     </div>
     <div class="click_button">
-        <img class="img_100" src="/image/kzkt/forward.png" alt="" id="onMenuShareAppMessage">
+        <img class="img_100" src="/image/kzkt/forward.png" alt="">
     </div>
 </div>
 
-<button class="weui_btn" id="checkJsApi">checkJsApi</button>
-
-<button class="weui_btn" id="chooseImage">chooseImage</button>
-
-<button class="weui_btn" id="onMenuShareTimeline">onMenuShareTimeline</button>
-
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage','chooseImage','onMenuShareTimeline'), true, true) ?>);
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
 
 
     wx.ready(function () {
-        // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
-        document.querySelector('#checkJsApi').onclick = function () {
-            wx.checkJsApi({
-                jsApiList: [
-                    'onMenuShareAppMessage',
-                    'chooseImage',
-                    'onMenuShareTimeline'
-                ],
-                success: function (res) {
-                    alert(JSON.stringify(res));
-                }
-            });
-        };
 
-        document.querySelector('#onMenuShareAppMessage').onclick = function () {
-            var id = request("id");
-//            wx.onMenuShareAppMessage({
-//                title: '空中课堂报名',
-//                desc: '学员报名账户信息',
-//                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id,
-//                imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg',
-//                trigger: function (res) {
-//                    alert('用户点击发送给朋友');
-//                },
-//                success: function (res) {
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareAppMessage'
+            ],
+            success: function (res) {
+//                alert(JSON.stringify(res));
+            }
+        });
+
+        var id = request("id");
+        wx.onMenuShareAppMessage({
+            title: '空中课堂报名', // 分享标题
+            desc: '学员报名账户信息', // 分享描述
+            link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
+            imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
 //                    alert('已分享');
-//                },
-//                cancel: function (res) {
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
 //                    alert('已取消');
-//                },
-//                fail: function (res) {
-//                    alert("fail:" + JSON.stringify(res));
-//                }
-//            });
-
-
-            wx.onMenuShareAppMessage({
-                title: '空中课堂报名', // 分享标题
-                desc: '学员报名账户信息', // 分享描述
-                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
-                imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
-                type: 'link', // 分享类型,music、video或link，不填默认为link
-                dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                    alert('已分享');
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                    alert('已取消');
-                }
-            });
-
-            alert('已注册获取“发送给朋友”状态事件');
-        };
-
-        var images = {
-            localId: [],
-            serverId: []
-        };
-        document.querySelector('#chooseImage').onclick = function () {
-            wx.chooseImage({
-                success: function (res) {
-                    images.localId = res.localIds;
-                    alert('已选择 ' + res.localIds.length + ' 张图片');
-                }
-            });
-        };
-
-        document.querySelector('#onMenuShareTimeline').onclick = function() {
-            var id = request("id");
-            wx.onMenuShareTimeline({
-                title: '空中课堂报名', // 分享标题
-                link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
-                imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
-                success: function () {
-                    // 用户确认分享后执行的回调函数
-                    alert('已分享');
-                },
-                cancel: function () {
-                    // 用户取消分享后执行的回调函数
-                    alert('已取消');
-                }
-            });
-            alert('已注册获取“发送给朋友圈”状态事件');
-        };
+            }
+        });
 
     });
 
