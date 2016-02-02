@@ -88,6 +88,7 @@ class VolunteerController extends Controller
             return redirect('home/error');
         } /*if>*/
 
+        dd($volunteer);
         return view('volunteer.show')->with(['volunteer' => $volunteer]);
     }
 
