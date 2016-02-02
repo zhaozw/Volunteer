@@ -35,45 +35,38 @@ Route::group(['prefix' => 'volunteer'], function () {
 });
 
 
+Route::group(['prefix' => 'kzkt'], function () {
+    Route::get('/index', 'KZKTController@index');
+    Route::get('/province', 'KZKTController@getProvince');
+    Route::get('/city', 'KZKTController@getCity');
+    Route::get('/country', 'KZKTController@getCountry');
+    Route::get('/hospital', 'KZKTController@getHospital');
+    Route::get('/department', 'KZKTController@getDepartment');
+    Route::post('/addClassroom', 'KZKTController@addClassroom');
+    Route::post('/updateClassroom', 'KZKTController@updateClassroom');
+    Route::post('/checkIn', 'KZKTController@checkIn');
+    Route::get('/findPreRegister', 'KZKTController@findPreRegister');
+    Route::get('/findSingleRegister', 'KZKTController@findSingleRegister');
+    Route::get('/findAllRegister', 'KZKTController@findAllRegister');
+    Route::get('/signup', 'KZKTController@signup');
+    Route::get('/editClassroom', 'KZKTController@editClassroom');
+    Route::get('/viewCard', 'KZKTController@viewCard');
+});
 
+Route::group(['prefix' => 'hpxt'], function () {
+    Route::get('/index', 'HPXTController@index');
+    Route::get('/introduction', 'HPXTController@introduction');
+    Route::get('/procedure', 'HPXTController@procedure');
+    Route::get('/document', 'HPXTController@document');
+    Route::get('/document-ppt', 'HPXTController@documentPpt');
+    Route::get('/document-agreement', 'HPXTController@documentAgreement');
+    Route::get('/class-manage', 'HPXTController@classManage');
+    Route::get('/class-application', 'HPXTController@classApplication');
+    Route::get('/class-application-add-doctor', 'HPXTController@classApplicationAddDoctor');
+    Route::get('/class-application-add-assistant', 'HPXTController@classApplicationAddAssistant');
+    Route::get('/class-store', 'HPXTController@classStore');
+});
 
-Route::group(['prefix' => 'activity'], function () {
-    // 活动列表主页
-    Route::get('/index', 'ActivityController@index');
-
-    // 千院科教
-    Route::get('/qykj/index', 'QYKJController@index');
-
-    // E名医
+Route::group(['prefix' => 'emy'], function () {
     Route::get('/emy/index', 'EMYController@index');
-
-    // 黄埔学堂
-    Route::get('/hpxt/index', 'HPXTController@index');
-    Route::get('/hpxt/introduction', 'HPXTController@introduction');
-    Route::get('/hpxt/procedure', 'HPXTController@procedure');
-    Route::get('/hpxt/document', 'HPXTController@document');
-    Route::get('/hpxt/document-ppt', 'HPXTController@documentPpt');
-    Route::get('/hpxt/document-agreement', 'HPXTController@documentAgreement');
-    Route::get('/hpxt/class-manage', 'HPXTController@classManage');
-    Route::get('/hpxt/class-application', 'HPXTController@classApplication');
-    Route::get('/hpxt/class-application-add-doctor', 'HPXTController@classApplicationAddDoctor');
-    Route::get('/hpxt/class-application-add-assistant', 'HPXTController@classApplicationAddAssistant');
-    Route::get('/hpxt/class-store', 'HPXTController@classStore');
-
-    // 空中课堂
-    Route::get('/kzkt/index', 'KZKTController@index');
-    Route::get('/kzkt/province', 'KZKTController@getProvince');
-    Route::get('/kzkt/city', 'KZKTController@getCity');
-    Route::get('/kzkt/country', 'KZKTController@getCountry');
-    Route::get('/kzkt/hospital', 'KZKTController@getHospital');
-    Route::get('/kzkt/department', 'KZKTController@getDepartment');
-    Route::post('/kzkt/addClassroom', 'KZKTController@addClassroom');
-    Route::post('/kzkt/updateClassroom', 'KZKTController@updateClassroom');
-    Route::post('/kzkt/checkIn', 'KZKTController@checkIn');
-    Route::get('/kzkt/findPreRegister', 'KZKTController@findPreRegister');
-    Route::get('/kzkt/findSingleRegister', 'KZKTController@findSingleRegister');
-    Route::get('/kzkt/findAllRegister', 'KZKTController@findAllRegister');
-    Route::get('/kzkt/signup', 'KZKTController@signup');
-    Route::get('/kzkt/editClassroom', 'KZKTController@editClassroom');
-    Route::any('/kzkt/viewCard', 'KZKTController@viewCard');
 });
