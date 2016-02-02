@@ -78,17 +78,21 @@ class VolunteerController extends Controller
      */
     public function showSelf(Request $request)
     {
+        \Log::info('showSelf');
         $user = \Session::get('logged_user');
         if (!$user) {
+            \Log::info('showSelf no session');
             return redirect('home/error');
         } /*if>*/
 
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         if (!$volunteer) {
+            \Log::info('showSelf no volunteer');
             return redirect('home/error');
         } /*if>*/
 
-        dd($volunteer);
+        \Log::info('name'.$volunteer->name);
+
         return view('volunteer.show')->with(['volunteer' => $volunteer]);
     }
 
