@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\HPXTClassMode;
-use App\Model\HPXTClassScale;
 use Illuminate\Http\Request;
 
 use App\Model\Volunteer;
@@ -11,6 +9,7 @@ use App\Model\HPXTClass;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Constants\DefaultValue;
 
 class HPXTController extends Controller
 {
@@ -55,8 +54,20 @@ class HPXTController extends Controller
     }
 
     public function classApplication() {
-        $classModes = HPXTClassMode::all();
-        $classScales = HPXTClassScale::all();
+//        $classModes = HPXTClassMode::all();
+//        $classScales = HPXTClassScale::all();
+        $classModes = array();
+        $rowMode1 = array('id' => 1, 'mode' => DefaultValue::DEFAULT_CLASS_MODE_COMMON);
+        array_push($classModes, $rowMode1);
+        $rowMode2 = array('id' => 2, 'mode' => DefaultValue::DEFAULT_CLASS_MODE_CITY);
+        array_push($classModes, $rowMode2);
+        $rowMode3 = array('id' => 3, 'mode' => DefaultValue::DEFAULT_CLASS_MODE_HOSPITAL);
+        array_push($classModes, $rowMode3);
+        $classScales = array();
+        $rowScales1 = array('id' => 1, 'scale' => DefaultValue::DEFAULT_CLASS_SCALES_FIRST);;
+        array_push($classScales, $rowScales1);
+        $rowScales2 = array('id' => 2, 'scale' => DefaultValue::DEFAULT_CLASS_SCALES_SECOND);;
+        array_push($classScales, $rowScales2);
 
         return view('hpxt.class_application')->with([
             'modes'=>$classModes,
