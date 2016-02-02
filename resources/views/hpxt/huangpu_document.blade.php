@@ -12,13 +12,13 @@
 <body class="huangpu-body">
 <div class="container-fluid">
   <br>
-  <a href="/activity/hpxt/document-ppt">
+  <a href="/hpxt/document-ppt">
     <div class="row project-x">
       <img class=" littlepic" src="/image/svg/huangpu_class.svg" alt="图标">
       <h4 class="col-heading">班级宣讲PPT<span class="glyphicon glyphicon-menu-right"></span></h4>
     </div>
   </a>
-  <a href="/activity/hpxt/document-agreement">
+  <a href="/hpxt/document-agreement">
     <div class="row project-x">
       <img class=" littlepic" src="/image/svg/huangpu_agreement.svg" alt="图标">
       <h4 class="col-heading">导师服务协议<span class="glyphicon glyphicon-menu-right"></span></h4>
