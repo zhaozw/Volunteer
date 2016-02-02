@@ -23,6 +23,7 @@ class AccessMiddleware
             return redirect('\home\error');
         } /*if>*/
 
+        \Log::info('AccessMiddleware.openid:'.$user['openid']);
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         if (!$volunteer) {
             return redirect('/volunteer/create-self');

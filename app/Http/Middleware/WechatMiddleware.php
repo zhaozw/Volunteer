@@ -17,7 +17,7 @@ class WechatMiddleware
     public function handle($request, Closure $next)
     {
         if (\Session::has('logged_user')) {
-            \Log::info('has logged_user');
+            \Log::info('WechatMiddleware:has logged_user');
             return $next($request);
         } /*if>*/
 
