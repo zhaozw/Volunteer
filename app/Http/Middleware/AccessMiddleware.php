@@ -19,6 +19,7 @@ class AccessMiddleware
     {
         $user = \Session::get('logged_user');
         if (!$user) {
+            \Log::info('logged_user is null');
             return redirect('\home\error');
         } /*if>*/
 
