@@ -152,7 +152,7 @@ class VolunteerController extends Controller
             return redirect('home/error');
         } /*if>*/
 
-        return view('volunteer.beans');
+        return view('volunteer.beans')->with(['volunteer' => $volunteer]);
     }
 
     public function shop(Request $request)
