@@ -44,6 +44,7 @@ class VolunteerController extends Controller
             'name'      => 'required',
             'phone'     => 'required|digits:11|unique:volunteers,phone',
             'email'     => 'required|email|unique:volunteers,email',
+            'password' => 'required|min:6',
             'unit_id'   => 'required|exists:units,id'
         ]);
         if ($validator->fails()) {
@@ -59,6 +60,7 @@ class VolunteerController extends Controller
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
         $volunteer->email   = $request->email;
+        $volunteer->password   = $request->password;
         $volunteer->unit_id = $request->unit_id;
 
         $volunteer->headimgurl  = $user['headimgurl'];
@@ -76,15 +78,20 @@ class VolunteerController extends Controller
      */
     public function showSelf(Request $request)
     {
+        \Log::info('showSelf');
         $user = \Session::get('logged_user');
         if (!$user) {
+            \Log::info('showSelf no session');
             return redirect('home/error');
         } /*if>*/
 
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         if (!$volunteer) {
+            \Log::info('showSelf no volunteer');
             return redirect('home/error');
         } /*if>*/
+
+        \Log::info('name'.$volunteer->name);
 
         return view('volunteer.show')->with(['volunteer' => $volunteer]);
     }
@@ -145,7 +152,7 @@ class VolunteerController extends Controller
             return redirect('home/error');
         } /*if>*/
 
-        return view('volunteer.beans');
+        return view('volunteer.beans')->with(['volunteer' => $volunteer]);
     }
 
     public function shop(Request $request)

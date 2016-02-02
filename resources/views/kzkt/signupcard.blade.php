@@ -104,5 +104,45 @@
     </div>
 </div>
 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" charset="utf-8">
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
+
+
+    wx.ready(function () {
+
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareAppMessage'
+            ],
+            success: function (res) {
+//                alert(JSON.stringify(res));
+            }
+        });
+
+        var id = request("id");
+        wx.onMenuShareAppMessage({
+            title: '空中课堂报名', // 分享标题
+            desc: '学员报名账户信息', // 分享描述
+            link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
+            imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
+            type: 'link', // 分享类型,music、video或link，不填默认为link
+            dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+            success: function () {
+                // 用户确认分享后执行的回调函数
+//                    alert('已分享');
+            },
+            cancel: function () {
+                // 用户取消分享后执行的回调函数
+//                    alert('已取消');
+            }
+        });
+
+    });
+
+    wx.error(function (res) {
+        alert("error:" + res.errMsg);
+    });
+</script>
 </body>
 </html>

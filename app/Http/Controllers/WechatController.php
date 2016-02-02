@@ -30,14 +30,14 @@ class WechatController extends Controller
     public function menu() {
         $menuService        = new Menu(env('WX_APPID'), env('WX_SECRET'));
         $buttonWDF          = new MenuItem("WDF", 'view', url('/wdf'));
-        $buttonActivity     = new MenuItem("我的活动", 'view', url('/activity/index'));
+        $buttonActivity     = new MenuItem("我的活动", 'view', url('/activity'));
         $buttonPersonal     = new MenuItem("个人中心");
 
         $menus = [
             $buttonWDF,
             $buttonActivity,
             $buttonPersonal->buttons([
-                new MenuItem('个人信息', 'view', url('/volunteer/information')),
+                new MenuItem('个人信息', 'view', url('/volunteer/show-self')),
                 new MenuItem('我的迈豆', 'view', url('/volunteer/beans')),
                 new MenuItem('迈豆商城', 'view', url('/volunteer/shop')),
                 new MenuItem('关于我们', 'view', url('/volunteer/about')),

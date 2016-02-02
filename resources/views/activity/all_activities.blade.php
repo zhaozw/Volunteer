@@ -53,11 +53,11 @@
     });
 
     function goAirClass() {
-        window.location.href = '/activity/kzkt/index';
+        window.location.href = '/kzkt/index';
     }
 
     function goHuangpu() {
-        window.location.href = '/activity/hpxt/index';
+        window.location.href = '/hpxt/index';
     }
 </script>
 </body>

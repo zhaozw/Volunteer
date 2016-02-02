@@ -17,6 +17,7 @@ class WechatMiddleware
     public function handle($request, Closure $next)
     {
         if (\Session::has('logged_user')) {
+            \Log::info('WechatMiddleware:has logged_user');
             return $next($request);
         } /*if>*/
 
@@ -25,8 +26,10 @@ class WechatMiddleware
         $auth = new Auth($appId, $secret);
         $user = $auth->authorize(url($request->fullUrl()));
         if ($user) {
+            \Log::info('get user put logged_user');
             \Session::put('logged_user', $user->all());
         } else {
+            \Log::info('put null into logged_user');
             \Session::put('logged_user', null);
         } /*else>*/
         return $next($request);

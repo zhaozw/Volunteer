@@ -26,12 +26,26 @@ Route::get('/activity', 'ActivityController@index');
 /* menu personal */
 Route::group(['prefix' => 'volunteer'], function () {
     Route::get('create-self', 'VolunteerController@createSelf');
-    Route::get('store-self', 'VolunteerController@storeSelf');
+    Route::post('store-self', 'VolunteerController@storeSelf');
     Route::get('show-self', 'VolunteerController@showSelf');
     Route::get('edit-self', 'VolunteerController@editSelf');
+});
+
+/*
+ * xsm, add, 20151123.
+ * for volunteer register, volunteer info.
+ * */
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('/information', 'VolunteerController@information'); //个人中心 - 我的消息
+    Route::get('/beans', 'VolunteerController@beans'); //个人中心 - 迈豆积分
+
+    Route::get('edit-self', 'VolunteerController@editSelf');//个人中心 - 编辑信息。区别于资源管理。使用该路由只能管理自己的信息。
+    Route::get('show-self', 'VolunteerController@showSelf');//个人中心 - 个人信息。区别于资源管理。使用该路由只能查看自己的信息。
     Route::post('update-self', 'VolunteerController@updateSelf');
 
     Route::get('beans', 'VolunteerController@beans');
+    Route::get('shop', 'VolunteerController@shop');
+    Route::get('about', 'VolunteerController@about');
 });
 
 
@@ -69,8 +83,4 @@ Route::group(['prefix' => 'hpxt'], function () {
 
 Route::group(['prefix' => 'emy'], function () {
     Route::get('/emy/index', 'EMYController@index');
-});
-
-Route::group(['prefix' => 'qykj'], function () {
-    Route::get('/qykj/index', 'QYKJController@index');
 });

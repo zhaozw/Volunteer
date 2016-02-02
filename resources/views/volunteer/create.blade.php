@@ -24,7 +24,7 @@
 @endif
 <div class="container-fluid">
     <div class="row" id="login-div">
-        <form class="form-horizontal" id="login-form" action="{{url('/volunteer')}}" method="POST">
+        <form class="form-horizontal" id="login-form" action="{{url('/volunteer/store-self')}}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
@@ -46,6 +46,12 @@
                            placeholder="邮箱" required="required">
                     <label for="inputPassword3" class="pos login-field-icon"><span
                                 class=" glyphicon glyphicon-envelope"></span></label>
+                </div>
+
+                <div class="div-position">
+                    <input type="text" class="form-control" name="password" id="inputPassword" value="{{old('password')}}"
+                           placeholder="密码" required="required">
+                    <label for="inputPassword3" class="pos login-field-icon"><span class=" glyphicon glyphicon-lock"></span></label>
                 </div>
 
                 <div class="div-position">

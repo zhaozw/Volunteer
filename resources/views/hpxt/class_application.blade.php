@@ -21,7 +21,7 @@
 <div class="container">
     <br>
 
-    <form action="activity/hpxt/class-store" class="form-horizontal" method="post">
+    <form action="hpxt/class-store" class="form-horizontal" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
@@ -39,7 +39,7 @@
                 <select class="form-control" name="{{old('scale_id')}}">
                     <option selected hidden>请选择班级规模</option>
                     @foreach($scales as $scale)
-                        <option value="{{$scale->id}}">{{$scale->scale}}</option>
+                        <option value="{{$scale['id']}}">{{$scale['scale']}}</option>
                     @endforeach
                 </select>
             </div>
@@ -52,7 +52,7 @@
                 <select class="form-control" name="{{old('mode_id')}}">
                     <option selected hidden>请选择班级形式</option>
                     @foreach($modes as $mode)
-                        <option value="{{$mode->id}}">{{$mode->mode}}</option>
+                        <option value="{{$mode['id']}}">{{$mode['mode']}}</option>
                     @endforeach
                 </select>
             </div>
