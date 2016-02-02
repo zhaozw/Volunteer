@@ -21,7 +21,7 @@
 <div class="container">
     <br>
 
-    <form action="activity/hpxt/class-store" class="form-horizontal" method="post">
+    <form action="hpxt/class-store" class="form-horizontal" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
         <div class="form-group">
