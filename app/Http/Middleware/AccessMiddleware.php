@@ -24,7 +24,7 @@ class AccessMiddleware
 
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
         if (!$volunteer) {
-            return redirect('/volunteer/create');
+            return redirect('/volunteer/create-self');
         } /*if>*/
 
         if (Carbon::now()->diffInMinutes($volunteer->updated_at) > 30) {
