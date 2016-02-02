@@ -23,7 +23,7 @@
         </ul>
     </div>
 
-    @foreach($volunteer->volunteerBeans->sortByDesc('valid_time') as $bean)
+    @foreach($volunteer->beans->sortByDesc('updated_at') as $bean)
         <div class="row project-x ">
             <div class="col-xs-6 ">
                 <ul class="list-unstyled ">
