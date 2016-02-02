@@ -17,20 +17,23 @@ class AccessMiddleware
      */
     public function handle($request, Closure $next)
     {
-        \Log::info('AccessMiddleware');
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('\home\error');
+        } /*if>*/
 
-        if ($volunteer = Volunteer::where('openid', $user['openid'])->first()) {
-            if (Carbon::now()->diffInMinutes($volunteer->updated_at) > 30) {
-                $volunteer->openid      = $user['openid'];
-                $volunteer->headimgurl  = $user['headimgurl'];
-                $volunteer->nickname    = $user['nickname'];
-                $volunteer->save();
-            } /*if>>*/
-            \Log::info('$volunteer'.$volunteer->openid);
-            return $next($request);
-        } else {
+        $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        if (!$volunteer) {
             return redirect('/volunteer/create');
-        } /*else>*/
+        } /*if>*/
+
+        if (Carbon::now()->diffInMinutes($volunteer->updated_at) > 30) {
+            $volunteer->openid      = $user['openid'];
+            $volunteer->headimgurl  = $user['headimgurl'];
+            $volunteer->nickname    = $user['nickname'];
+            $volunteer->save();
+        } /*if>*/
+        return next($request);
     }
-}
+
+} /*class*/

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Model\Unit;
 
 class ActivityTableSeeder extends Seeder
 {
@@ -11,34 +12,31 @@ class ActivityTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        DB::table('activitys')->insert(
-            ['title' => '千院科教', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 1]
-        );
+        $novoId = Unit::where('short_name', 'novo_nordisk')->first()->id;
 
-        DB::table('activitys')->insert(
-            ['title' => '黄埔学堂', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 1]
-        );
+        DB::table('activities')->insert([
+                'title' => '千院科教',
+                'abstract' => '摘要',
+                'unit_id' => $novoId
+        ]);
 
-        DB::table('activitys')->insert(
-            ['title' => '医师助手', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 1]
-        );
+        DB::table('activities')->insert([
+            'title' => '黄埔学堂',
+            'abstract' => '摘要',
+            'unit_id' => $novoId
+        ]);
 
-        DB::table('activitys')->insert(
-            ['title' => '空中课堂', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 1]
-        );
+        DB::table('activities')->insert([
+            'title' => '空中课堂',
+            'abstract' => '摘要',
+            'unit_id' => $novoId
+        ]);
 
-        DB::table('activitys')->insert(
-            ['title' => 'e名医', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 1]
-        );
-
-        DB::table('activitys')->insert(
-            ['title' => '甲状腺书院', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 2]
-        );
-
-        DB::table('activitys')->insert(
-            ['title' => '甲状腺公开课', 'abstract' => '摘要', 'details' => '详情', 'valid' => true, 'unit_id' => 2]
-        );
+        DB::table('activities')->insert([
+            'title' => 'e名医',
+            'abstract' => '摘要',
+            'unit_id' => $novoId
+        ]);
 
     }
 

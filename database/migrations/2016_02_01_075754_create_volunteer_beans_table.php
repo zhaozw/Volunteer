@@ -14,19 +14,16 @@ class CreateVolunteerBeansTable extends Migration
     {
         Schema::create('volunteer_beans', function (Blueprint $table) {
             $table->increments('id');
-
             $table->integer('volunteer_id')->unsigned()->comment('志愿者');
             $table->foreign('volunteer_id')->references('id')->on('volunteers');
 
             $table->integer('bean_rate_id')->unsigned()->comment('积分兑换规则');
-            $table->foreign('bean_rate_id')->references('id')->on('activity_bean_rates');
+            $table->foreign('bean_rate_id')->references('id')->on('bean_rates');
 
-            $table->boolean('valid')->default(false)->comment('积分是否有效');
-            $table->timestamp('action_at')->comment('积分生成时间');
-            $table->timestamp('valid_time')->comment('积分生效时间');
+            $table->boolean('is_valid')->default(false)->comment('积分是否有效');
 
             $table->index('volunteer_id');
-
+            $table->index('bean_rate_id');
             $table->timestamps();
         });
     }

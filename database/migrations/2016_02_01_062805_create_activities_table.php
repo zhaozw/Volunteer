@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateActivitysTable extends Migration
+class CreateActivitiesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,13 @@ class CreateActivitysTable extends Migration
      */
     public function up()
     {
-        Schema::create('activitys', function (Blueprint $table) {
+        Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
 
             $table->string('title', 31)->comment('项目标题');
             $table->text('abstract')->comment('项目摘要');
-            $table->text('details')->comment('项目详情');
-
-            $table->boolean('valid')->default(true)->comment('项目是否有效');
+            $table->string('icon_url')->nullable()->comment('项目图标url');
+            $table->string('index_url')->nullable()->comment('项目链接');
 
             $table->integer('unit_id')->unsigned()->comment('主办单位');
             $table->foreign('unit_id')->references('id')->on('units');
@@ -35,9 +34,9 @@ class CreateActivitysTable extends Migration
      */
     public function down()
     {
-        Schema::table('activitys', function(Blueprint $table) {
-            $table->dropForeign('activitys_unit_id_foreign');
+        Schema::table('activities', function(Blueprint $table) {
+            $table->dropForeign('activities_unit_id_foreign');
         });
-        Schema::drop('activitys');
+        Schema::drop('activities');
     }
 }

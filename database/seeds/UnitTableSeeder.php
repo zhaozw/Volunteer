@@ -13,14 +13,11 @@ class UnitTableSeeder extends Seeder
     {
         //
         DB::table('units')->insert(
-            ['abbreviation' => 'novo_nordisk',  'full_name' => '诺和诺德' ]
+            ['short_name' => 'novo_nordisk',  'full_name' => '诺和诺德' ]
         );
 
         DB::table('units')->insert(
-            ['abbreviation' => 'merck', 'full_name' => '默克' ]);
-
-        DB::table('units')->insert(
-            ['abbreviation' => 'medscience_tech', 'full_name' => '迈德同信' ]
+            ['short_name' => 'medscience_tech', 'full_name' => '迈德科技' ]
         );
     }
 }

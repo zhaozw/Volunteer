@@ -15,20 +15,20 @@ class CreateVolunteersTable extends Migration
         Schema::create('volunteers', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('openid')->nullable()->comment('wechat volunteer open id');
+            $table->string('name', 31)->comment('名字');
+            $table->string('phone', 11)->comment('电话');
+            $table->string('password', 31)->comment('密码');
+            $table->string('email', 31)->nullable()->comment('邮箱');
+            $table->string('number', 31)->nullable()->comment('工号');
+
+            $table->string('openid')->comment('wechat volunteer open id');
             $table->string('nickname')->nullable()->comment('wechat volunteer nick name');
             $table->string('headimgurl')->nullable()->comment('wechat volunteer headimgurl');
-
-            $table->string('name', 31)->comment('名字');
-            $table->string('phone', 31)->comment('电话');
-            $table->string('email', 62)->comment('邮箱');
 
             $table->integer('unit_id')->unsigned()->comment('单位ID');
             $table->foreign('unit_id')->references('id')->on('units');
 
             $table->unsignedInteger('beans_total')->default(0)->comment('迈豆总额');
-            $table->unsignedInteger('doctors_total')->default(0)->comment('服务医生总数');
-
             $table->timestamps();
         });
     }
@@ -45,4 +45,5 @@ class CreateVolunteersTable extends Migration
         });
         Schema::drop('volunteers');
     }
-}
+
+} /*class*/

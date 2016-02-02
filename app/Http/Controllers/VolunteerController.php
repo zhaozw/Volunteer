@@ -15,8 +15,8 @@ class VolunteerController extends Controller
         $this->middleware('auth.wechat');
         $this->middleware('auth.access', [
             'except' => [
-                'create',
-                'store'
+                'createSelf',
+                'storeSelf'
             ]
         ]);
     }
@@ -26,7 +26,7 @@ class VolunteerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function createSelf(Request $request)
     {
         $units = Unit::all();
         return view('volunteer.create')->with(['units' => $units]);
@@ -38,34 +38,34 @@ class VolunteerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeSelf(Request $request)
     {
         $validator = \Validator::make($request->all(), [
             'name'      => 'required',
             'phone'     => 'required|digits:11|unique:volunteers,phone',
-            'email' => 'required|email|unique:volunteers,email',
+            'email'     => 'required|email|unique:volunteers,email',
             'unit_id'   => 'required|exists:units,id'
         ]);
-
-        /* redirect to error page.*/
         if ($validator->fails()) {
             return redirect('volunteer/create')->withErrors($validator)->withInput();
         } /*if>*/
 
-        $volunteer = new Volunteer();
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('home/error');
+        } /*if>*/
+
+        $volunteer = new Volunteer();
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
         $volunteer->email   = $request->email;
         $volunteer->unit_id = $request->unit_id;
 
-        $volunteer->headimgurl = $user['headimgurl'];
-        $volunteer->nickname = $user['nickname'];
-        $volunteer->openid = $user['openid'];
-
+        $volunteer->headimgurl  = $user['headimgurl'];
+        $volunteer->nickname    = $user['nickname'];
+        $volunteer->openid      = $user['openid'];
         $volunteer->save();
-
-        return view('register_succeed');//TODO 弹到注册成功
+        return view('volunteer.success');
     }
 
     /**
@@ -77,69 +77,44 @@ class VolunteerController extends Controller
     public function showSelf(Request $request)
     {
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('home/error');
+        } /*if>*/
+
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        if (!$volunteer) {
+            return redirect('home/error');
+        } /*if>*/
 
-        return view('volunteer.show')->with([
-            'volunteer' => $volunteer
-        ]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Request $request)
-    {
-        //
+        return view('volunteer.show')->with(['volunteer' => $volunteer]);
     }
 
     public function editSelf(Request $request)
     {
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('home/error');
+        } /*if>*/
+
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
-
-        if (null == $volunteer) {
-            return view('volunteer.edit_error');
+        if (!$volunteer) {
+            return redirect('home/error');
         } /*if>*/
 
-        return view('volunteer.edit')->with([
-            'volunteer' => $volunteer
-        ]);
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $validator = \Validator::make($request->all(), [
-            'phone' => 'required|unique:volunteers, phone',
-            'email' => 'required|email',
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        } /*if>*/
-
-        $volunteer = \App\Model\Volunteer::where('openid', '=', $id)->first();
-        if (null == $volunteer) {
-            return view('volunteer.update_error');
-        } /*if>*/
-
-        $volunteer->phone = $request->phone;
-        $volunteer->email = $request->email;
-        $volunteer->save();
+        return view('volunteer.edit')->with(['volunteer' => $volunteer]);
     }
 
     public function updateSelf(Request $request)
     {
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('home/error');
+        } /*if>*/
+
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        if (!$volunteer) {
+            return redirect('home/error');
+        } /*if>*/
 
         $validator = \Validator::make($request->all(), [
             'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
@@ -147,21 +122,12 @@ class VolunteerController extends Controller
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }
+        } /*if>*/
 
         $volunteer->phone = $request->phone;
         $volunteer->email = $request->email;
         $volunteer->save();
-
         return redirect('/volunteer/show-self');
-    }
-
-    /*
-     * get all information
-     * */
-    public function information(Request $request)
-    {
-        //
     }
 
     /*
@@ -170,37 +136,26 @@ class VolunteerController extends Controller
     public function beans(Request $request)
     {
         $user = \Session::get('logged_user');
+        if (!$user) {
+            return redirect('home/error');
+        } /*if>*/
+
         $volunteer = Volunteer::where('openid', $user['openid'])->first();
+        if (!$volunteer) {
+            return redirect('home/error');
+        } /*if>*/
 
-        return view('volunteer.beans')->with([
-            'volunteer' => $volunteer
-        ]);
+        return view('volunteer.beans');
     }
 
-    function findAllAirClass(Request $request)
+    public function shop(Request $request)
     {
-        $openid = \Session::get('logged_user');
-        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 2)->get();
-        $array = array();
-        $count = 0;
-        foreach ($airClassrooms as $airClassroom) {
-            $count = $count + 1;
-            $name = $airClassroom->name;
-            $id = $airClassroom->id;
-            $phone = $airClassroom->phone;
-            $className = null;
-            if ($airClassroom->course_type == 1) {
-                $className = '基础班';
-            } else if ($airClassroom->course_type == 2) {
-                $className = '高级班';
-            } else {
-                $className = '精品班';
-            }
-
-            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone);
-            array_push($array, $row);
-        }
-
-        return view('volunteer.activitydetail', ['count'=>$count, 'data' => $array]);
+        return view('volunteer.shop');
     }
-}
+
+    public function about(Request $request)
+    {
+        return view('volunteer.about');
+    }
+
+} /*class*/

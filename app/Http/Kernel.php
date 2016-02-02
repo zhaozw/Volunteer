@@ -30,16 +30,8 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
 
-        /*
-         * xsm, add, 20151124.
-         * shortcut for wdf volunteer access verify.
-         * */
-        'auth.access' => \App\Http\Middleware\AccessMiddleware::class,
-
-        /*
-         * xsm, add, 20151125.
-         * shortcut for wdf wechat personal verify.
-         * */
         'auth.wechat' => \App\Http\Middleware\WechatMiddleware::class,
+        'auth.access' => \App\Http\Middleware\AccessMiddleware::class,
+        'auth.kzkt' => \App\Http\Middleware\KZKTAccessMIddleware::class,
     ];
 }

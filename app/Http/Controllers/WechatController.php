@@ -20,7 +20,6 @@ class WechatController extends Controller
 
         $server = new Server($appId, $token, $encodingASEKey);
         $server->on('message', function ($message) {
-            \Log::info('wechat' . $message);
             return Message::make('text')->content('您好！');
         });
 
@@ -40,6 +39,8 @@ class WechatController extends Controller
             $buttonPersonal->buttons([
                 new MenuItem('个人信息', 'view', url('/volunteer/information')),
                 new MenuItem('我的迈豆', 'view', url('/volunteer/beans')),
+                new MenuItem('迈豆商城', 'view', url('/volunteer/shop')),
+                new MenuItem('关于我们', 'view', url('/volunteer/about')),
             ]),
         ];
         $menuService->set($menus);
