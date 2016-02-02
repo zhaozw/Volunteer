@@ -26,7 +26,7 @@ Route::get('/activity', 'ActivityController@index');
 /* menu personal */
 Route::group(['prefix' => 'volunteer'], function () {
     Route::get('create-self', 'VolunteerController@createSelf');
-    Route::get('store-self', 'VolunteerController@storeSelf');
+    Route::post('store-self', 'VolunteerController@storeSelf');
     Route::get('show-self', 'VolunteerController@showSelf');
     Route::get('edit-self', 'VolunteerController@editSelf');
     Route::post('update-self', 'VolunteerController@updateSelf');
