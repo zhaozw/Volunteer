@@ -38,6 +38,7 @@ class AccessMiddleware
             $volunteer->nickname    = $user['nickname'];
             $volunteer->save();
         } /*if>*/
+        \Log::info('AccessMiddleware.next');
         return next($request);
     }
 
