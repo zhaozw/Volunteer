@@ -17,7 +17,9 @@ class CreateVolunteersTable extends Migration
 
             $table->string('name', 31)->comment('名字');
             $table->string('phone', 11)->comment('电话');
-            $table->string('email', 31)->comment('邮箱');
+            $table->string('password', 31)->comment('密码');
+            $table->string('email', 31)->nullable()->comment('邮箱');
+            $table->string('number', 31)->nullable()->comment('工号');
 
             $table->string('openid')->comment('wechat volunteer open id');
             $table->string('nickname')->nullable()->comment('wechat volunteer nick name');
