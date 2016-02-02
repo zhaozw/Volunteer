@@ -32,6 +32,8 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::post('update-self', 'VolunteerController@updateSelf');
 
     Route::get('beans', 'VolunteerController@beans');
+    Route::get('shop', 'VolunteerController@shop');
+    Route::get('about', 'VolunteerController@about');
 });
 
 
