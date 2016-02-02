@@ -39,7 +39,7 @@ class AccessMiddleware
             $volunteer->save();
         } /*if>*/
         \Log::info('AccessMiddleware.next');
-        return next($request);
+        return $next($request);
     }
 
 } /*class*/
