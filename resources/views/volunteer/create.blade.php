@@ -49,6 +49,12 @@
                 </div>
 
                 <div class="div-position">
+                    <input type="text" class="form-control" name="password" id="inputPassword" value="{{old('password')}}"
+                           placeholder="密码" required="required">
+                    <label for="inputPassword3" class="pos login-field-icon"><span class=" glyphicon glyphicon-lock"></span></label>
+                </div>
+
+                <div class="div-position">
                     <div class="dropdown clearfix">
                         <button id="drop1" class="btn btn-block dropdown-toggle" type="button" data-toggle="dropdown"
                                 aria-haspopup="false" aria-expanded="false">

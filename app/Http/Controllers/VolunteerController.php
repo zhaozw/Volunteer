@@ -44,6 +44,7 @@ class VolunteerController extends Controller
             'name'      => 'required',
             'phone'     => 'required|digits:11|unique:volunteers,phone',
             'email'     => 'required|email|unique:volunteers,email',
+            'password' => 'required|min:6',
             'unit_id'   => 'required|exists:units,id'
         ]);
         if ($validator->fails()) {
@@ -59,6 +60,7 @@ class VolunteerController extends Controller
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
         $volunteer->email   = $request->email;
+        $volunteer->password   = $request->password;
         $volunteer->unit_id = $request->unit_id;
 
         $volunteer->headimgurl  = $user['headimgurl'];
