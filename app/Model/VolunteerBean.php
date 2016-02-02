@@ -11,13 +11,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class VolunteerBean extends Model
 {
-    //
     protected $table = 'volunteer_beans';
 
-    protected $dates = ['created_at', 'updated_at', 'valid_time', 'action_at'];
-
-    protected function activityBeanRate()
+    protected function volunteer()
     {
-        return $this->belongsTo('App\Model\ActivityBeanRate', 'bean_rate_id');
+        return $this->belongsTo('App\Model\Volunteer', 'volunteer_id');
+    }
+
+    protected function beanRate()
+    {
+        return $this->belongsTo('App\Model\BeanRate', 'bean_rate_id');
     }
 }

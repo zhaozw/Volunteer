@@ -14,9 +14,8 @@ class CreateUnitsTable extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->increments('id');
-
-            $table->string('abbreviation', 31)->commnet('公司名称英文缩写');
             $table->string('full_name', 31)->comment('公司全名');
+            $table->string('short_name', 31)->commnet('公司全名英文缩写');
             $table->timestamps();
         });
     }

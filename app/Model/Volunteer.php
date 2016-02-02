@@ -15,11 +15,11 @@ class Volunteer extends Model
 
     protected function unit()
     {
-        return $this->BelongsTo('App\Model\Unit');
+        return $this->BelongsTo('App\Model\Unit', 'unit_id');
     }
 
-    protected function volunteerBeans()
+    protected function beans()
     {
-        return $this->hasMany('App\Model\VolunteerBean');
+        return $this->hasMany('App\Model\VolunteerBean', 'volunteer_id');
     }
 }

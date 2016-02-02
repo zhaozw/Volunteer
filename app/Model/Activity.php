@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Activity extends Model
 {
-    protected $table = 'activitys';
+    protected $table = 'activities';
 
     protected function unit()
     {
-        return $this->belongsTo('App\Model\Unit');
+        return $this->belongsTo('App\Model\Unit', 'unit_id');
     }
 }

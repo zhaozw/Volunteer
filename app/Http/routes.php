@@ -13,40 +13,39 @@
 
 Route::any('/wechat', 'WechatController@serve');
 Route::any('/menu', 'WechatController@menu');
-//Route::controller('/debug', 'DebugController');
 
-/*
- * xsm, add, 20151124
- * for wdf index page.
- * */
-Route::get('wdf', 'WDFController@index');
-
-/*
- * xsm, add, 20151123.
- * for volunteer register, volunteer info.
- * */
-Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('/information', 'VolunteerController@information');
-    Route::get('/beans', 'VolunteerController@beans');
-
-    Route::get('edit-self', 'VolunteerController@editSelf');
-    Route::get('show-self', 'VolunteerController@showSelf');
-    Route::post('update-self', 'VolunteerController@updateSelf');
+Route::group(['prefix' => 'home'], function () {
+    Route::get('/error', 'HomeController@error');
+    Route::get('/unavailable', 'HomeController@unavailable');
 });
-Route::resource('volunteer', 'VolunteerController');
 
-/*
- * xsm, add, 20151124.
- * for activity route.
- * */
+/* menu wdf */
+Route::get('/wdf', 'WDFController@index');
+/* menu activity */
+Route::get('/activity', 'ActivityController@index');
+/* menu personal */
+Route::group(['prefix' => 'volunteer'], function () {
+    Route::get('create-self', 'VolunteerController@createSelf');
+    Route::get('store-self', 'VolunteerController@storeSelf');
+    Route::get('show-self', 'VolunteerController@showSelf');
+    Route::get('edit-self', 'VolunteerController@editSelf');
+    Route::post('update-self', 'VolunteerController@updateSelf');
+
+    Route::get('beans', 'VolunteerController@beans');
+});
+
+
+
+
 Route::group(['prefix' => 'activity'], function () {
     // 活动列表主页
     Route::get('/index', 'ActivityController@index');
 
-    Route::get('/qykj/index', 'QYKJController@index'); //千院科教
-    Route::get('/yszs/index', 'YSZSController@index');//医师助手
-    Route::get('/jzxsy/index', 'JZXSYController@index');//甲状腺书院
-    Route::get('/emy/index', 'EMYController@index');//E名医
+    // 千院科教
+    Route::get('/qykj/index', 'QYKJController@index');
+
+    // E名医
+    Route::get('/emy/index', 'EMYController@index');
 
     // 黄埔学堂
     Route::get('/hpxt/index', 'HPXTController@index');

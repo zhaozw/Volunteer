@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVolunteerDoctorsTable extends Migration
+class CreateKzktClassesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateVolunteerDoctorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('volunteer_doctors', function (Blueprint $table) {
+        Schema::create('kzkt_classes', function (Blueprint $table) {
             $table->increments('id');
 
             $table->integer('volunteer_id')->unsigned()->comment('志愿者');
@@ -21,10 +21,14 @@ class CreateVolunteerDoctorsTable extends Migration
             $table->integer('doctor_id')->unsigned()->comment('医师');
             $table->foreign('doctor_id')->references('id')->on('doctors');
 
-            $table->index('volunteer_id');
+            $table->string('type', 11)->comment('课程班');
+            $table->string('login_number', 11)->comment('登录密码');
+            $table->string('invite_number', 11)->comment('邀请码');
+            $table->boolean('status')->default(false)->comment('状态');
 
             $table->timestamps();
         });
+
     }
 
     /**
@@ -34,12 +38,10 @@ class CreateVolunteerDoctorsTable extends Migration
      */
     public function down()
     {
-        Schema::table('volunteer_doctors', function (Blueprint $table) {
-            //
-            $table->dropForeign('volunteer_doctors_volunteer_id_foreign');
-            $table->dropForeign('volunteer_doctors_doctor_id_foreign');
+        Schema::table('kzkt_classes', function(Blueprint $table) {
+            $table->dropForeign('kzkt_classes_volunteer_id_foreign');
+            $table->dropForeign('kzkt_classes_doctor_id_foreign');
         });
-
-        Schema::drop('volunteer_doctors');
+        Schema::drop('kzkt_classes');
     }
 }
