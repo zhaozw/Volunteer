@@ -24,7 +24,7 @@
 @endif
 <div class="container-fluid">
     <div class="row" id="login-div">
-        <form class="form-horizontal" id="login-form" action="{{url('/volunteer')}}" method="POST">
+        <form class="form-horizontal" id="login-form" action="{{url('/volunteer/store-self')}}" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
             <div class="form-group">
