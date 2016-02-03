@@ -128,6 +128,8 @@ select {
 
 .learning_card .weui_cell:before {
   border-top: none;
+  left: 0px;
+
 }
 
 .learning_card .weui_cell:nth-child(1) .weui_cell_bd {

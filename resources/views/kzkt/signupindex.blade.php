@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/volunteer.css">
     <script type="application/javascript">
         function goSignup() {
-            window.location.href = '/activity/kzkt/signup';
+            window.location.href = '/kzkt/signup';
         }
     </script>
 </head>

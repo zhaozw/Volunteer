@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\KZKTClass;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use \App\Model\AirClassroom;
+use \App\Model\Doctor;
+use \App\Model\Hospital;
+use \App\Model\HPXTClass;
+use \App\Model\Volunteer;
 use DB;
 use Overtrue\Wechat\Js;
 
@@ -25,31 +29,31 @@ class KZKTController extends Controller
 
     function getProvince()
     {
-        $list = DB::select('select distinct SA_PRIOVINCE_ID, SA_PROVINCE from bz_sys_area order by SA_PRIOVINCE_ID');
+        $list = DB::select('select distinct province_id, province from hospitals order by province_id');
         return response()->json(['list'=>$list]);
     }
 
     function getCity(Request $request)
     {
         $id = $request->input('id');
-        $list = DB::select('select distinct SA_CITY_ID,SA_CITY from bz_sys_area where SA_PRIOVINCE_ID = :id
-              order by SA_CITY_ID', ['id' => $id]);
+        $list = DB::select('select distinct city_id, city from hospitals where province_id = :id
+              order by city_id', ['id' => $id]);
         return response()->json(['list'=>$list]);
     }
 
     function getCountry(Request $request)
     {
         $id = $request->input('id');
-        $list = DB::select('select distinct SA_COUNTRY_ID,SA_COUNTRY from bz_sys_area where SA_CITY_ID = :id
-              order by SA_COUNTRY_ID', ['id' => $id]);
+        $list = DB::select('select distinct country_id,country from hospitals where city_id = :id
+              order by country_id', ['id' => $id]);
         return response()->json(['list'=>$list]);
     }
 
     function getHospital(Request $request)
     {
         $id = $request->input('id');
-        $list = DB::select('select SA_HOSPITAL_ID,SA_HOSPITAL from bz_sys_area where SA_COUNTRY_ID= :id
-              order by SA_HOSPITAL_ID', ['id' => $id]);
+        $list = DB::select('select id,hosptial from hospitals where country_id= :id
+              order by hosptial_id', ['id' => $id]);
         return response()->json(['list'=>$list]);
     }
 
@@ -62,28 +66,85 @@ class KZKTController extends Controller
     function addClassroom(Request $request)
     {
         $openid = \Session::get('logged_user');
-        $data = AirClassroom::where('phone', $request->input('phone'))->first();
-        if ($data) {
-            return response()->json(['result' => '-1']);
+        $volunteerId = 0;
+        if ($openid) {
+            $volunteer = Volunteer::where('openid', $openid['openid'])->first();
+            $volunteerId = $volunteer->id;
+        }
+        $doctor = Doctor::where('phone', $request->input('phone'))->first();
+
+        if ($doctor) {//医生数据已经存在时
+            $kzktData = KZKTClass::where('doctor_id', $doctor->id)->first();
+            if ($kzktData) {//空中课堂报名数据存在时
+                return response()->json(['result' => '-1']);
+            }
+            else {
+                $kzktData = new KZKTClass();
+                $kzktData->volunteer_id = $volunteerId;
+                $kzktData->doctor_id = $doctor->id;
+                $kzktData->password = substr($request->input('phone'), 5);
+                $kzktData->type = $request->input('classType');
+                if ($doctor->email) {
+                    $kzktData->status = true;
+                    $result = '1';
+                }
+                else {
+                    $kzktData->status = false;
+                    $result = '2';
+                }
+                $kzktData->save();
+
+                return response()->json(['result' => $result, 'id'=>$doctor->id]);
+            }
+        }
+        else {
+            $doctor = new Doctor();
+            $doctor->name = $request->input('name');
+            $doctor->phone = $request->input('phone');
+            $doctor->hospital = $request->input('hospital');
+            $doctor->office = $request->input('department');
+//            $doctor->title = $request->input('title');
+            $doctor->email = $request->input('mail');
+            $doctor->qq = $request->input('oicq');
+            $doctor->save();
+
+            $kzktData = new KZKTClass();
+            $kzktData->volunteer_id = $volunteerId;
+            $kzktData->doctor_id = $doctor->id;
+            $kzktData->password = substr($request->input('phone'), 5);
+            $kzktData->type = $request->input('classType');
+            if ($doctor->email) {
+                $kzktData->status = true;
+                $result = '1';
+            }
+            else {
+                $kzktData->status = false;
+                $result = '2';
+            }
+            $kzktData->save();
+
+            return response()->json(['result' => $result, 'id'=>$doctor->id]);
         }
 
-        $airClassroom = new AirClassroom();
-        $airClassroom->name = $request->input('name');
-        $airClassroom->phone = $request->input('phone');
-        $airClassroom->password = substr($request->input('phone'), 5);
-        $airClassroom->course_type = $request->input('classType');
-        $airClassroom->province = $request->input('province');
-        $airClassroom->city = $request->input('city');
-        $airClassroom->country = $request->input('country');
-        $airClassroom->hospital = $request->input('hospital');
-        $airClassroom->department = $request->input('department');
-        $airClassroom->title = $request->input('title');
-        $airClassroom->mail = $request->input('mail');
-        $airClassroom->oicq = $request->input('oicq');
-        $airClassroom->status = 1;
-        $airClassroom->openid = $openid['openid'];
-        $airClassroom->save();
-        return response()->json(['result' => '1']);
+
+
+//        $airClassroom = new AirClassroom();
+//        $airClassroom->name = $request->input('name');
+//        $airClassroom->phone = $request->input('phone');
+//        $airClassroom->password = substr($request->input('phone'), 5);
+//        $airClassroom->course_type = $request->input('classType');
+//        $airClassroom->province = $request->input('province');
+//        $airClassroom->city = $request->input('city');
+//        $airClassroom->country = $request->input('country');
+//        $airClassroom->hospital = $request->input('hospital');
+//        $airClassroom->department = $request->input('department');
+//        $airClassroom->title = $request->input('title');
+//        $airClassroom->mail = $request->input('mail');
+//        $airClassroom->oicq = $request->input('oicq');
+//        $airClassroom->status = 1;
+//        $airClassroom->openid = $openid['openid'];
+//        $airClassroom->save();
+//        return response()->json(['result' => '1']);
     }
 
     function updateClassroom(Request $request)

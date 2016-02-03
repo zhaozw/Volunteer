@@ -22,7 +22,7 @@
                 $('#text_province').val(branchId);
                 $('#text_province_view').val(location);
                 console.log("ready" + branchId + location);
-                var requestCity = '/activity/kzkt/city';
+                var requestCity = '/kzkt/city';
                 $.ajax({
                     url: requestCity,
                     data: {
@@ -34,9 +34,9 @@
                         $("#select_city").empty();
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id = "ss_" + this.SA_CITY_ID;
-                            strHtml += "<div id='ss_" + this.SA_CITY_ID + "' class='weui_actionsheet_cell nextActionSheet' " +
-                            "value='" + this.SA_CITY_ID + "' onclick='changeCountry(\"" + id + "\")'>" + this.SA_CITY + "</div>";
+                            var id = "ss_" + this.city_id;
+                            strHtml += "<div id='ss_" + this.city_id + "' class='weui_actionsheet_cell nextActionSheet' " +
+                            "value='" + this.city_id + "' onclick='changeCountry(\"" + id + "\")'>" + this.city + "</div>";
                         });
                         $("#select_city").html(strHtml);
 
@@ -76,9 +76,9 @@
                         $("#select_country").empty();
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id = "ss_" + this.SA_COUNTRY_ID;
-                            strHtml += "<div id='ss_" + this.SA_COUNTRY_ID + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.SA_COUNTRY_ID + "' onclick='changeHospital(\"" + id + "\")'>" + this.SA_COUNTRY + "</div>";
+                            var id = "ss_" + this.country_id;
+                            strHtml += "<div id='ss_" + this.country_id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
+                            "value='" + this.country_id + "' onclick='changeHospital(\"" + id + "\")'>" + this.country + "</div>";
                         });
                         $("#select_country").html(strHtml);
 
@@ -91,7 +91,7 @@
                         $("#select_hospital").html(strHtml1);
 
                         $("#select_department").val("-1");
-                        $("#select_title").val("-1");
+//                        $("#select_title").val("-1");
                     },
                     error: function (xhr, status, errorThrown) {
                         alert("Sorry, there was a problem!");
@@ -111,7 +111,7 @@
                 var tmp = $('#text_province_view').val() + '-' + $('#text_city_view').val()
                         + '-' + $('#text_country_view').val();
                 $('#text_location').val(tmp);
-                var requestHospital = '/activity/kzkt/hospital';
+                var requestHospital = '/kzkt/hospital';
                 $.ajax({
                     url : requestHospital,
                     data: {
@@ -123,12 +123,12 @@
                         $("#select_hospital").empty();
                         var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
                         $(json.list).each(function () {
-                            strHtml+="<option value='"+this.SA_HOSPITAL_ID+"'>"+this.SA_HOSPITAL+"</option>";
+                            strHtml+="<option value='"+this.hospital_id+"'>"+this.hospital+"</option>";
                         });
                         $("#select_hospital").html(strHtml);
 
                         $("#select_department").val("-1");
-                        $("#select_title").val("-1");
+//                        $("#select_title").val("-1");
 
                         $('.mask').removeClass('weui_fade_toggle');
                         $('.mask').css("display","none");
@@ -167,7 +167,7 @@
                 $(this).parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
             })
 
-            var requestUrl = '/activity/kzkt/province';
+            var requestUrl = '/kzkt/province';
             $.ajax({
                 type: "get",
                 dataType: "json",
@@ -177,9 +177,9 @@
                     var strHtml = "";
 
                     $(json.list).each(function () {
-                        var id = "ss_" + this.SA_PRIOVINCE_ID;
-                        strHtml += "<div id='ss_" + this.SA_PRIOVINCE_ID + "' class='weui_actionsheet_cell nextActionSheet' " +
-                        "value='" + this.SA_PRIOVINCE_ID + "' onclick='changeCity(\"" + id + "\")'>" + this.SA_PROVINCE + "</div>";
+                        var id = "ss_" + this.province_id;
+                        strHtml += "<div id='ss_" + this.province_id + "' class='weui_actionsheet_cell nextActionSheet' " +
+                        "value='" + this.province_id + "' onclick='changeCity(\"" + id + "\")'>" + this.province + "</div>";
                     });
                     $("#select_province").html(strHtml);
                 },
@@ -195,28 +195,28 @@
             });
 
 
-            var requestDepartment = '/activity/kzkt/department';
-            $.ajax({
-                type: "get",
-                dataType: "json",
-                url: requestDepartment,
-                success: function (json) {
-                    $("#select_department").empty();
-                    var strHtml = "<option value='-1' selected=true>" + "请选择" + "</option>";
-                    $(json.list).each(function () {
-                        strHtml += "<option value='" + this.DEPT_ID + "'>" + this.DEPT_NAME + "</option>";
-                    });
-                    $("#select_department").html(strHtml);
-                },
-                error: function (xhr, status, errorThrown) {
-                    alert("Sorry, there was a problem!");
-                    console.log("Error: " + errorThrown);
-                    console.log("Status: " + status);
-                    console.dir(xhr);
-                },
-                complete: function (xhr, status) {
-                }
-            });
+//            var requestDepartment = '/activity/kzkt/department';
+//            $.ajax({
+//                type: "get",
+//                dataType: "json",
+//                url: requestDepartment,
+//                success: function (json) {
+//                    $("#select_department").empty();
+//                    var strHtml = "<option value='-1' selected=true>" + "请选择" + "</option>";
+//                    $(json.list).each(function () {
+//                        strHtml += "<option value='" + this.DEPT_ID + "'>" + this.DEPT_NAME + "</option>";
+//                    });
+//                    $("#select_department").html(strHtml);
+//                },
+//                error: function (xhr, status, errorThrown) {
+//                    alert("Sorry, there was a problem!");
+//                    console.log("Error: " + errorThrown);
+//                    console.log("Status: " + status);
+//                    console.dir(xhr);
+//                },
+//                complete: function (xhr, status) {
+//                }
+//            });
 
             var addSelOption = function(jq) { //方法addSelOption : 为匹配对象添加一项"请选择"， jq ： jQuery对象
                 //创建option对象，并设置文本为"请选择"，value值为-1
@@ -317,11 +317,11 @@
                     return result;
                 }
 
-                if($("#select_title").val() == '-1'){
-                    document.getElementById('txt_warn').innerText = '请选择职称！';
-                    result = false;
-                    return result;
-                }
+//                if($("#select_title").val() == '-1'){
+//                    document.getElementById('txt_warn').innerText = '请选择职称！';
+//                    result = false;
+//                    return result;
+//                }
 
                 if(!verifyAddress()){
                     result = false;
@@ -337,11 +337,11 @@
                     var country = $("#text_country").val();
                     var hospital = $("#select_hospital").val();
                     var department = $("#select_department").val();
-                    var title = $("#select_title").val();
+//                    var title = $("#select_title").val();
                     var mail = $("#mail").val();
                     var oicq = $("#text_qq").val();
                     document.getElementById('txt_warn').innerText = '正在提交！';
-                    var requestUrl = '/activity/kzkt/addClassroom';
+                    var requestUrl = '/kzkt/addClassroom';
                     $.ajax({
                         url: requestUrl,
                         data: {
@@ -353,7 +353,6 @@
                             country: country,
                             hospital: hospital,
                             department: department,
-                            title: title,
                             mail: mail,
                             oicq: oicq
                         },
@@ -367,7 +366,13 @@
                             if (json.result == '1') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '提交成功！';
-                                window.location.href = '/activity/kzkt/findPreRegister';
+//                                window.location.href = '/kzkt/findPreRegister';
+                                console.log('bbb');
+                            }
+                            if (json.result == '2') {
+                                console.log('aaa');
+                                document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，提交数据请在xx进行修改';
+//                                window.location.href = '/kzkt/findPreRegister';
                                 console.log('bbb');
                             }
                         },
@@ -490,27 +495,33 @@
                     <div class="weui_cell_bd weui_cell_primary">
                         <select name="select_department" id="select_department" type="text" class="weui_input">
                             <option value="-1">请选择</option>
+                            <option value="1">内分泌科</option>
+                            <option value="2">综合内科</option>
+                            <option value="3">全科</option>
+                            <option value="4">神经内科</option>
+                            <option value="5">心血管科</option>
+                            <option value="6">老年科</option>
                         </select>
                     </div>
                     <div class="weui_cell_ft"></div>
                 </div>
 
 
-                <div class="weui_cell">
-                    <div class="weui_cell_hd">
-                        <label for="" class="weui_label">职&emsp;称</label>
-                    </div>
-                    <div class="weui_cell_bd weui_cell_primary">
-                        <select name="select_title" id="select_title" type="text" class="weui_input">
-                            <option value="-1">请选择</option>
-                            <option value="1">住院医师</option>
-                            <option value="2">主治医师</option>
-                            <option value="3">副主任医师</option>
-                            <option value="4">主任医师</option>
-                        </select>
-                    </div>
-                    <div class="weui_cell_ft"></div>
-                </div>
+                {{--<div class="weui_cell">--}}
+                    {{--<div class="weui_cell_hd">--}}
+                        {{--<label for="" class="weui_label">职&emsp;称</label>--}}
+                    {{--</div>--}}
+                    {{--<div class="weui_cell_bd weui_cell_primary">--}}
+                        {{--<select name="select_title" id="select_title" type="text" class="weui_input">--}}
+                            {{--<option value="-1">请选择</option>--}}
+                            {{--<option value="1">住院医师</option>--}}
+                            {{--<option value="2">主治医师</option>--}}
+                            {{--<option value="3">副主任医师</option>--}}
+                            {{--<option value="4">主任医师</option>--}}
+                        {{--</select>--}}
+                    {{--</div>--}}
+                    {{--<div class="weui_cell_ft"></div>--}}
+                {{--</div>--}}
 
             </div>
 
