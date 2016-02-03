@@ -64,7 +64,7 @@
                 $('#text_location').val(tmp);
                 //alert(branchId);
                 console.log("ready" + branchId);
-                var requestCountry = '/activity/kzkt/country';
+                var requestCountry = '/kzkt/country';
                 $.ajax({
                     url: requestCountry,
                     data: {
