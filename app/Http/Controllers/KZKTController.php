@@ -211,32 +211,32 @@ class KZKTController extends Controller
         return view('kzkt.signupstudent', ['data' => $array]);
     }
 
-    function findSingleRegister(Request $request)
-    {
-        $id = $request->input('id');
-        $airClassroom = AirClassroom::where('id', $id)->first();
-        if ($airClassroom) {
-            $province = DB::select('select distinct SA_PROVINCE from bz_sys_area where SA_PRIOVINCE_ID = :id',
-                ['id' => $airClassroom->province]);
-            $city = DB::select('select distinct SA_CITY from bz_sys_area where SA_CITY_ID = :id',
-                ['id' => $airClassroom->city]);
-            $country = DB::select('select distinct SA_COUNTRY from bz_sys_area where SA_COUNTRY_ID = :id',
-                ['id' => $airClassroom->country]);
-            $address = $province[0]->SA_PROVINCE . '-' . $city[0]->SA_CITY . '-' . $country[0]->SA_COUNTRY;
-            $className = null;
-            if ($airClassroom->course_type == 1) {
-                $className = '基础班';
-            } else if ($airClassroom->course_type == 2) {
-                $className = '高级班';
-            } else {
-                $className = '精品班';
-            }
-
-            return response()->json(['result' => '1', 'data' => $airClassroom, 'address' => $address, 'className' => $className]);
-        } else {
-            return response()->json(['result' => '-1']);
-        }
-    }
+//    function findSingleRegister(Request $request)
+//    {
+//        $id = $request->input('id');
+//        $airClassroom = AirClassroom::where('id', $id)->first();
+//        if ($airClassroom) {
+//            $province = DB::select('select distinct SA_PROVINCE from bz_sys_area where SA_PRIOVINCE_ID = :id',
+//                ['id' => $airClassroom->province]);
+//            $city = DB::select('select distinct SA_CITY from bz_sys_area where SA_CITY_ID = :id',
+//                ['id' => $airClassroom->city]);
+//            $country = DB::select('select distinct SA_COUNTRY from bz_sys_area where SA_COUNTRY_ID = :id',
+//                ['id' => $airClassroom->country]);
+//            $address = $province[0]->SA_PROVINCE . '-' . $city[0]->SA_CITY . '-' . $country[0]->SA_COUNTRY;
+//            $className = null;
+//            if ($airClassroom->course_type == 1) {
+//                $className = '基础班';
+//            } else if ($airClassroom->course_type == 2) {
+//                $className = '高级班';
+//            } else {
+//                $className = '精品班';
+//            }
+//
+//            return response()->json(['result' => '1', 'data' => $airClassroom, 'address' => $address, 'className' => $className]);
+//        } else {
+//            return response()->json(['result' => '-1']);
+//        }
+//    }
 
     function findAllRegister(Request $request)
     {
@@ -288,5 +288,26 @@ class KZKTController extends Controller
     function editClassroom(Request $request)
     {
         return view('kzkt.signupedit');
+    }
+
+    function findSingleRegister(Request $request)
+    {
+        $id = $request->input('id');
+        $doctor = Doctor::where('id', $id)->first();
+        $kzktData = KZKTClass::where('doctor_id', $doctor->id)->first();
+        if ($doctor != null && $kzktData != null) {
+            $className = null;
+            if ($kzktData->type == 1) {
+                $className = '基础班';
+            } else if ($kzktData->type == 2) {
+                $className = '高级班';
+            } else {
+                $className = '精品班';
+            }
+
+            return response()->json(['result' => '1', 'data' => $doctor, 'className' => $className, 'password'=>$kzktData->login_number]);
+        } else {
+            return response()->json(['result' => '-1']);
+        }
     }
 }

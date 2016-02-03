@@ -29,7 +29,7 @@
         }
 
         var getData = function (id){
-            var requestUrl = '/activity/kzkt/findSingleRegister';
+            var requestUrl = '/kzkt/findSingleRegister';
             $.ajax({
                 type : "get",
                 data: {
@@ -46,7 +46,7 @@
                         document.getElementById('name1').innerText = json.data.name;
                         document.getElementById('name2').innerText = json.data.name;
                         document.getElementById('phone').innerText = json.data.phone;
-                        document.getElementById('pwd').innerText = json.data.password;
+                        document.getElementById('pwd').innerText = json.password;
                         document.getElementById('class_type').innerText = json.className;
                     }
                 },

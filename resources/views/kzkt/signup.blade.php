@@ -367,7 +367,7 @@
                             if (json.result == '1') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '提交成功！';
-//                                window.location.href = '/kzkt/findPreRegister';
+                                window.location.href = '/kzkt/viewCard?id='+json.id;
                                 console.log('bbb');
                             }
                             if (json.result == '2') {
