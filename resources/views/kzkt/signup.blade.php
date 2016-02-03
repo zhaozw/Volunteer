@@ -123,7 +123,7 @@
                         $("#select_hospital").empty();
                         var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
                         $(json.list).each(function () {
-                            strHtml+="<option value='"+this.hospital_id+"'>"+this.hospital+"</option>";
+                            strHtml+="<option value='"+this.id+"'>"+this.hospital+"</option>";
                         });
                         $("#select_hospital").html(strHtml);
 
