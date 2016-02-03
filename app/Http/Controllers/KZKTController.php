@@ -53,7 +53,7 @@ class KZKTController extends Controller
     {
         $id = $request->input('id');
         $list = DB::select('select id,hospital from hospitals where country_id= :id
-              order by hosptial_id', ['id' => $id]);
+              order by hospital_id', ['id' => $id]);
         return response()->json(['list'=>$list]);
     }
 
