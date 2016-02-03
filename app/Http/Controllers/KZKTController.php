@@ -82,7 +82,7 @@ class KZKTController extends Controller
                 $kzktData = new KZKTClass();
                 $kzktData->volunteer_id = $volunteerId;
                 $kzktData->doctor_id = $doctor->id;
-                $kzktData->password = substr($request->input('phone'), 5);
+                $kzktData->login_number = substr($request->input('phone'), 5);
                 $kzktData->type = $request->input('classType');
                 if ($doctor->email) {
                     $kzktData->status = true;
@@ -112,7 +112,7 @@ class KZKTController extends Controller
             $kzktData = new KZKTClass();
             $kzktData->volunteer_id = $volunteerId;
             $kzktData->doctor_id = $doctor->id;
-            $kzktData->password = substr($request->input('phone'), 5);
+            $kzktData->login_number = substr($request->input('phone'), 5);
             $kzktData->type = $request->input('classType');
             if ($doctor->email) {
                 $kzktData->status = true;
