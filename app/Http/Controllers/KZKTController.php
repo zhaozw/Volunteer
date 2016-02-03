@@ -66,7 +66,7 @@ class KZKTController extends Controller
     function addClassroom(Request $request)
     {
         $openid = \Session::get('logged_user');
-        $volunteerId = 0;
+        $volunteerId = 1;
         if ($openid) {
             $volunteer = Volunteer::where('openid', $openid['openid'])->first();
             $volunteerId = $volunteer->id;
