@@ -52,7 +52,7 @@ class KZKTController extends Controller
     function getHospital(Request $request)
     {
         $id = $request->input('id');
-        $list = DB::select('select id,hosptial from hospitals where country_id= :id
+        $list = DB::select('select id,hospital from hospitals where country_id= :id
               order by hosptial_id', ['id' => $id]);
         return response()->json(['list'=>$list]);
     }
