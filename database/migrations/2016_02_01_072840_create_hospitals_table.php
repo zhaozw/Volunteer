@@ -15,17 +15,17 @@ class CreateHospitalsTable extends Migration
         Schema::create('hospitals', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->integer('province_id')->unsigned()->comment('省ID');
+            $table->string('province_id', 31)->comment('省ID');
             $table->string('province', 31)->comment('省');
 
-            $table->integer('city_id')->unsigned()->comment('市ID');
+            $table->string('city_id', 31)->comment('市ID');
             $table->string('city', 31)->comment('市');
 
-            $table->integer('country_id')->unsigned()->comment('区ID');
+            $table->string('country_id', 31)->comment('区ID');
             $table->string('country', 31)->comment('区');
 
-            $table->integer('hospital_id')->unsigned()->comment('省ID');
-            $table->string('hospital', 31)->comment('省');
+            $table->string('hospital_id', 31)->comment('医院ID');
+            $table->string('hospital', 31)->nullable()->comment('医院');
 
             $table->timestamps();
         });
