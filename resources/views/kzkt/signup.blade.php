@@ -335,7 +335,8 @@
                     var province = $("#text_province").val();
                     var city = $("#text_city").val();
                     var country = $("#text_country").val();
-                    var hospital = $("#select_hospital").val();
+//                    var hospital = $("#select_hospital").val();
+                    var hospital = document.getElementById('select_hospital').innerText;
                     var department = $("#select_department").val();
 //                    var title = $("#select_title").val();
                     var mail = $("#mail").val();
