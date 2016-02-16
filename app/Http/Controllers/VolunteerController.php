@@ -78,17 +78,17 @@ class VolunteerController extends Controller
     public function storeSelf(Request $request)
     {
 
-        $validator = \Validator::make($request->all(), [
-            'name'      => 'required',
-            'phone'     => 'required|digits:11|unique:volunteers,phone',
-            'email'     => 'required|email|unique:volunteers,email',
-            'password' => 'required|min:6',
-            'unit_id'   => 'required|exists:units,id'
-        ]);
-        if ($validator->fails()) {
-//            return redirect('volunteer/create')->withErrors($validator)->withInput();
-            return response()->json(['result' => '-1']);
-        } /*if>*/
+//        $validator = \Validator::make($request->all(), [
+//            'name'      => 'required',
+//            'phone'     => 'required|digits:11|unique:volunteers,phone',
+//            'email'     => 'required|email|unique:volunteers,email',
+//            'password' => 'required|min:6',
+//            'unit_id'   => 'required|exists:units,id'
+//        ]);
+//        if ($validator->fails()) {
+////            return redirect('volunteer/create')->withErrors($validator)->withInput();
+//            return response()->json(['result' => '-1']);
+//        } /*if>*/
 
         $user = \Session::get('logged_user');
         if (!$user) {

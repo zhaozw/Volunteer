@@ -106,8 +106,6 @@
                     }
                 }
 
-                alert('3');
-
                 if(result == true) {
                     var name = $("#name").val();
                     var phone = $("#phone").val();
