@@ -91,6 +91,12 @@
                     return result;
                 }
 
+                if($("#unit").val() == '-1'){
+                    document.getElementById('txt_warn').innerText = '请选择公司！';
+                    result = false;
+                    return result;
+                }
+
                 if($("#unit").val() == '1'){
                     var number = document.getElementById('number').value;
                     if(number.length == 0) {
@@ -107,7 +113,7 @@
                     var unit_id = $("#unit").val();
                     var number = "";
                     var email = "";
-                    if(unit == '1') {
+                    if(unit_id == '1') {
                         number = $("#number").val();
                         email = number + 'novonordisk.com';
                     }
@@ -164,17 +170,18 @@
                 </label>
 
                 <label>
-                    <input id="password" class="columns" type="text" placeholder="请输入密码">
+                    <input id="password" class="columns" type="password" placeholder="请输入密码">
                     <span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>
                 </label>
 
                 <label>
-                    <input id="repassword" class="columns" type="text" placeholder="请确认密码">
+                    <input id="repassword" class="columns" type="password" placeholder="请确认密码">
                     <span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>
                 </label>
 
                 <label>
                     <select id="unit" class="columns">
+                        <option value="-1">请选择</option>
                         @foreach($units as $unit)
                             <option value="{{$unit->id}}">{{$unit->full_name}}</option>
                         @endforeach
@@ -186,7 +193,7 @@
                     <input id="number" class="columns" type="text" placeholder="员工编码，例如：NMRO">
                     <span class="columns text-center"><img src="/image/volunteer/u42.png" alt=""></span>
                 </label>
-                <p><a id="btn_save" type="submit" class="button expanded">注册</a></p>
+                <p><a id="btn_save" type="button" class="button expanded">注册</a></p>
                 <p id="txt_warn">请填写。。。</p>
             </div>
         </form>
