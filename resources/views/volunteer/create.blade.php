@@ -91,11 +91,15 @@
                     return result;
                 }
 
+                alert('1');
+
                 if($("#unit").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择公司！';
                     result = false;
                     return result;
                 }
+
+                alert('2');
 
                 if($("#unit").val() == '1'){
                     var number = document.getElementById('number').value;
@@ -105,6 +109,8 @@
                         return result;
                     }
                 }
+
+                alert('3');
 
                 if(result == true) {
                     var name = $("#name").val();
