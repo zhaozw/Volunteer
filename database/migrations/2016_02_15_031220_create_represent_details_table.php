@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRepresnetDetailsTable extends Migration
+class CreateRepresentDetailsTable extends Migration
 {
     /**
      * Run the migrations.
