@@ -1,0 +1,52 @@
+@import url(vendor/foundation.min.css);
+
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+body {
+    background-image: url("../image/bg1.png");
+}
+
+#sign_up {
+    margin-top: 3rem;
+}
+
+#sign_up > div {
+    background-color: #fff;
+}
+
+#sign_up form h4 {
+    margin-left: -.625rem;
+    margin-right: -.625rem;
+    margin-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background-color: #222;
+    color: #fff;
+}
+
+#sign_up form input, #sign_up form select {
+    width: 84%;
+    background-color: #eee;
+    border: none;
+    box-shadow: none;
+}
+
+#sign_up form span {
+    width: 14%;
+    height: 2.4375rem;
+    margin: auto;
+    padding: 0;
+    background-color: #eee;
+}
+
+#sign_up form span img {
+    padding-top: .2rem;
+}
+
+#sign_up form .button {
+    display: inline-block;
+}
+
+/*# sourceMappingURL=medtech.css.map */

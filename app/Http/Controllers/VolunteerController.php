@@ -38,36 +38,70 @@ class VolunteerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+//    public function storeSelf(Request $request)
+//    {
+//        $validator = \Validator::make($request->all(), [
+//            'name'      => 'required',
+//            'phone'     => 'required|digits:11|unique:volunteers,phone',
+//            'email'     => 'required|email|unique:volunteers,email',
+//            'password' => 'required|min:6',
+//            'unit_id'   => 'required|exists:units,id'
+//        ]);
+//        if ($validator->fails()) {
+//            return redirect('volunteer/create')->withErrors($validator)->withInput();
+//        } /*if>*/
+//
+//        $user = \Session::get('logged_user');
+//        if (!$user) {
+//            return redirect('home/error');
+//        } /*if>*/
+//
+//        $volunteer = new Volunteer();
+//        $volunteer->name    = $request->name;
+//        $volunteer->phone   = $request->phone;
+//        $volunteer->password   = $request->password;
+//        $volunteer->unit_id = $request->unit_id;
+//        $unit = $request->unit_id;
+//
+//        if($unit == '1') {
+//            $volunteer->email = $request->email;
+//            $volunteer->number = $request->number;
+//        }
+//
+//        $volunteer->headimgurl  = $user['headimgurl'];
+//        $volunteer->nickname    = $user['nickname'];
+//        $volunteer->openid      = $user['openid'];
+//        $volunteer->save();
+//        return view('volunteer.success');
+//    }
+
     public function storeSelf(Request $request)
     {
-        $validator = \Validator::make($request->all(), [
-            'name'      => 'required',
-            'phone'     => 'required|digits:11|unique:volunteers,phone',
-            'email'     => 'required|email|unique:volunteers,email',
-            'password' => 'required|min:6',
-            'unit_id'   => 'required|exists:units,id'
-        ]);
-        if ($validator->fails()) {
-            return redirect('volunteer/create')->withErrors($validator)->withInput();
-        } /*if>*/
 
         $user = \Session::get('logged_user');
         if (!$user) {
-            return redirect('home/error');
+            //return redirect('home/error');
+            return response()->json(['result' => '-1']);
         } /*if>*/
 
         $volunteer = new Volunteer();
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
-        $volunteer->email   = $request->email;
         $volunteer->password   = $request->password;
         $volunteer->unit_id = $request->unit_id;
+        $unit = $request->unit_id;
+
+        if($unit == '1') {
+            $volunteer->email = $request->email;
+            $volunteer->number = $request->number;
+        }
 
         $volunteer->headimgurl  = $user['headimgurl'];
         $volunteer->nickname    = $user['nickname'];
         $volunteer->openid      = $user['openid'];
         $volunteer->save();
-        return view('volunteer.success');
+
+        return response()->json(['result' => '1']);
     }
 
     /**
@@ -163,6 +197,11 @@ class VolunteerController extends Controller
     public function about(Request $request)
     {
         return view('volunteer.about');
+    }
+
+    public function success(Request $request)
+    {
+        return view('volunteer.success');
     }
 
 } /*class*/

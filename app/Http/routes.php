@@ -24,12 +24,12 @@ Route::get('/wdf', 'WDFController@index');
 /* menu activity */
 Route::get('/activity', 'ActivityController@index');
 /* menu personal */
-Route::group(['prefix' => 'volunteer'], function () {
-    Route::get('create-self', 'VolunteerController@createSelf');
-    Route::post('store-self', 'VolunteerController@storeSelf');
-    Route::get('show-self', 'VolunteerController@showSelf');
-    Route::get('edit-self', 'VolunteerController@editSelf');
-});
+//Route::group(['prefix' => 'volunteer'], function () {
+//    Route::get('create-self', 'VolunteerController@createSelf');
+//    Route::post('store-self', 'VolunteerController@storeSelf');
+//    Route::get('show-self', 'VolunteerController@showSelf');
+//    Route::get('edit-self', 'VolunteerController@editSelf');
+//});
 
 /*
  * xsm, add, 20151123.
@@ -39,6 +39,8 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('/information', 'VolunteerController@information'); //个人中心 - 我的消息
     Route::get('/beans', 'VolunteerController@beans'); //个人中心 - 迈豆积分
 
+    Route::get('create-self', 'VolunteerController@createSelf');
+    Route::post('store-self', 'VolunteerController@storeSelf');
     Route::get('edit-self', 'VolunteerController@editSelf');//个人中心 - 编辑信息。区别于资源管理。使用该路由只能管理自己的信息。
     Route::get('show-self', 'VolunteerController@showSelf');//个人中心 - 个人信息。区别于资源管理。使用该路由只能查看自己的信息。
     Route::post('update-self', 'VolunteerController@updateSelf');
@@ -46,6 +48,7 @@ Route::group(['prefix' => 'volunteer'], function () {
     Route::get('beans', 'VolunteerController@beans');
     Route::get('shop', 'VolunteerController@shop');
     Route::get('about', 'VolunteerController@about');
+    Route::get('success', 'VolunteerController@success');
 });
 
 
