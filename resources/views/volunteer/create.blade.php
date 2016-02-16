@@ -65,7 +65,7 @@
                 document.getElementById('repassword').focus();
                 return false;
             }
-            
+
             return true;
         }
 
@@ -85,22 +85,17 @@
                     result = false;
                     return result;
                 }
-                alert('0');
 
                 if (!verifyPassword()) {
                     result = false;
                     return result;
                 }
 
-                alert('1');
-
                 if($("#unit").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择公司！';
                     result = false;
                     return result;
                 }
-
-                alert('2');
 
                 if($("#unit").val() == '1'){
                     var number = document.getElementById('number').value;
