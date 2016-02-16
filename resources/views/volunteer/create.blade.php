@@ -54,18 +54,18 @@
                 return false;
             }
 
-            if (!password.isEqual(repassword)) {
-                document.getElementById('txt_warn').innerText = '两次输入密码不一致！';
-                document.getElementById('repassword').focus();
-                return false;
-            }
-
             if (repassword.length < 6) {
                 document.getElementById('txt_warn').innerText = '密码不足6位！';
                 document.getElementById('repassword').focus();
                 return false;
             }
 
+            if (password != repassword) {
+                document.getElementById('txt_warn').innerText = '两次输入密码不一致！';
+                document.getElementById('repassword').focus();
+                return false;
+            }
+            
             return true;
         }
 
