@@ -85,6 +85,7 @@
                     result = false;
                     return result;
                 }
+                alert('0');
 
                 if (!verifyPassword()) {
                     result = false;
