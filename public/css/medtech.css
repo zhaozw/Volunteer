@@ -64,4 +64,91 @@ body {
 #index img:first-child {
     border-radius: .4rem .4rem 0 0; }
 
+/**/
+#airclass {
+    margin-top: 1rem;
+}
+
+#airclass > div {
+    background-color: #fff;
+}
+
+#airclass > div > div > div {
+    margin-left: 34px;
+}
+
+#airclass h4 {
+    margin-left: -.625rem;
+    margin-right: -.625rem;
+    margin-bottom: 0rem;
+    padding-top: .5rem;
+    padding-bottom: 1rem;
+    background-color: #222;
+    color: #fff;
+}
+
+#airclass h6 {
+    padding: 7px;
+    padding-top: 1rem;
+    margin-left: -.625rem;
+    margin-right: -.625rem;
+    margin-bottom: 0rem;
+    padding-bottom: 1.5rem;
+    background-color: #49B3EF;
+    color: #fff;
+}
+
+.baoming {
+    font-size: 18px;
+    font-weight: bold;
+    color: #05587D;
+}
+
+.time {
+    font-size: 14px;
+    color: #8a8a8a;
+}
+
+.baomingfs {
+    margin-top: 2px;
+}
+
+.banji {
+    font-size: 15px;
+    font-weight: bold;
+    color: #5f5f5f;
+}
+
+.xiangqing {
+    width: 95%;
+    float: left;
+    font-size: 14px;
+    color: #5f5f5f;
+}
+
+.bj {
+    margin-top: -22px;
+}
+
+.bj a img {
+    width: 35px;
+    float: right;
+    margin-top: -50px;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color .25s ease-out, color .25s ease-out;
+    border-radius: 0;
+    padding: .85em 1em;
+    margin: -11px 1px -1rem;
+    font-size: .9rem;
+    background-color: #2199e8;
+    color: #fff;
+    width: 133px;
+}
+	
 /*# sourceMappingURL=medtech.css.map */
