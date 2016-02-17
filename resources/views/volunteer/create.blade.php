@@ -115,7 +115,7 @@
                     var email = "";
                     if(unit_id == '1') {
                         number = $("#number").val();
-                        email = number + 'novonordisk.com';
+                        email = number + '@novonordisk.com';
                     }
                     document.getElementById('txt_warn').innerText = '正在提交！';
                     var requestUrl = '/volunteer/store-self';
@@ -194,7 +194,7 @@
                     <span class="columns text-center"><img src="/image/volunteer/u42.png" alt=""></span>
                 </label>
                 <p><a id="btn_save" type="button" class="button expanded">注册</a></p>
-                <p id="txt_warn">请填写。。。</p>
+                <p id="txt_warn" style="text-align:center;color:red">大大大大</p>
             </div>
         </form>
 
