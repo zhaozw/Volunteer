@@ -24,7 +24,7 @@
 
 <div class="row">
     <div id="kzkt" class="small-4 column" style="display:none;">
-        <a href="" onclick="goAirClass()">
+        <a href="/kzkt/index">
             <div >
                 <img src="/image/activity/u11.png">
                 <img src="/image/activity/u13.png" alt="">
@@ -33,7 +33,7 @@
         </a>
     </div>
     <div id="hpxt" class="small-4 column" style="display:none;">
-        <a href="" onclick="goHuangpu()">
+        <a href="/hpxt/index">
             <div >
                 <img src="/image/activity/u19.png">
                 <img src="/image/activity/u21.png" alt="">
