@@ -22,7 +22,7 @@
     <div class="swiper-pagination"></div>
 </div>
 
-<div class="row">
+<div class="row" id="index">
     <div id="kzkt" class="small-4 column" style="display:none;">
         <a href="/kzkt/index">
             <div >
