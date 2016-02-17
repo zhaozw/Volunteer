@@ -194,7 +194,7 @@
                     <span class="columns text-center"><img src="/image/volunteer/u42.png" alt=""></span>
                 </label>
                 <p><a id="btn_save" type="button" class="button expanded">注册</a></p>
-                <p id="txt_warn" style="text-align:center;color:red">大大大大</p>
+                <p id="txt_warn" style="text-align:center;color:red"></p>
             </div>
         </form>
 
