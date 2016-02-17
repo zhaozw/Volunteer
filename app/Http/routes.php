@@ -23,6 +23,8 @@ Route::group(['prefix' => 'home'], function () {
 Route::get('/wdf', 'WDFController@index');
 /* menu activity */
 Route::get('/activity', 'ActivityController@index');
+Route::get('/activity/view', 'ActivityController@loadView');
+Route::get('/activity/none', 'ActivityController@noneView');
 /* menu personal */
 //Route::group(['prefix' => 'volunteer'], function () {
 //    Route::get('create-self', 'VolunteerController@createSelf');

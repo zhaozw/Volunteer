@@ -49,4 +49,19 @@ body {
     display: inline-block;
 }
 
+#index {
+    margin-top: 1rem; }
+#index p {
+    position: relative;
+    margin-bottom: 0;
+    bottom: 1.2rem;
+    text-align: center;
+    font-size: .6rem;
+    color: #fff; }
+#index img {
+    width: 100%;
+    margin-bottom: -.2rem; }
+#index img:first-child {
+    border-radius: .4rem .4rem 0 0; }
+
 /*# sourceMappingURL=medtech.css.map */
