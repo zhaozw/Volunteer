@@ -102,28 +102,24 @@
     <div class="click_button">
         <img class="img_100" src="/image/kzkt/forward.png" alt="">
     </div>
-    <button id="chooseImage" type="button" class="weui_btn" style="width: 90%;">选&emsp;择</button>
-    <button id="uploadImage" type="button" class="weui_btn" style="width: 90%;">上&emsp;传</button>
-    <button id="downloadImage" type="button" class="weui_btn" style="width: 90%;">下&emsp;载</button>
+    {{--<button id="chooseImage" type="button" class="weui_btn" style="width: 90%;">选&emsp;择</button>--}}
+    {{--<button id="uploadImage" type="button" class="weui_btn" style="width: 90%;">上&emsp;传</button>--}}
+    {{--<button id="downloadImage" type="button" class="weui_btn" style="width: 90%;">下&emsp;载</button>--}}
 </div>
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage','chooseImage',
-    'uploadImage', 'downloadImage'), true, true) ?>);
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
 
 
     wx.ready(function () {
 
         wx.checkJsApi({
             jsApiList: [
-                'onMenuShareAppMessage',
-                'chooseImage',
-                'uploadImage',
-                'downloadImage'
+                'onMenuShareAppMessage'
             ],
             success: function (res) {
-                alert(JSON.stringify(res));
+//                alert(JSON.stringify(res));
             }
         });
 
@@ -145,68 +141,68 @@
             }
         });
 
-        var images = {
-            localId: [],
-            serverId: []
-        };
-
-        document.querySelector('#chooseImage').onclick = function () {
-            wx.chooseImage({
-                success: function (res) {
-                    images.localId = res.localIds;
-                    alert('已选择 ' + res.localIds.length + ' 张图片');
-                }
-            });
-        };
-
-        document.querySelector('#uploadImage').onclick = function () {
-            if (images.localId.length == 0) {
-                alert('请先使用 chooseImage 接口选择图片');
-                return;
-            }
-            var i = 0, length = images.localId.length;
-            images.serverId = [];
-            function upload() {
-                wx.uploadImage({
-                    localId: images.localId[i],
-                    success: function (res) {
-                        i++;
-                        alert('已上传：' + i + '/' + length);
-                        images.serverId.push(res.serverId);
-                        if (i < length) {
-                            upload();
-                        }
-                    },
-                    fail: function (res) {
-                        alert(JSON.stringify(res));
-                    }
-                });
-            }
-            upload();
-        };
-
-        document.querySelector('#downloadImage').onclick = function () {
-            if (images.serverId.length === 0) {
-                alert('请先使用 uploadImage 上传图片');
-                return;
-            }
-            var i = 0, length = images.serverId.length;
-            images.localId = [];
-            function download() {
-                wx.downloadImage({
-                    serverId: images.serverId[i],
-                    success: function (res) {
-                        i++;
-                        alert('已下载：' + i + '/' + length);
-                        images.localId.push(res.localId);
-                        if (i < length) {
-                            download();
-                        }
-                    }
-                });
-            }
-            download();
-        };
+//        var images = {
+//            localId: [],
+//            serverId: []
+//        };
+//
+//        document.querySelector('#chooseImage').onclick = function () {
+//            wx.chooseImage({
+//                success: function (res) {
+//                    images.localId = res.localIds;
+//                    alert('已选择 ' + res.localIds.length + ' 张图片');
+//                }
+//            });
+//        };
+//
+//        document.querySelector('#uploadImage').onclick = function () {
+//            if (images.localId.length == 0) {
+//                alert('请先使用 chooseImage 接口选择图片');
+//                return;
+//            }
+//            var i = 0, length = images.localId.length;
+//            images.serverId = [];
+//            function upload() {
+//                wx.uploadImage({
+//                    localId: images.localId[i],
+//                    success: function (res) {
+//                        i++;
+//                        alert('已上传：' + i + '/' + length);
+//                        images.serverId.push(res.serverId);
+//                        if (i < length) {
+//                            upload();
+//                        }
+//                    },
+//                    fail: function (res) {
+//                        alert(JSON.stringify(res));
+//                    }
+//                });
+//            }
+//            upload();
+//        };
+//
+//        document.querySelector('#downloadImage').onclick = function () {
+//            if (images.serverId.length === 0) {
+//                alert('请先使用 uploadImage 上传图片');
+//                return;
+//            }
+//            var i = 0, length = images.serverId.length;
+//            images.localId = [];
+//            function download() {
+//                wx.downloadImage({
+//                    serverId: images.serverId[i],
+//                    success: function (res) {
+//                        i++;
+//                        alert('已下载：' + i + '/' + length);
+//                        images.localId.push(res.localId);
+//                        if (i < length) {
+//                            download();
+//                        }
+//                    }
+//                });
+//            }
+//            download();
+//        };
 
     });
 

@@ -11,6 +11,7 @@
 
 </head>
 <body>
-<p>注册成功</p>
+<p style="text-align:center;font-size: 10px;">注册成功</p>
+<input type="button" style="text-align:center;width: 95%" text="关闭" onclick="window.close();">
 </body>
 </html>
