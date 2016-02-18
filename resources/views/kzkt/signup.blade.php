@@ -423,14 +423,26 @@
                         <label for="" class="weui_label">课程班</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
-                        <select name="select_class" id="select_class" type="text" class="weui_input">
-                            <option value="-1">请选择班级</option>
-                            <option value="1">基础班</option>
-                            <option value="2">高级班</option>
-                            <option value="3">精品班</option>
-                        </select>
+                        {{--<select name="select_class" id="select_class" type="text" class="weui_input">--}}
+                            {{--<option value="-1">请选择班级</option>--}}
+                            {{--<option value="1">基础班</option>--}}
+                            {{--<option value="2">高级班</option>--}}
+                            {{--<option value="3">精品班</option>--}}
+                        {{--</select>--}}
+                        <input name="select_class" id="select_class" type="text" class="weui_input" disabled placeholder="请选择班级">
                     </div>
                     <div class="weui_cell_ft"></div>
+                </div>
+            </div>
+
+            <div class="actionSheet_wrap">
+                <div class="mask"></div>
+                <div class="weui_actionsheet">
+                    <div class="weui_actionsheet_menu">
+                        <div class="weui_actionsheet_cell nextActionSheet">基础班</div>
+                        <div class="weui_actionsheet_cell nextActionSheet">高级班</div>
+                        <div class="weui_actionsheet_cell nextActionSheet">精品班</div>
+                    </div>
                 </div>
             </div>
 
