@@ -99,7 +99,7 @@ class VolunteerController extends Controller
         $volunteer = new Volunteer();
         $volunteer->name    = $request->name;
         $volunteer->phone   = $request->phone;
-        $volunteer->password   = $request->password;
+//        $volunteer->password   = $request->password;
         $volunteer->unit_id = $request->unit_id;
         $unit = $request->unit_id;
 

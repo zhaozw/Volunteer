@@ -86,10 +86,10 @@
                     return result;
                 }
 
-                if (!verifyPassword()) {
-                    result = false;
-                    return result;
-                }
+//                if (!verifyPassword()) {
+//                    result = false;
+//                    return result;
+//                }
 
                 if($("#unit").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择公司！';
@@ -124,7 +124,7 @@
                         data: {
                             name: name,
                             phone: phone,
-                            password:password,
+//                            password:password,
                             unit_id:unit_id,
                             number:number,
                             email:email
@@ -169,15 +169,15 @@
                     <span class="columns text-center"><img src="/image/volunteer/u32.png" alt=""></span>
                 </label>
 
-                <label>
-                    <input id="password" class="columns" type="password" placeholder="请输入密码">
-                    <span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>
-                </label>
+                {{--<label>--}}
+                    {{--<input id="password" class="columns" type="password" placeholder="请输入密码">--}}
+                    {{--<span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>--}}
+                {{--</label>--}}
 
-                <label>
-                    <input id="repassword" class="columns" type="password" placeholder="请确认密码">
-                    <span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>
-                </label>
+                {{--<label>--}}
+                    {{--<input id="repassword" class="columns" type="password" placeholder="请确认密码">--}}
+                    {{--<span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>--}}
+                {{--</label>--}}
 
                 <label>
                     <select id="unit" class="columns">
