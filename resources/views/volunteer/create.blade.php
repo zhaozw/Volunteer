@@ -159,39 +159,26 @@
 
         <form>
             <div class="row column log-in-form">
-                <h4 class="text-center">注册账号</h4>
                 <label>
+                    <span class="columns text-center"><p class="sign_up_mc">姓 名</p></span>
                     <input id="name" class="columns" type="text" placeholder="请输入姓名">
-                    <span class="columns text-center"><img src="/image/volunteer/u34.png" alt=""></span>
                 </label>
                 <label>
+                    <span class="columns text-center"><p class="sign_up_mc">手 机</p></span>
                     <input id="phone" class="columns" type="text" placeholder="请输入手机号">
-                    <span class="columns text-center"><img src="/image/volunteer/u32.png" alt=""></span>
                 </label>
-
-                {{--<label>--}}
-                    {{--<input id="password" class="columns" type="password" placeholder="请输入密码">--}}
-                    {{--<span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>--}}
-                {{--</label>--}}
-
-                {{--<label>--}}
-                    {{--<input id="repassword" class="columns" type="password" placeholder="请确认密码">--}}
-                    {{--<span class="columns text-center"><img src="/image/volunteer/u51.png" alt=""></span>--}}
-                {{--</label>--}}
-
                 <label>
+                    <span class="columns text-center"><p class="sign_up_mc">公 司</p></span>
                     <select id="unit" class="columns">
                         <option value="-1">请选择</option>
                         @foreach($units as $unit)
                             <option value="{{$unit->id}}">{{$unit->full_name}}</option>
                         @endforeach
                     </select>
-                    <span class="columns text-center"><img src="/image/volunteer/u28.png" alt=""></span>
                 </label>
-
                 <label>
+                    <span class="columns text-center"><p class="sign_up_mc">编 码</p></span>
                     <input id="number" class="columns" type="text" placeholder="员工编码，例如：NMRO">
-                    <span class="columns text-center"><img src="/image/volunteer/u42.png" alt=""></span>
                 </label>
                 <p><a id="btn_save" type="button" class="button expanded">注册</a></p>
                 <p id="txt_warn" style="text-align:center;color:red"></p>
