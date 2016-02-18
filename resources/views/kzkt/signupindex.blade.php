@@ -31,13 +31,12 @@
 </head>
 <body>
 <div class="row" id="airclass">
-    <div class="small-10 small-centered large-4 large-centered columns">
+    <div class=" large-4 large-centered columns">
         <h4 class="text-center">课程简介</h4>
         <h6 class="text-left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;全科医学协作平台远程教育项目-2016空中课堂内分泌代谢基础班、高级版、精品班由蓝海联盟（北京）医学研究院主办，由内分泌代谢专家结合基层常见的内分泌疾病诊疗误区和难点、设置的远程教育课程。</h6>
         <div>
             <div>
                 <p>
-
                     <span class="baoming">报名时间</span> <span class="time">2016年3月---2016年4月</span>
                 </p>
                 <p>
@@ -45,11 +44,9 @@
                 </p>
             </div>
         </div>
-        <div style="background-color: #007aff;height: 2px;width: auto"></div>
+        <hr>
         <div>
-
-            <p class="baoming">报名方式</p>
-            <a href="#" class="button expanded">查看报名详情</a>
+            <a href="#" class="button expanded">报名方式</a>
         </div>
         <div>
             <hr>
