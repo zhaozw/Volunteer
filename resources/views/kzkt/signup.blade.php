@@ -418,7 +418,7 @@
                     </div>
                 </div>
 
-                <div class="weui_cell">
+                <div class="weui_cell showActionSheet">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">课程班</label>
                     </div>
