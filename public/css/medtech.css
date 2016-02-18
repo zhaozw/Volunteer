@@ -1,21 +1,14 @@
 @import url(vendor/foundation.min.css);
-
 body, h1, h2, h3, h4, h5, h6 {
-    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
+    font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif; }
 
 body {
-    background-image: url("../image/bg1.png");
-}
+    background-color: #49ACDA}
 
 #sign_up {
-    margin-top: 3rem;
-}
-
+    margin-top: 3rem; }
 #sign_up > div {
-    background-color: #fff;
-}
-
+    background-color: #fff; }
 #sign_up form h4 {
     margin-left: -.625rem;
     margin-right: -.625rem;
@@ -23,59 +16,47 @@ body {
     padding-top: .5rem;
     padding-bottom: .5rem;
     background-color: #222;
-    color: #fff;
-}
-
+    color: #fff; }
 #sign_up form input, #sign_up form select {
     width: 84%;
     background-color: #eee;
     border: none;
-    box-shadow: none;
-}
-
+    box-shadow: none; }
 #sign_up form span {
     width: 14%;
     height: 2.4375rem;
     margin: auto;
     padding: 0;
-    background-color: #eee;
-}
-
+    background-color: #eee; }
 #sign_up form span img {
-    padding-top: .2rem;
-}
-
+    padding-top: .2rem; }
 #sign_up form .button {
-    display: inline-block;
-}
+    display: inline-block; }
 
 #index {
     margin-top: 1rem; }
 #index p {
     position: relative;
     margin-bottom: 0;
-    bottom: 1.2rem;
+    bottom: 1.3rem;
     text-align: center;
     font-size: .6rem;
     color: #fff; }
 #index img {
     width: 100%;
-    margin-bottom: -.2rem; }
+    margin-bottom: -.1rem; }
 #index img:first-child {
     border-radius: .4rem .4rem 0 0; }
 
-/**/
-#airclass {
+/*# sourceMappingURL=medtech.css.map */
+
+
+#airclass{
     margin-top: 1rem;
 }
-
 #airclass > div {
-    background-color: #fff;
-}
-
-#airclass > div > div > div {
-    margin-left: 34px;
-}
+    height: 100%;
+    background-color: #fff; }
 
 #airclass h4 {
     margin-left: -.625rem;
@@ -84,8 +65,8 @@ body {
     padding-top: .5rem;
     padding-bottom: 1rem;
     background-color: #222;
-    color: #fff;
-}
+    color: #fff; }
+
 
 #airclass h6 {
     padding: 7px;
@@ -94,61 +75,53 @@ body {
     margin-right: -.625rem;
     margin-bottom: 0rem;
     padding-bottom: 1.5rem;
-    background-color: #49B3EF;
+    background-color: #48A5E2;
     color: #fff;
 }
+.baoming{
 
-.baoming {
-    font-size: 18px;
-    font-weight: bold;
-    color: #05587D;
+    font-size: 15px;
+    font-weight:bold;
+    color:#05587D;
 }
-
-.time {
+.time{
     font-size: 14px;
     color: #8a8a8a;
 }
-
-.baomingfs {
+.baomingfs{
     margin-top: 2px;
 }
-
-.banji {
-    font-size: 15px;
+.banji{
+    float: left;
+    font-size: 14px;
     font-weight: bold;
     color: #5f5f5f;
 }
-
-.xiangqing {
-    width: 95%;
+.xiangqing{
+    width: 90%;
     float: left;
-    font-size: 14px;
+    font-size: 13px;
     color: #5f5f5f;
 }
-
-.bj {
+.bj{
     margin-top: -22px;
 }
-
-.bj a img {
+.bj a img{
     width: 35px;
     float: right;
-    margin-top: -50px;
+    margin-top: -53px;
 }
-
 .btn {
     text-align: center;
     display: inline-block;
     cursor: pointer;
     -webkit-appearance: none;
-    transition: background-color .25s ease-out, color .25s ease-out;
+    transition: background-color .25s ease-out,color .25s ease-out;
     border-radius: 0;
     padding: .85em 1em;
     margin: -11px 1px -1rem;
     font-size: .9rem;
     background-color: #2199e8;
     color: #fff;
-    width: 133px;
+    width:133px;
 }
-	
-/*# sourceMappingURL=medtech.css.map */
