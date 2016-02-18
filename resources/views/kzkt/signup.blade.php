@@ -439,9 +439,9 @@
                 <div class="mask"></div>
                 <div class="weui_actionsheet">
                     <div class="weui_actionsheet_menu">
-                        <div class="weui_actionsheet_cell nextActionSheet">基础班</div>
-                        <div class="weui_actionsheet_cell nextActionSheet">高级班</div>
-                        <div class="weui_actionsheet_cell nextActionSheet">精品班</div>
+                        <div class="weui_actionsheet_cell actionsheet_cancel">基础班</div>
+                        <div class="weui_actionsheet_cell actionsheet_cancel">高级班</div>
+                        <div class="weui_actionsheet_cell actionsheet_cancel">精品班</div>
                     </div>
                 </div>
             </div>
