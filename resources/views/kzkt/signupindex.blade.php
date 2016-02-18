@@ -71,7 +71,7 @@
             <div>
                 <a href="#" class="button expanded">报名方式</a>
                 <a href="/kzkt/signup" class="button expanded">2016空中课堂报名</a>
-                <a href="#" class="button expanded">查看历史报名记录</a>
+                <a href="/kzkt/findAllRegister" class="button expanded">查看历史报名记录</a>
 
 
             </div>

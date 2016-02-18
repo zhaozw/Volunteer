@@ -10,7 +10,7 @@
 
     <script type="application/javascript">
         function goEdit(id) {
-            window.location.href = '/activity/kzkt/viewCard?id='+id;
+            window.location.href = '/kzkt/viewCard?id='+id;
         }
     </script>
 </head>
