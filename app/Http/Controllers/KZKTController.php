@@ -187,29 +187,29 @@ class KZKTController extends Controller
         }
     }
 
-    function findPreRegister(Request $request)
-    {
-        $openid = \Session::get('logged_user');
-        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 1)->get();
-        $array = array();
-        foreach ($airClassrooms as $airClassroom) {
-            $name = $airClassroom->name;
-            $id = $airClassroom->id;
-            $className = null;
-            if ($airClassroom->course_type == 1) {
-                $className = '基础班';
-            } else if ($airClassroom->course_type == 2) {
-                $className = '高级班';
-            } else {
-                $className = '精品班';
-            }
-
-            $row = array('name' => $name, 'id' => $id, 'className' => $className);
-            array_push($array, $row);
-        }
-
-        return view('kzkt.signupstudent', ['data' => $array]);
-    }
+//    function findPreRegister(Request $request)
+//    {
+//        $openid = \Session::get('logged_user');
+//        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 1)->get();
+//        $array = array();
+//        foreach ($airClassrooms as $airClassroom) {
+//            $name = $airClassroom->name;
+//            $id = $airClassroom->id;
+//            $className = null;
+//            if ($airClassroom->course_type == 1) {
+//                $className = '基础班';
+//            } else if ($airClassroom->course_type == 2) {
+//                $className = '高级班';
+//            } else {
+//                $className = '精品班';
+//            }
+//
+//            $row = array('name' => $name, 'id' => $id, 'className' => $className);
+//            array_push($array, $row);
+//        }
+//
+//        return view('kzkt.signupstudent', ['data' => $array]);
+//    }
 
 //    function findSingleRegister(Request $request)
 //    {
@@ -295,6 +295,11 @@ class KZKTController extends Controller
         $id = $request->input('id');
         $doctor = Doctor::where('id', $id)->first();
         $kzktData = KZKTClass::where('doctor_id', $doctor->id)->first();
+        $hospital = Hospital::where('id', $doctor->hospital_id)->first();
+        $address = $hospital->province . '-' . $hospital->city . '-' . $hospital->country;
+        $province = $hospital->province_id;
+        $city = $hospital->city_id;
+        $country = $hospital->country_id;
         if ($doctor != null && $kzktData != null) {
             $className = null;
             if ($kzktData->type == 1) {
@@ -305,7 +310,10 @@ class KZKTController extends Controller
                 $className = '精品班';
             }
 
-            return response()->json(['result' => '1', 'data' => $doctor, 'className' => $className, 'password'=>$kzktData->login_number]);
+            return response()->json(['result' => '1', 'data' => $doctor, 'address' => $address,
+                'className' => $className, 'password' => $kzktData->login_number,
+                'kzktType' => $kzktData->type, 'province' => $province,
+                'city' => $city, 'country' => $country]);
         } else {
             return response()->json(['result' => '-1']);
         }
