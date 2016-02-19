@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <title>完成报名</title>
-
+    <title>历史报名记录</title>
+    <link rel="stylesheet" href="/css/medtech.css">
     <link rel="stylesheet" href="/css/volunteer.css">
     <link rel="stylesheet" href="/css/weui.min.css">
 
