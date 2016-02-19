@@ -132,11 +132,18 @@
 
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id = "ss_" + this.id;
+                            var id =  this.id;
                             var name = this.hospital;
                             strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
                             "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
                         });
+                        
+                        if(strHtml.length == 0) {
+                            var id =  '-1';
+                            var name = '请选择医院';
+                            strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
+                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
+                        }
 
                         console.log(strHtml);
 
@@ -164,7 +171,6 @@
         }
 
         var onHospitalClick = function(id, name) {
-            var code = id.substr(3, id.length);
             document.getElementById('text_hospital').value = id;
             document.getElementById('text_location2').value = name;
             $(function () {
