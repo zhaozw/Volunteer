@@ -123,6 +123,7 @@
                     type : "get",
                     dataType : "json",
                     success: function (json) {
+
                         $("#select_hospital").empty();
 //                        var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
 //                        $(json.list).each(function () {
@@ -134,7 +135,7 @@
                             var id = this.id;
                             var name = this.hospital;
                             strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id,name + "\")'>" + this.hospital + "</div>";
+                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id+","+name + "\")'>" + this.hospital + "</div>";
                         });
 
                         $("#select_hospital").html(strHtml);
