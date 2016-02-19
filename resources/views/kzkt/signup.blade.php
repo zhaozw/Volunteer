@@ -86,11 +86,14 @@
                         $("#select_city").parents('.actionSheet_wrap').next().children(0).css("display", "block");
                         $("#select_city").parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
 
-                        $("#select_hospital").empty();
-                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
-                        $("#select_hospital").html(strHtml1);
+                        $("#text_location2").empty();
+                        $("#text_hospital").val("-1");
 
-                        $("#select_department").val("-1");
+//                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
+//                        $("#select_hospital").html(strHtml1);
+
+                        $("#select_department").empty();
+                        $("#text_department").val("-1");
 //                        $("#select_title").val("-1");
                     },
                     error: function (xhr, status, errorThrown) {
@@ -121,13 +124,23 @@
                     dataType : "json",
                     success: function (json) {
                         $("#select_hospital").empty();
-                        var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
+//                        var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
+//                        $(json.list).each(function () {
+//                            strHtml+="<option value='"+this.id+"'>"+this.hospital+"</option>";
+//                        });
+
+                        var strHtml = "";
                         $(json.list).each(function () {
-                            strHtml+="<option value='"+this.id+"'>"+this.hospital+"</option>";
+                            var id = this.id;
+                            var name = this.hospital;
+                            strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
+                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id,name + "\")'>" + this.hospital + "</div>";
                         });
+
                         $("#select_hospital").html(strHtml);
 
-                        $("#select_department").val("-1");
+                        $("#select_department").empty();
+                        $("#text_department").val("-1");
 //                        $("#select_title").val("-1");
 
                         $('.mask').removeClass('weui_fade_toggle');
@@ -145,6 +158,16 @@
         var onClassClick = function (id, name) {
             document.getElementById('text_class').value = id;
             document.getElementById('select_class').value = name;
+        }
+
+        var onHospitalClick = function(id, name) {
+            document.getElementById('text_hospital').value = id;
+            document.getElementById('text_location2').value = name;
+        }
+
+        var onDepartmentClick = function(id, name) {
+            document.getElementById('text_department').value = id;
+            document.getElementById('select_department').value = name;
         }
 
         $( window ).load(function() {
@@ -311,23 +334,17 @@
                     return result;
                 }
 
-                if($("#select_hospital").val() == '-1'){
+                if($("#text_hospital").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择医院！';
                     result = false;
                     return result;
                 }
 
-                if($("#select_department").val() == '-1'){
+                if($("#text_department").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择科室！';
                     result = false;
                     return result;
                 }
-
-//                if($("#select_title").val() == '-1'){
-//                    document.getElementById('txt_warn').innerText = '请选择职称！';
-//                    result = false;
-//                    return result;
-//                }
 
                 if(!verifyAddress()){
                     result = false;
@@ -341,9 +358,9 @@
                     var province = $("#text_province").val();
                     var city = $("#text_city").val();
                     var country = $("#text_country").val();
-//                    var hospital = $("#select_hospital").val();
-                    var hospital = $("#select_hospital option:selected").text();
-                    var department = $("#select_department").val();
+                    var hospital = $("#text_hospital").val();
+//                    var hospital = $("#select_hospital option:selected").text();
+                    var department = $("#text_department").val();
 //                    var title = $("#select_title").val();
                     var mail = $("#mail").val();
                     var oicq = $("#text_qq").val();
@@ -491,53 +508,49 @@
                 </div>
 
 
-                <div class="weui_cell">
+                <div class="weui_cell showActionSheet">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">医&emsp;院</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary">
-                        <select name="select_hospital" id="select_hospital" type="text" class="weui_input">
-                            <option value="-1">请选择</option>
-                        </select>
+                    <div class="weui_cell_bd weui_cell_primary location_select">
+                        <input name="text_location2" id="text_location2" type="text" class="weui_input" disabled placeholder="请选择医院">
                     </div>
                     <div class="weui_cell_ft"></div>
                 </div>
 
+                <div class="actionSheet_wrap">
+                    <div class="mask"></div>
+                    <div class="weui_actionsheet">
+                        <div id="select_hospital" class="weui_actionsheet_menu">
+                            <div class="weui_actionsheet_cell actionsheet_cancel">请选择医院</div>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="weui_cell">
+                <div class="weui_cell showActionSheet">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">科&emsp;室</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary">
-                        <select name="select_department" id="select_department" type="text" class="weui_input">
-                            <option value="-1">请选择</option>
-                            <option value="1">内分泌科</option>
-                            <option value="2">综合内科</option>
-                            <option value="3">全科</option>
-                            <option value="4">神经内科</option>
-                            <option value="5">心血管科</option>
-                            <option value="6">老年科</option>
-                        </select>
+                    <div class="weui_cell_bd weui_cell_primary location_select">
+                        <input name="select_department" id="select_department" type="text" class="weui_input" disabled placeholder="请选择科室">
                     </div>
                     <div class="weui_cell_ft"></div>
+
                 </div>
 
-
-                {{--<div class="weui_cell">--}}
-                    {{--<div class="weui_cell_hd">--}}
-                        {{--<label for="" class="weui_label">职&emsp;称</label>--}}
-                    {{--</div>--}}
-                    {{--<div class="weui_cell_bd weui_cell_primary">--}}
-                        {{--<select name="select_title" id="select_title" type="text" class="weui_input">--}}
-                            {{--<option value="-1">请选择</option>--}}
-                            {{--<option value="1">住院医师</option>--}}
-                            {{--<option value="2">主治医师</option>--}}
-                            {{--<option value="3">副主任医师</option>--}}
-                            {{--<option value="4">主任医师</option>--}}
-                        {{--</select>--}}
-                    {{--</div>--}}
-                    {{--<div class="weui_cell_ft"></div>--}}
-                {{--</div>--}}
+                <div class="actionSheet_wrap">
+                    <div class="mask"></div>
+                    <div class="weui_actionsheet">
+                        <div class="weui_actionsheet_menu">
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('1','内分泌科')">内分泌科</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('2','综合内科')">综合内科</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('3','全科')">全科</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('4','神经内科')">神经内科</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('5','心血管科')">心血管科</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('6','老年科')">老年科</div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
 
@@ -575,7 +588,9 @@
             <input type="hidden" id="text_province_view">
             <input type="hidden" id="text_city_view">
             <input type="hidden" id="text_country_view">
-            <input type="hidden" id="text_class">
+            <input type="hidden" id="text_class" value="-1">
+            <input type="hidden" id="text_hospital" value="-1">
+            <input type="hidden" id="text_department" value="-1">
         </form>
     </div>
 </div>
