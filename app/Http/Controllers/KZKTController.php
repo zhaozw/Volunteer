@@ -150,25 +150,34 @@ class KZKTController extends Controller
 
     function updateClassroom(Request $request)
     {
-        $airClassroom = AirClassroom::where('id', $request->input('id'))->first();
-        if (!$airClassroom) {
-            return response()->json(['result' => '-1']);
-        } else {
+        $id = $request->input('id');
+        $doctor = Doctor::where('id', $id)->first();
+        $kzktData = KZKTClass::where('doctor_id', $doctor->id)->first();
+        $hospital = Hospital::where('id', $request->input('hospital'))->first();
+        if($doctor != null && $kzktData != null) {
+            $doctor->name = $request->input('name');
+            $doctor->phone = $request->input('phone');
+            $doctor->hospital_id = $hospital->id;
+            $doctor->office = $request->input('department');
+            $doctor->email = $request->input('mail');
+            $doctor->qq = $request->input('oicq');
+            $doctor->save();
 
-            $airClassroom->name = $request->input('name');
-            $airClassroom->phone = $request->input('phone');
-            $airClassroom->password = substr($request->input('phone'), 5);
-            $airClassroom->course_type = $request->input('classType');
-            $airClassroom->province = $request->input('province');
-            $airClassroom->city = $request->input('city');
-            $airClassroom->country = $request->input('country');
-            $airClassroom->hospital = $request->input('hospital');
-            $airClassroom->department = $request->input('department');
-            $airClassroom->title = $request->input('title');
-            $airClassroom->mail = $request->input('mail');
-            $airClassroom->oicq = $request->input('oicq');
-            $airClassroom->save();
-            return response()->json(['result' => '1']);
+            $kzktData->login_number = substr($request->input('phone'), 5);
+            $kzktData->type = $request->input('classType');
+            if ($doctor->email) {
+                $kzktData->status = true;
+                $result = '1';
+            } else {
+                $kzktData->status = false;
+                $result = '2';
+            }
+            $kzktData->save();
+
+            return response()->json(['result' => $result, 'id' => $doctor->id]);
+        }
+        else {
+            return response()->json(['result' => '-1']);
         }
     }
 
