@@ -560,8 +560,10 @@
                         dataType: "json",
                         success: function (json) {
                             if (json.result == '-1') {
-                                document.getElementById('txt_warn').innerText = '该手机号已被报名过！';
+                                document.getElementById('txt_warn').innerText = '提交失败！';
+                                window.location.href = '/kzkt/index';
                             }
+
                             if (json.result == '1') {
                                 document.getElementById('txt_warn').innerText = '提交成功！';
                                 window.location.href = '/kzkt/viewCard?id='+json.id;
@@ -569,7 +571,7 @@
                             if (json.result == '2') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，请在未完成报名页面进行修改';
-//                                window.location.href = '/kzkt/findPreRegister';
+                                window.location.href = '/kzkt/index';
                                 console.log('bbb');
                             }
                         },
