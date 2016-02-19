@@ -373,7 +373,7 @@
                 if(result == true) {
                     var name = $("#name").val();
                     var phone = $("#phone").val();
-                    var classType = $("#select_class").val();
+                    var classType = $("#text_class").val();
                     var province = $("#text_province").val();
                     var city = $("#text_city").val();
                     var country = $("#text_country").val();
