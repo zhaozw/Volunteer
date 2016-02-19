@@ -102,7 +102,7 @@ class KZKTController extends Controller
             $doctor = new Doctor();
             $doctor->name = $request->input('name');
             $doctor->phone = $request->input('phone');
-            $doctor->hospital_id = $hospital->id;
+            $doctor->hospital_id = $request->input('hospital');
             $doctor->office = $request->input('department');
 //            $doctor->title = $request->input('title');
             $doctor->email = $request->input('mail');
