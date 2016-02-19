@@ -320,6 +320,7 @@ class KZKTController extends Controller
             $volunteerId = $volunteer->id;
         }
         $kzktDatas = KZKTClass::where('volunteer_id', $volunteerId)
+            ->where('status', true)
             ->orderBy('id', 'desc')
             ->get();
 
@@ -331,6 +332,7 @@ class KZKTController extends Controller
             $name = $doctor->name;
             $id = $doctor->id;
             $phone = $doctor->phone;
+            $time = $kzkt ->create_at;
             $className = null;
             if ($kzkt->type == 1) {
                 $className = '基础班';
@@ -340,10 +342,37 @@ class KZKTController extends Controller
                 $className = '精品班';
             }
 
-            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone);
+            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone, 'time' => $time);
             array_push($array, $row);
         }
 
-        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array]);
+        $unDatas = KZKTClass::where('volunteer_id', $volunteerId)
+            ->where('status', false)
+            ->orderBy('id', 'desc')
+            ->get();
+
+        $unarray = array();
+        $uncount = 0;
+        foreach ($unDatas as $kzkt) {
+            $uncount = $uncount + 1;
+            $doctor = Doctor::where('id', $kzkt->doctor_id)->first();
+            $name = $doctor->name;
+            $id = $doctor->id;
+            $phone = $doctor->phone;
+            $time = $kzkt ->create_at;
+            $className = null;
+            if ($kzkt->type == 1) {
+                $className = '基础班';
+            } else if ($kzkt->type == 2) {
+                $className = '高级班';
+            } else {
+                $className = '精品班';
+            }
+
+            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone, 'time' => $time);
+            array_push($unarray, $row);
+        }
+
+        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array, 'undata' => $unarray]);
     }
 }

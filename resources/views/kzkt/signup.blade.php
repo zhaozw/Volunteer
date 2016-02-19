@@ -87,6 +87,7 @@
                         $("#select_city").parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
 
                         $("#text_location2").empty();
+                        $("#select_hospital").empty();
                         $("#text_hospital").val("-1");
 
 //                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
@@ -137,7 +138,7 @@
                             strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
                             "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
                         });
-                        
+
                         if(strHtml.length == 0) {
                             var id =  '-1';
                             var name = '请选择医院';
@@ -325,7 +326,7 @@
                     return result;
                 }
 
-                if($("#select_class").val() == '-1'){
+                if($("#text_class").val() == '-1'){
                     document.getElementById('txt_warn').innerText = '请选择班级！';
                     result = false;
                     return result;
@@ -411,7 +412,7 @@
                             }
                             if (json.result == '2') {
                                 console.log('aaa');
-                                document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，提交数据请在xx进行修改';
+                                document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，请在未完成报名页面进行修改';
 //                                window.location.href = '/kzkt/findPreRegister';
                                 console.log('bbb');
                             }

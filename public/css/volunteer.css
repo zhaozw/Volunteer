@@ -78,14 +78,14 @@ select {
 .student_card .weui_cell_hd img:nth-child(1) {
   position: absolute;
   z-index: 100;
-  top: 0%;
+  top: 10%;
   left: -10px;
   width: 67px;
 }
 
 .student_card .weui_cell_hd img:nth-child(2) {
   position: absolute;
-  top: 12px;
+  top: 23px;
   left: 3%;
   width: 65px;
 }
@@ -101,7 +101,7 @@ select {
 .student_card .weui_cell_bd a:nth-child(2) span {
   position: absolute;
   right: 0px;
-  top: 5px;
+  top: 15px;
   padding-left: 7%;
   padding-right: 8%;
   font-size: 13px;
@@ -114,7 +114,7 @@ select {
 }
 
 .student_card .weui_cell_bd p {
-  font-size: 15px;
+  font-size: 14px;
   color: #585858;
 }
 
@@ -195,13 +195,13 @@ select {
 
 .student_sign .weui_cell .weui_cell_hd p {
   position: absolute;
-  top: 10px;
+  top: 12px;
   left: 15%;
 }
 
 .student_sign .weui_cell .weui_cell_ft img {
   position: absolute;
-  top: 10px;
+  top: 14px;
   right: 5%;
   padding-left: 12px;
   border-left: 1px solid #e8e8e8;
