@@ -403,17 +403,19 @@
 
         var verifyAddress = function () {
             var email = document.getElementById('mail').value;
-            if (email.length == 0) {
-                document.getElementById('txt_warn').innerText = '请输入邮箱！';
-                document.getElementById('mail').focus();
-                return false;
-            }
-            var pattern = /^[\w-]+@([\w-]+\.)+[\w-]+$/;
-            flag = pattern.test(email);
-            if (!flag) {
-                document.getElementById('txt_warn').innerText = '请输入正确邮箱！';
-                document.getElementById('mail').focus();
-                return false;
+            if (email.length > 0) {
+                if (email.length == 0) {
+                    document.getElementById('txt_warn').innerText = '请输入邮箱！';
+                    document.getElementById('mail').focus();
+                    return false;
+                }
+                var pattern = /^[\w-]+@([\w-]+\.)+[\w-]+$/;
+                flag = pattern.test(email);
+                if (!flag) {
+                    document.getElementById('txt_warn').innerText = '请输入正确邮箱！';
+                    document.getElementById('mail').focus();
+                    return false;
+                }
             }
             return true;
         }
