@@ -138,15 +138,17 @@
                             "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id+","+name + "\")'>" + this.hospital + "</div>";
                         });
 
+
+
                         $("#select_hospital").html(strHtml);
 
                         $("#select_department").empty();
                         $("#text_department").val("-1");
 //                        $("#select_title").val("-1");
 
-                        $('.mask').removeClass('weui_fade_toggle');
-                        $('.mask').css("display","none");
-                        $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+//                        $('.mask').removeClass('weui_fade_toggle');
+//                        $('.mask').css("display","none");
+//                        $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
 
                     },
                     error: function (xhr, status, errorThrown) {
