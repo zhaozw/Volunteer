@@ -313,7 +313,7 @@ class KZKTController extends Controller
 
             return response()->json(['result' => '1', 'data' => $doctor, 'address' => $address,
                 'className' => $className, 'password' => $kzktData->login_number,
-                'kzktType' => $kzktData->type, 'province' => $province,
+                'kzktType' => $kzktData->type, 'hosp' => $hospital->id, 'province' => $province,
                 'city' => $city, 'country' => $country, 'hospital' => $hospital->hospital]);
         } else {
             return response()->json(['result' => '-1']);
