@@ -59,7 +59,7 @@
 //                        province = json.data.province;
 //                        city = json.data.city;
 //                        country = json.data.country;
-//                        department = json.data.office;
+                        department = json.data.office;
 //                        hospital = json.data.hospital;
                         getProvince(province);
 //                        getCity(city, province);
@@ -95,9 +95,9 @@
 //                    });
                     var strHtml = "";
                     $(json.list).each(function () {
-                        var id = "ss_" + this.SA_PRIOVINCE_ID;
-                        strHtml += "<div id='ss_" + this.SA_PRIOVINCE_ID + "' class='weui_actionsheet_cell nextActionSheet' " +
-                        "value='" + this.SA_PRIOVINCE_ID + "' onclick='changeCity(\"" + id + "\")'>" + this.SA_PROVINCE + "</div>";
+                        var id = "ss_" + this.province_id;
+                        strHtml += "<div id='ss_" + this.province_id + "' class='weui_actionsheet_cell nextActionSheet' " +
+                        "value='" + this.province_id + "' onclick='changeCity(\"" + id + "\")'>" + this.province + "</div>";
                     });
                     $("#select_province").html(strHtml);
 //                    if (id != null)
@@ -245,9 +245,9 @@
                         $("#select_city").empty();
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id = "ss_" + this.SA_CITY_ID;
-                            strHtml += "<div id='ss_" + this.SA_CITY_ID + "' class='weui_actionsheet_cell nextActionSheet' " +
-                            "value='" + this.SA_CITY_ID + "' onclick='changeCountry(\"" + id + "\")'>" + this.SA_CITY + "</div>";
+                            var id = "ss_" + this.city_id;
+                            strHtml += "<div id='ss_" + this.city_id + "' class='weui_actionsheet_cell nextActionSheet' " +
+                            "value='" + this.city_id + "' onclick='changeCountry(\"" + id + "\")'>" + this.city + "</div>";
                         });
                         $("#select_city").html(strHtml);
 
@@ -287,9 +287,9 @@
                         $("#select_country").empty();
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id = "ss_" + this.SA_COUNTRY_ID;
-                            strHtml += "<div id='ss_" + this.SA_COUNTRY_ID + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.SA_COUNTRY_ID + "' onclick='changeHospital(\"" + id + "\")'>" + this.SA_COUNTRY + "</div>";
+                            var id = "ss_" + this.country_id;
+                            strHtml += "<div id='ss_" + this.country_id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
+                            "value='" + this.country_id + "' onclick='changeHospital(\"" + id + "\")'>" + this.country + "</div>";
                         });
                         $("#select_country").html(strHtml);
 
@@ -297,12 +297,15 @@
                         $("#select_city").parents('.actionSheet_wrap').next().children(0).css("display", "block");
                         $("#select_city").parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
 
+                        $("#text_location2").empty();
                         $("#select_hospital").empty();
-                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
-                        $("#select_hospital").html(strHtml1);
+                        $("#text_hospital").val("-1");
+//                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
+//                        $("#select_hospital").html(strHtml1);
 
-                        $("#select_department").val("-1");
-                        $("#select_title").val("-1");
+                        $("#select_department").empty();
+                        $("#text_department").val("-1");
+//                        $("#select_title").val("-1");
                     },
                     error: function (xhr, status, errorThrown) {
                         alert("Sorry, there was a problem!");
