@@ -166,6 +166,12 @@
         var onHospitalClick = function(id, name) {
             document.getElementById('text_hospital').value = id;
             document.getElementById('text_location2').value = name;
+            $(function () {
+                $('.mask').removeClass('weui_fade_toggle');
+                $('.mask').css("display","none");
+                $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+            });
+
         }
 
         var onDepartmentClick = function(id, name) {
