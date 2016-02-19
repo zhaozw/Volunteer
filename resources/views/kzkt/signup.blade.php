@@ -141,6 +141,12 @@
                 });
             });
         }
+
+        var onClassClick = function (id, name) {
+            document.getElementById('text_class').value = id;
+            document.getElementById('select_class').value = name;
+        }
+
         $( window ).load(function() {
             console.log( "window loaded" );
         });
@@ -423,12 +429,6 @@
                         <label for="" class="weui_label">课程班</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary location_select">
-                        {{--<select name="select_class" id="select_class" type="text" class="weui_input">--}}
-                            {{--<option value="-1">请选择班级</option>--}}
-                            {{--<option value="1">基础班</option>--}}
-                            {{--<option value="2">高级班</option>--}}
-                            {{--<option value="3">精品班</option>--}}
-                        {{--</select>--}}
                         <input name="select_class" id="select_class" type="text" class="weui_input" disabled placeholder="请选择班级">
                     </div>
                     <div class="weui_cell_ft"></div>
@@ -438,9 +438,9 @@
                     <div class="mask"></div>
                     <div class="weui_actionsheet">
                         <div class="weui_actionsheet_menu">
-                            <div class="weui_actionsheet_cell actionsheet_cancel">基础班</div>
-                            <div class="weui_actionsheet_cell actionsheet_cancel">高级班</div>
-                            <div class="weui_actionsheet_cell actionsheet_cancel">精品班</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onClassClick('1','基础班')">基础班</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onClassClick('2','高级班')">高级班</div>
+                            <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onClassClick('3','精品班')">精品班</div>
                         </div>
                     </div>
                 </div>
@@ -575,6 +575,7 @@
             <input type="hidden" id="text_province_view">
             <input type="hidden" id="text_city_view">
             <input type="hidden" id="text_country_view">
+            <input type="hidden" id="text_class">
         </form>
     </div>
 </div>
