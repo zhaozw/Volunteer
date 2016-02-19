@@ -98,7 +98,7 @@ class KZKTController extends Controller
             }
         }
         else {
-            $hospital = Hospital::where('hospital', $request->input('hospital'))->first();
+            $hospital = Hospital::where('hospital', (int)$request->input('hospital'))->first();
             $doctor = new Doctor();
             $doctor->name = $request->input('name');
             $doctor->phone = $request->input('phone');
