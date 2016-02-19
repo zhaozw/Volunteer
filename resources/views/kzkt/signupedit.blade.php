@@ -48,11 +48,13 @@
                         $("#mail").val(json.data.mail);
                         $("#text_qq").val(json.data.oicq);
                         $("#select_class").val(json.className);
+                        $("#text_class").val(json.kzktType);
 //                        $("#select_title").val(json.data.title);
                         $("#text_province").val(json.province);
                         $("#text_city").val(json.city);
                         $("#text_country").val(json.country);
-                        $("#text_location").val(json.address)
+                        $("#text_location").val(json.address);
+                        $("#select_hospital").val(json.hospital);
                         province = json.data.province;
                         city = json.data.city;
                         country = json.data.country;
@@ -61,7 +63,7 @@
                         getProvince(province);
 //                        getCity(city, province);
 //                        getCountry(country, city);
-                        getHospital(hospital, country);
+//                        getHospital(hospital, country);
                         getDepartment(department);
                     }
                 },
@@ -115,22 +117,22 @@
 
         var getDepartment = function (id) {
             switch (id) {
-                case 1:
+                case '1':
                     $('#select_department').val('内分泌科');
                     break;
-                case 2:
+                case '2':
                     $('#select_department').val('综合内科');
                     break;
-                case 3:
+                case '3':
                     $('#select_department').val('全科');
                     break;
-                case 4:
+                case '4':
                     $('#select_department').val('神经内科');
                     break;
-                case 5:
+                case '5':
                     $('#select_department').val('心血管科');
                     break;
-                case 6:
+                case '6':
                     $('#select_department').val('老年科');
                     break;
             }
@@ -194,47 +196,32 @@
 //            });
 //        }
 
-        var getHospital = function(id, branchId) {
-            var requestHospital = '/kzkt/hospital';
-            $.ajax({
-                url : requestHospital,
-                data: {
-                    id: branchId
-                },
-                type : "get",
-                dataType : "json",
-                success: function (json) {
-                    $("#select_hospital").empty();
+//        var getHospital = function(id, branchId) {
+//            var requestHospital = '/kzkt/hospital';
+//            $.ajax({
+//                url : requestHospital,
+//                data: {
+//                    id: branchId
+//                },
+//                type : "get",
+//                dataType : "json",
+//                success: function (json) {
+//                    $("#select_hospital").empty();
 //                    var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
 //                    $(json.list).each(function () {
 //                        strHtml+="<option value='"+this.SA_HOSPITAL_ID+"'>"+this.SA_HOSPITAL+"</option>";
 //                    });
-
-                    var strHtml = "";
-                    $(json.list).each(function () {
-                        var id =  this.id;
-                        var name = this.hospital;
-                        strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                        "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
-                    });
-
-                    if(strHtml.length == 0) {
-                        var id =  '-1';
-                        var name = '请选择医院';
-                        strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                        "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
-                    }
-
-                    $("#select_hospital").html(strHtml);
-                    console.log(id);
-                    if (id != null)
-                        $("#select_hospital").val(id);
-                },
-                error: function (xhr, status, errorThrown) {
-//                    alert("Sorry, there was a problem!");
-                }
-            });
-        }
+//
+//                    $("#select_hospital").html(strHtml);
+//                    console.log(id);
+//                    if (id != null)
+//                        $("#select_hospital").val(id);
+//                },
+//                error: function (xhr, status, errorThrown) {
+////                    alert("Sorry, there was a problem!");
+//                }
+//            });
+//        }
 
         var changeCity = function (id) {
             $(function () {

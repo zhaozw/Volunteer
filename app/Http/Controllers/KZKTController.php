@@ -300,6 +300,7 @@ class KZKTController extends Controller
         $province = $hospital->province_id;
         $city = $hospital->city_id;
         $country = $hospital->country_id;
+
         if ($doctor != null && $kzktData != null) {
             $className = null;
             if ($kzktData->type == 1) {
@@ -313,7 +314,7 @@ class KZKTController extends Controller
             return response()->json(['result' => '1', 'data' => $doctor, 'address' => $address,
                 'className' => $className, 'password' => $kzktData->login_number,
                 'kzktType' => $kzktData->type, 'province' => $province,
-                'city' => $city, 'country' => $country]);
+                'city' => $city, 'country' => $country, 'hospital' => $hospital->hospital]);
         } else {
             return response()->json(['result' => '-1']);
         }
