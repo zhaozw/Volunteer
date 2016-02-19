@@ -135,10 +135,10 @@
                             var id = this.id;
                             var name = this.hospital;
                             strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id+","+name + "\")'>" + this.hospital + "</div>";
+                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
                         });
 
-
+                        console.log(strHtml);
 
                         $("#select_hospital").html(strHtml);
 
@@ -146,9 +146,9 @@
                         $("#text_department").val("-1");
 //                        $("#select_title").val("-1");
 
-//                        $('.mask').removeClass('weui_fade_toggle');
-//                        $('.mask').css("display","none");
-//                        $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+                        $('.mask').removeClass('weui_fade_toggle');
+                        $('.mask').css("display","none");
+                        $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
 
                     },
                     error: function (xhr, status, errorThrown) {
