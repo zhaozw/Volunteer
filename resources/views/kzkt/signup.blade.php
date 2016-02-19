@@ -377,7 +377,7 @@
                     var province = $("#text_province").val();
                     var city = $("#text_city").val();
                     var country = $("#text_country").val();
-                    var hospital = $("#text_hospital").val();
+                    var hospital = parseInt($("#text_hospital").val());
 //                    var hospital = $("#select_hospital option:selected").text();
                     var department = $("#text_department").val();
 //                    var title = $("#select_title").val();
