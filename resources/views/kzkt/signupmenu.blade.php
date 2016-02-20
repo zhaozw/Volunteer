@@ -113,7 +113,7 @@
 
     <!--编辑部分-->
     <div id="div_edit" style="display: none">
-        <div class="weui_cells_title">请完善相应医生信息完成报名</div>
+        <div class="weui_cells_titles">请完善相应医生信息完成报名</div>
         <div class="container student_sign">
 
             <div class="weui_cells">
