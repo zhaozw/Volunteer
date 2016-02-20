@@ -297,7 +297,7 @@
                         $("#select_city").parents('.actionSheet_wrap').next().children(0).css("display", "block");
                         $("#select_city").parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
 
-                        $("#text_location2").empty();
+                        $("#text_location2").val('');
                         $("#select_hospital").empty();
                         $("#text_hospital").val("-1");
 //                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
