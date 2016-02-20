@@ -85,7 +85,7 @@
 <!-- 代码部分begin -->
 
 <div class="container">
-    <div id="div_tabs" class="his_hd">
+    <div id="div_tabs" style="height: 40px; margin: 0px;">
         {{--<a id="tab_a" href="#" class="his_style his_active">报名成功学员</a>--}}
         {{--<a id="tab_b" href="#" class="his_style">报名未成功学员</a>--}}
         <a id="tab_a" href="#" style="display: block; float: left; width: 50%; text-align: center;
