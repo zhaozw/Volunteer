@@ -20,7 +20,7 @@
         }
 
         $(document).ready(function () {
-            $("#div_tabs").attr("class", "tabsa");
+            $("#div_tabs").attr("class", "tabs");
 
             $("#tab_a").on('click', function () {
                 $("#tab_b").removeClass("active");
@@ -37,6 +37,29 @@
             });
 
         });
+    </script>
+    <script type="text/css">
+        .tabs {
+            height: 40px;
+            margin: 0px;
+        }
+
+        .tabs a {
+            display: block;
+            float: left;
+            width: 50%;
+            color: #333;
+            text-align: center;
+            background: #eee;
+            line-height: 50px;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .tabs a.active {
+            color: #fff;
+            background: #2199E8;
+        }
     </script>
 </head>
 {{--<body class="body-gray" ontouchstart>--}}
@@ -79,7 +102,7 @@
 <!-- 代码部分begin -->
 
 <div class="container">
-    <div id="div_tabs" class="tabsa">
+    <div id="div_tabs" class="tabs">
         <a id="tab_a" href="#" hidefocus="true" class="active">报名成功学员</a>
         <a id="tab_b" href="#" hidefocus="true">报名未成功学员</a>
     </div>
