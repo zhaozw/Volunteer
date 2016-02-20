@@ -100,7 +100,7 @@
     </div>
     <!--转发部分-->
     <div id="div_history">
-        <div class="weui_cells_title" style="margin-top: 10px;">请将听课证转发给相应医生完成报名</div>
+        <div class="weui_cells_title" style="margin-top: 15px;">请将听课证转发给相应医生完成报名</div>
 
         @foreach($data as $index)
         <div class="weui_cell student_card">
@@ -130,7 +130,7 @@
 
     <!--编辑部分-->
     <div id="div_edit" style="display: none">
-        <div class="weui_cells_title" style="margin-top: 10px;">请完善相应医生信息完成报名</div>
+        <div class="weui_cells_title" style="margin-top: 15px;">请完善相应医生信息完成报名</div>
         <div class="container student_sign">
 
             <div class="weui_cells">
