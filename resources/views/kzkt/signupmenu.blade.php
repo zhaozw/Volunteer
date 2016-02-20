@@ -20,7 +20,7 @@
         }
 
         $(document).ready(function () {
-            $("#div_tabs").attr("class", "tabs");
+            $("#div_tabs").attr("class", "tab_indexs");
 
             $("#tab_a").on('click', function () {
                 $("#tab_b").removeClass("active");
@@ -39,12 +39,12 @@
         });
     </script>
     <script type="text/css">
-        .tabs {
+        .tab_index {
             height: 40px;
             margin: 0px;
         }
 
-        .tabs a {
+        .tab_index a {
             display: block;
             float: left;
             width: 50%;
@@ -56,7 +56,7 @@
             text-decoration: none;
         }
 
-        .tabs a.active {
+        .tab_index a.index_active {
             color: #fff;
             background: #2199E8;
         }
@@ -102,8 +102,8 @@
 <!-- 代码部分begin -->
 
 <div class="container">
-    <div id="div_tabs" class="tabs">
-        <a id="tab_a" href="#" hidefocus="true" class="active">报名成功学员</a>
+    <div id="div_tabs" class="tab_index">
+        <a id="tab_a" href="#" hidefocus="true" class="index_active">报名成功学员</a>
         <a id="tab_b" href="#" hidefocus="true">报名未成功学员</a>
     </div>
     <!--转发部分-->
