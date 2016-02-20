@@ -20,6 +20,8 @@
         }
 
         $(document).ready(function () {
+            $("#div_tabs").attr("class", "tabsa");
+
             $("#tab_a").on('click', function () {
                 $("#tab_b").removeClass("active");
                 $("#tab_a").attr("class", "active");
@@ -77,13 +79,13 @@
 <!-- 代码部分begin -->
 
 <div class="container">
-    <div class="tabsa">
+    <div id="div_tabs" class="tabsa">
         <a id="tab_a" href="#" hidefocus="true" class="active">报名成功学员</a>
         <a id="tab_b" href="#" hidefocus="true">报名未成功学员</a>
     </div>
     <!--转发部分-->
     <div id="div_history">
-        <div class="weui_cells_titles">请将听课证转发给相应医生完成报名</div>
+        <div class="weui_cells_title">请将听课证转发给相应医生完成报名</div>
 
         @foreach($data as $index)
         <div class="weui_cell student_card">
@@ -113,7 +115,7 @@
 
     <!--编辑部分-->
     <div id="div_edit" style="display: none">
-        <div class="weui_cells_titles">请完善相应医生信息完成报名</div>
+        <div class="weui_cells_title">请完善相应医生信息完成报名</div>
         <div class="container student_sign">
 
             <div class="weui_cells">
