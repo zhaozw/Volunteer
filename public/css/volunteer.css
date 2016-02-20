@@ -252,7 +252,24 @@ select {
   margin: 0px;
 }
 
-.his_hd a {
+/*.his_hd a {*/
+  /*display: block;*/
+  /*float: left;*/
+  /*width: 50%;*/
+  /*color: #333;*/
+  /*text-align: center;*/
+  /*background: #eee;*/
+  /*line-height: 50px;*/
+  /*font-size: 15px;*/
+  /*text-decoration: none;*/
+/*}*/
+
+/*.his_hd a.his_hd_active {*/
+  /*color: #fff;*/
+  /*background: #2199E8;*/
+/*}*/
+
+.his_style {
   display: block;
   float: left;
   width: 50%;
@@ -264,7 +281,7 @@ select {
   text-decoration: none;
 }
 
-.his_hd a.his_hd_active {
+.his_active {
   color: #fff;
   background: #2199E8;
 }
