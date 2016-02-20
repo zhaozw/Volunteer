@@ -82,8 +82,8 @@
 
 <div class="container">
     <div id="div_tabs" class="his_hd">
-        <a id="tab_a" href="#" class="his_hd_active">报名成功学员</a>
-        <a id="tab_b" href="#" >报名未成功学员</a>
+        <p id="tab_a" class="a his_hd_active">报名成功学员</p>
+        <p id="tab_b" class="a">报名未成功学员</p>
     </div>
     <!--转发部分-->
     <div id="div_history">
