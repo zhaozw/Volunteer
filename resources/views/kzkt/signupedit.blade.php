@@ -303,7 +303,7 @@
 //                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
 //                        $("#select_hospital").html(strHtml1);
 
-                        $("#select_department").empty();
+                        $("#select_department").val('');
                         $("#text_department").val("-1");
 //                        $("#select_title").val("-1");
                     },
@@ -357,7 +357,7 @@
 
                         $("#select_hospital").html(strHtml);
 
-                        $("#select_department").empty();
+                        $("#select_department").val('');
                         $("#text_department").val("-1");
 
                         $('.mask').removeClass('weui_fade_toggle');
