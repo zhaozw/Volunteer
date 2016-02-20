@@ -20,48 +20,25 @@
         }
 
         $(document).ready(function () {
-            $("#div_tabs").attr("class", "tab_index");
+            $("#div_tabs").attr("class", "his_hd");
 
             $("#tab_a").on('click', function () {
-                $("#div_tabs").attr("class", "tab_index");
-                $("#tab_b").removeClass("index_active");
-                $("#tab_a").attr("class", "index_active");
+                $("#div_tabs").attr("class", "his_hd");
+                $("#tab_b").removeClass("his_hd_active");
+                $("#tab_a").attr("class", "his_hd_active");
                 $("#div_history").show();
                 $("#div_edit").hide();
             });
 
             $("#tab_b").on('click', function () {
-                $("#div_tabs").attr("class", "tab_index");
-                $("#tab_a").removeClass("index_active");
-                $("#tab_b").attr("class", "index_active");
+                $("#div_tabs").attr("class", "his_hd");
+                $("#tab_a").removeClass("his_hd_active");
+                $("#tab_b").attr("class", "his_hd_active");
                 $("#div_edit").show();
                 $("#div_history").hide();
             });
 
         });
-    </script>
-    <script type="text/css">
-        .tab_index {
-            height: 40px;
-            margin: 0px;
-        }
-
-        .tab_index a {
-            display: block;
-            float: left;
-            width: 50%;
-            color: #333;
-            text-align: center;
-            background: #eee;
-            line-height: 50px;
-            font-size: 15px;
-            text-decoration: none;
-        }
-
-        .tab_index a.index_active {
-            color: #fff;
-            background: #2199E8;
-        }
     </script>
 </head>
 {{--<body class="body-gray" ontouchstart>--}}
@@ -104,8 +81,8 @@
 <!-- 代码部分begin -->
 
 <div class="container">
-    <div id="div_tabs" class="tab_index">
-        <a id="tab_a" href="#" hidefocus="true" class="index_active">报名成功学员</a>
+    <div id="div_tabs" class="his_hd">
+        <a id="tab_a" href="#" hidefocus="true" class="his_hd_active">报名成功学员</a>
         <a id="tab_b" href="#" hidefocus="true">报名未成功学员</a>
     </div>
     <!--转发部分-->

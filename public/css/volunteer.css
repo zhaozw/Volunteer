@@ -224,12 +224,13 @@ select {
 .mask {
   display: none;
 }
-.tabsa {
+
+.tabs {
   height: 40px;
   margin: 0px;
 }
 
-.tabsa a {
+.tabs a {
   display: block;
   float: left;
   width: 50%;
@@ -241,7 +242,29 @@ select {
   text-decoration: none;
 }
 
-.tabsa a.active {
+.tabs a.active {
+  color: #fff;
+  background: #2199E8;
+}
+
+.his_hd {
+  height: 40px;
+  margin: 0px;
+}
+
+.his_hd a {
+  display: block;
+  float: left;
+  width: 50%;
+  color: #333;
+  text-align: center;
+  background: #eee;
+  line-height: 50px;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.his_hd a.his_hd_active {
   color: #fff;
   background: #2199E8;
 }
