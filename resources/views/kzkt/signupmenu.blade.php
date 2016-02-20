@@ -87,7 +87,7 @@
                                             <p>手机号：{{$index['phone']}}</p>
                                             <p>报名时间：{{$index['time']}}</p>
                                         </a>
-                                        <a href="">
+                                        <a onclick="goViewCard({{$index['id']}})">
                                             <span>点<br>击<br>转<br>发</span>
                                         </a>
                                     </div>
