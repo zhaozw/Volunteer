@@ -99,7 +99,7 @@
         background: #eee;">报名未成功学员</a>
     </div>
     <!--转发部分-->
-    <div id="div_history" style="margin: 5px;">
+    <div id="div_history" style="margin-top: 5px;">
         <div class="weui_cells_title">请将听课证转发给相应医生完成报名</div>
 
         @foreach($data as $index)
@@ -129,7 +129,7 @@
 
 
     <!--编辑部分-->
-    <div id="div_edit" style="margin: 5px; display: none">
+    <div id="div_edit" style="margin-top: 5px; display: none">
         <div class="weui_cells_title">请完善相应医生信息完成报名</div>
         <div class="container student_sign">
 
