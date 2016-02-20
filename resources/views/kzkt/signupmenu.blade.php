@@ -24,16 +24,20 @@
 
             $("#tab_a").on('click', function () {
 //                $("#div_tabs").attr("class", "his_hd");
-                $("#tab_b").removeClass("his_active");
-                $("#tab_a").attr("class", "his_style his_active");
+//                $("#tab_b").removeClass("his_active");
+//                $("#tab_a").attr("class", "his_style his_active");
+                $("#tab_a").css({"color":"#fff","backgroundColor":"#2199E8"});
+                $("#tab_b").css({"color":"#333","backgroundColor":"#eee"});
                 $("#div_history").show();
                 $("#div_edit").hide();
             });
 
             $("#tab_b").on('click', function () {
 //                $("#div_tabs").attr("class", "his_hd");
-                $("#tab_a").removeClass("his_active");
-                $("#tab_b").attr("class", "his_style his_active");
+//                $("#tab_a").removeClass("his_active");
+//                $("#tab_b").attr("class", "his_style his_active");
+                $("#tab_b").css({"color":"#fff","backgroundColor":"#2199E8"});
+                $("#tab_a").css({"color":"#333","backgroundColor":"#eee"});
                 $("#div_edit").show();
                 $("#div_history").hide();
             });
@@ -82,8 +86,17 @@
 
 <div class="container">
     <div id="div_tabs" class="his_hd">
-        <a id="tab_a" href="#" class="his_style his_active">报名成功学员</a>
-        <a id="tab_b" href="#" class="his_style">报名未成功学员</a>
+        {{--<a id="tab_a" href="#" class="his_style his_active">报名成功学员</a>--}}
+        {{--<a id="tab_b" href="#" class="his_style">报名未成功学员</a>--}}
+        <a id="tab_a" href="#" style="display: block; float: left; width: 50%; text-align: center;
+        line-height: 50px; font-size: 15px; text-decoration: none;
+        color: #fff;
+        background: #2199E8;">报名成功学员</a>
+
+        <a id="tab_b" href="#" style="display: block; float: left; width: 50%; text-align: center;
+        line-height: 50px; font-size: 15px; text-decoration: none;
+        color: #333;
+        background: #eee;">报名未成功学员</a>
     </div>
     <!--转发部分-->
     <div id="div_history">
