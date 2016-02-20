@@ -25,7 +25,7 @@
             $("#tab_a").on('click', function () {
 //                $("#div_tabs").attr("class", "his_hd");
                 $("#tab_b").removeClass("his_active");
-                $("#tab_a").attr("class", "his_active");
+                $("#tab_a").attr("class", "his_style his_active);
                 $("#div_history").show();
                 $("#div_edit").hide();
             });
@@ -33,7 +33,7 @@
             $("#tab_b").on('click', function () {
 //                $("#div_tabs").attr("class", "his_hd");
                 $("#tab_a").removeClass("his_active");
-                $("#tab_b").attr("class", "his_active");
+                $("#tab_b").attr("class", "his_style his_active");
                 $("#div_edit").show();
                 $("#div_history").hide();
             });
