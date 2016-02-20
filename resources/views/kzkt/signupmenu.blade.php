@@ -20,18 +20,20 @@
         }
 
         $(document).ready(function () {
-            $("#div_tabs").attr("class", "tab_indexs");
+            $("#div_tabs").attr("class", "tab_index");
 
             $("#tab_a").on('click', function () {
-                $("#tab_b").removeClass("active");
-                $("#tab_a").attr("class", "active");
+                $("#div_tabs").attr("class", "tab_index");
+                $("#tab_b").removeClass("index_active");
+                $("#tab_a").attr("class", "index_active");
                 $("#div_history").show();
                 $("#div_edit").hide();
             });
 
             $("#tab_b").on('click', function () {
-                $("#tab_a").removeClass("active");
-                $("#tab_b").attr("class", "active");
+                $("#div_tabs").attr("class", "tab_index");
+                $("#tab_a").removeClass("index_active");
+                $("#tab_b").attr("class", "index_active");
                 $("#div_edit").show();
                 $("#div_history").hide();
             });
