@@ -399,6 +399,11 @@ class KZKTController extends Controller
 
     }
 
+    function ViewHospital(Request $request)
+    {
+        return view('kzkt.addhospital');
+    }
+
     function classdetail1(Request $request)
     {
         return view('kzkt.classdetail1');
