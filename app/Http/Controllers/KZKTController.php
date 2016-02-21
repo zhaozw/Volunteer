@@ -393,4 +393,24 @@ class KZKTController extends Controller
 
         return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array, 'undata' => $unarray]);
     }
+
+    function addHospital(Request $request)
+    {
+
+    }
+
+    function classdetail1(Request $request)
+    {
+        return view('kzkt.classdetail1');
+    }
+
+    function classdetail2(Request $request)
+    {
+        return view('kzkt.classdetail2');
+    }
+
+    function classdetail3(Request $request)
+    {
+        return view('kzkt.classdetail3');
+    }
 }

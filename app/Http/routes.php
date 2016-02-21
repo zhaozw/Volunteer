@@ -70,6 +70,9 @@ Route::group(['prefix' => 'kzkt'], function () {
     Route::get('/signup', 'KZKTController@signup');
     Route::get('/editClassroom', 'KZKTController@editClassroom');
     Route::get('/viewCard', 'KZKTController@viewCard');
+    Route::get('/classdetail1', 'KZKTController@classdetail1');
+    Route::get('/classdetail2', 'KZKTController@classdetail2');
+    Route::get('/classdetail3', 'KZKTController@classdetail3');
 });
 
 Route::group(['prefix' => 'hpxt'], function () {

@@ -28,6 +28,21 @@
     <title>空中课堂报名</title>
     <link rel="stylesheet" href="/css/medtech.css">
 
+    <script type="application/javascript">
+        function goDetail1() {
+            window.location.href = '/kzkt/classdetail1';
+        }
+
+        function goDetail2() {
+            window.location.href = '/kzkt/classdetail2';
+        }
+
+        function goDetail3() {
+            window.location.href = '/kzkt/classdetail3';
+        }
+
+    </script>
+
 </head>
 <body>
 <div class="row" id="airclass">
