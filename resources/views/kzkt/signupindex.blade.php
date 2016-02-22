@@ -5,6 +5,9 @@
     <title>空中课堂报名</title>
     <link rel="stylesheet" href="/css/medtech.css">
 
+    <!-- 引入 jQuery 库 -->
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+
     <script type="application/javascript">
         function goDetail1() {
             var id = document.getElementById('text_view').value;

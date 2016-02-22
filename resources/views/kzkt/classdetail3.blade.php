@@ -63,6 +63,9 @@
         }
 
     </style>
+
+    <!-- 引入 jQuery 库 -->
+    <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
     <script type="application/javascript">
         function goSignUp() {
             window.location.href = '/kzkt/signup';
