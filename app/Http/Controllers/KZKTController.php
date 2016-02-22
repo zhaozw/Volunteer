@@ -12,6 +12,7 @@ use \App\Model\Hospital;
 use \App\Model\HPXTClass;
 use \App\Model\Volunteer;
 use DB;
+use Illuminate\Support\Facades\Log;
 use Overtrue\Wechat\Js;
 
 
@@ -412,8 +413,8 @@ class KZKTController extends Controller
             $strRealId = substr($hospital->hospital_id, $length);
             $realId = intval($strRealId, 10);
             $realId = $realId + 1;
-            $temp = sprintf("%03d", $realId);//生成4位数，不足前面补0
-            $newId = $hospital->hospital_id . $temp;
+            $temp = sprintf("%03d", $realId);//生成3位数，不足前面补0
+            $newId = $hospital->country_id . $temp;
 
             $data = new Hospital();
             $data->province = $hospital->province;
