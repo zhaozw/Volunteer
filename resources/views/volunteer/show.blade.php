@@ -34,7 +34,7 @@
                 {{$volunteer->unit->full_name}}
             </h4>
             <hr>
-            <a class="btn btn-warning" style="float: right" href="{{url('/volunteer/edit-self')}}">修改个人信息</a>
+            <a class="btn btn-warning" style="margin-left: 63%" href="{{url('/volunteer/edit-self')}}">修改个人信息</a>
         </div>
     </div>
 </div>
