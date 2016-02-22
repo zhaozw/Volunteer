@@ -401,9 +401,9 @@ class KZKTController extends Controller
         $country = $request->input('country');
         $name = $request->input('hospital');
 
-        $hospital = Hospital::where('province', $province)
-            ->where('city', $city)
-            ->where('country', $country)
+        $hospital = Hospital::where('province_id', $province)
+            ->where('city_id', $city)
+            ->where('country_id', $country)
             ->orderBy('hospital_id', 'desc')
             ->first();
 
