@@ -73,13 +73,13 @@
 
             <hr>
             <p class="bj">
-                <span class="banji">内分泌代谢疾病基础班</span><br>
+                <span class="banji">内分泌代谢疾病高级班</span><br>
                 <span class="xiangqing">课程内容围绕糖尿病并发症预防和治疗、以及降糖药的选择与延展等。</span>
                 <a><img src="/image/airclass/u42.png" onclick="goDetail2();"></a>
             </p>
             <hr>
             <p class="bj">
-                <span class="banji">内分泌代谢疾病基础班</span><br>
+                <span class="banji">内分泌代谢疾病精品班</span><br>
                 <span class="xiangqing">课程以病例分享以及课题研究的形式对内分泌常见疾病的讨论，病例谈论分析。</span>
                 <a><img src="/image/airclass/u42.png" onclick="goDetail3();"></a>
             </p>

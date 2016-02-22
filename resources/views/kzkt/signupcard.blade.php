@@ -103,7 +103,7 @@
         </div>
         <div class="weui_cell">
             <div class="weui_cell_hd qrcode">
-                <img class="img_100" src="/image/kzkt/2dcodev3.png" alt="">
+                <img class="img_100" src="/image/kzkt/2dcodedocmate.png" alt="">
             </div>
             <div class="weui_cell_bd">
                 <p>长按识别二维码</p>
@@ -123,7 +123,7 @@
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" charset="utf-8">
-    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), true, true) ?>);
+    wx.config(<?php echo $js->config(array('checkJsApi','onMenuShareAppMessage'), false, false) ?>);
 
 
     wx.ready(function () {
