@@ -399,34 +399,39 @@ class KZKTController extends Controller
         $province = $request->input('province');
         $city = $request->input('city');
         $country = $request->input('country');
+        $name = $request->input('hospital');
 
         $hospital = Hospital::where('province', $province)
             ->where('city', $city)
             ->where('country', $country)
-            ->orderBy('hospital_id', 'desc');
+            ->orderBy('hospital_id', 'desc')
+            ->first();
 
-        $length = strlen($hospital->country_id);
-        $strRealId = substr($hospital->hospital_id, $length);
-        $realId = intval($strRealId, 10);
-        $realId = $realId + 1;
-        $temp = sprintf("%03d", $realId);//生成4位数，不足前面补0
-        $newId = $hospital->hospital_id.$temp;
+        if($hospital) {
+            $length = strlen($hospital->country_id);
+            $strRealId = substr($hospital->hospital_id, $length);
+            $realId = intval($strRealId, 10);
+            $realId = $realId + 1;
+            $temp = sprintf("%03d", $realId);//生成4位数，不足前面补0
+            $newId = $hospital->hospital_id . $temp;
 
-        $data = new Hospital();
-        $data->province = $hospital->province;
-        $data->province_id = $hospital->province_id;
-        $data->city = $hospital->city;
-        $data->city_id = $hospital->city_id;
-        $data->country = $hospital->country;
-        $data->country_id = $hospital->country_id;
+            $data = new Hospital();
+            $data->province = $hospital->province;
+            $data->province_id = $hospital->province_id;
+            $data->city = $hospital->city;
+            $data->city_id = $hospital->city_id;
+            $data->country = $hospital->country;
+            $data->country_id = $hospital->country_id;
+            $data->hospital = $name;
+            $data->hospital_id = $hospital->$newId;
+            $data->save();
 
-        if ($hospital->hospital_id) {
-
+            return response()->json(['result' => '1']);
         }
         else {
-            $hospital = new Hospital();
-
+            return response()->json(['result' => '-1']);
         }
+
     }
 
     function viewHospital(Request $request)

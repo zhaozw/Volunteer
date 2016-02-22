@@ -13,6 +13,24 @@
 
     <script type="application/javascript">
 
+        var request = function (paras) {
+            var url = location.href;
+            var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+            var paraObj = {}
+            for (i = 0; j = paraString[i]; i++) {
+                paraObj[j.substring(0, j.indexOf("=")).
+                        toLowerCase()] = j
+                        .substring(j.indexOf("=") + 1, j.length);
+
+            }
+            var returnValue = paraObj[paras.toLowerCase()];
+            if (typeof(returnValue) == "undefined") {
+                return "";
+            } else {
+                return returnValue;
+            }
+        }
+
         var changeCity = function (id) {
             $(function () {
                 var branchId = $('#' + id).attr('value');
@@ -90,12 +108,6 @@
                         $("#select_hospital").empty();
                         $("#text_hospital").val("-1");
 
-//                        var strHtml1 = "<option value='-1' selected=true>" + "请选择" + "</option>";
-//                        $("#select_hospital").html(strHtml1);
-
-                        $("#select_department").empty();
-                        $("#text_department").val("-1");
-//                        $("#select_title").val("-1");
                     },
                     error: function (xhr, status, errorThrown) {
                         alert("Sorry, there was a problem!");
@@ -115,54 +127,7 @@
                 var tmp = $('#text_province_view').val() + '-' + $('#text_city_view').val()
                         + '-' + $('#text_country_view').val();
                 $('#text_location').val(tmp);
-                var requestHospital = '/kzkt/hospital';
-                $.ajax({
-                    url : requestHospital,
-                    data: {
-                        id: branchId
-                    },
-                    type : "get",
-                    dataType : "json",
-                    success: function (json) {
 
-                        $("#select_hospital").empty();
-//                        var strHtml="<option value='-1' selected=true>"+"请选择"+"</option>";
-//                        $(json.list).each(function () {
-//                            strHtml+="<option value='"+this.id+"'>"+this.hospital+"</option>";
-//                        });
-
-                        var strHtml = "";
-                        $(json.list).each(function () {
-                            var id =  this.id;
-                            var name = this.hospital;
-                            strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
-                        });
-
-                        if(strHtml.length == 0) {
-                            var id =  '-1';
-                            var name = '请选择医院';
-                            strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
-                        }
-
-                        console.log(strHtml);
-
-                        $("#select_hospital").html(strHtml);
-
-                        $("#select_department").empty();
-                        $("#text_department").val("-1");
-//                        $("#select_title").val("-1");
-
-                        $('.mask').removeClass('weui_fade_toggle');
-                        $('.mask').css("display","none");
-                        $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
-
-                    },
-                    error: function (xhr, status, errorThrown) {
-                        alert("Sorry, there was a problem!");
-                    }
-                });
             });
         }
 
@@ -283,20 +248,21 @@
                         success: function (json) {
                             console.log('1');
                             if (json.result == '-1') {
-                                document.getElementById('txt_warn').innerText = '该手机号已被报名过！';
+                                document.getElementById('txt_warn').innerText = '提交失败！';
                             }
+
                             if (json.result == '1') {
-                                console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '提交成功！';
-                                window.location.href = '/kzkt/viewCard?id='+json.id;
-                                console.log('bbb');
+                                var id = request("id");
+                                if(id == '0') {
+                                    window.location.href = '/kzkt/signup';
+                                }
+                                else{
+                                    window.location.href = '/kzkt/editClassroom?id='+id;
+                                }
                             }
-                            if (json.result == '2') {
-                                console.log('aaa');
-                                document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，请在未完成报名页面进行修改';
-                                window.location.href = '/kzkt/index';
-                                console.log('bbb');
-                            }
+
+
                         },
                         error: function (xhr, status, errorThrown) {
                             alert("Sorry, there was a problem!");

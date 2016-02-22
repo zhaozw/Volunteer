@@ -189,7 +189,7 @@
 
         var onEditClick = function() {
             console.log('onEditClick');
-            window.location.href = '/kzkt/viewHospital?id=1';
+            window.location.href = '/kzkt/viewHospital?id=0';
         }
 
 
