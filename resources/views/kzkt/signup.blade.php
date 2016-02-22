@@ -422,7 +422,11 @@
 
                                 $.ajax({
                                     type: "get",
-                                    url: requestUrl,
+                                    async: false,
+                                    url : requestUrl,
+                                    dataType : "jsonp",
+                                    jsonp: "callbackparam",//服务端用于接收callback调用的function名的参数
+                                    jsonpCallback:"success_jsonpCallback",//callback的function名称
                                     data: {
                                         mobile: phone,
                                         pwd: '',
@@ -431,16 +435,17 @@
                                     },
                                     success: function (data) {
                                         console.log(data);
-                                        window.location.href = '/kzkt/viewCard?id='+json.id;
+
                                     },
                                     error: function (xhr, status, errorThrown) {
-                                        alert("Sorry, there was a problem!");
+//                                        alert("Sorry, there was a problem!");
                                     },
                                     complete: function (xhr, status) {
 
                                     }
                                 });
 
+                                window.location.href = '/kzkt/viewCard?id='+json.id;
                             }
 
 
