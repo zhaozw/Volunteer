@@ -187,8 +187,9 @@
             document.getElementById('select_department').value = name;
         }
 
-        var onEditClick = function(id, name) {
-            window.location.href = '/kzkt/ViewHospital?id=1';
+        var onEditClick = function() {
+            console.log('onEditClick');
+            window.location.href = '/kzkt/viewHospital?id=1';
         }
 
 
