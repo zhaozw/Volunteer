@@ -116,7 +116,7 @@
         <img class="img_100" src="/image/kzkt/introduce.png" alt="">
     </div>
     <div class="click_button">
-        <img class="img_100" src="/image/kzkt/forward.png" alt="">
+        <img class="img_100" src="/image/kzkt/forward2.png" alt="">
     </div>
 
 </div>

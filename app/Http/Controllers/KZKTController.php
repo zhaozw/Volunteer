@@ -405,7 +405,15 @@ class KZKTController extends Controller
             ->where('country', $country)
             ->orderBy('hospital_id', 'desc');
 
-        if ($hospital) {
+        $data = new Hospital();
+        $data->province = $hospital->province;
+        $data->province_id = $hospital->province_id;
+        $data->city = $hospital->city;
+        $data->city_id = $hospital->city_id;
+        $data->country = $hospital->country;
+        $data->country_id = $hospital->country_id;
+
+        if ($hospital->hospital_id) {
 
         }
         else {
