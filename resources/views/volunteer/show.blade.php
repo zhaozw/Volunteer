@@ -19,17 +19,17 @@
     <div class="row footer">
         <div class="user-info">
             <hr>
-            <h4>
+            <h4 class="h4">
                 <small>电话</small>
                 {{$volunteer->phone}}
             </h4>
             <hr>
-            <h4>
+            <h4 class="h4">
                 <small>邮箱</small>
                 {{$volunteer->email}}
             </h4>
             <hr>
-            <h4>
+            <h4 class="h4">
                 <small>公司</small>
                 {{$volunteer->unit->full_name}}
             </h4>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
     <title>注册账号</title>
-    <link rel="stylesheet" href="/css/medtech.css">
+    <link rel="stylesheet" href="/css/weui.min.css">
+    <link rel="stylesheet" href="/css/volunteer.css">
     <!-- 引入 jQuery 库 -->
     <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 
@@ -69,7 +70,43 @@
             return true;
         }
 
+        var onUnitClick = function(id) {
+            document.getElementById('unit').value = id;
+            if (id =='1') {
+                var name = '诺和诺德';
+            }
+            else {
+                var name = '迈德科技';
+            }
+            document.getElementById('text_unit').value = name;
+            $(function () {
+                $('.mask').removeClass('weui_fade_toggle');
+                $('.mask').css("display","none");
+                $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+            });
+
+        }
+
         $(document).ready(function(){
+
+            $('.showActionSheet').click(function(){
+                $(this).next().children(0).addClass('weui_fade_toggle');
+                $(this).next().children(0).css("display","block");
+                $(this).next().children(1).addClass('weui_actionsheet_toggle');
+            });
+
+            $('.actionsheet_cancel').click(function(){
+                $('.mask').removeClass('weui_fade_toggle');
+                $('.mask').css("display","none");
+                $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+            });
+
+            $('.nextActionSheet').click(function(){
+                $(this).parents('.actionSheet_wrap').next().children(0).addClass('weui_fade_toggle');
+                $(this).parents('.actionSheet_wrap').next().children(0).css("display","block");
+                $(this).parents('.actionSheet_wrap').next().children(1).addClass('weui_actionsheet_toggle');
+            })
+
 
             $("#btn_save").on('click',function () {
                 var result = true;
@@ -109,7 +146,6 @@
                 if(result == true) {
                     var name = $("#name").val();
                     var phone = $("#phone").val();
-                    var password = $("#password").val();
                     var unit_id = $("#unit").val();
                     var number = "";
                     var email = "";
@@ -153,40 +189,77 @@
     </script>
 </head>
 
-<body>
-<div class="row" id="sign_up">
-    <div class="small-10 small-centered large-4 large-centered columns">
+<body class="body-gray" ontouchstart>
+<div class="container" style="margin-top:35%">
+    <div id="sign_up">
 
-        <form>
-            <div class="row column log-in-form">
-                <label>
-                    <span class="columns text-center"><p class="sign_up_mc">姓 名</p></span>
-                    <input id="name" class="columns" type="text" placeholder="请输入姓名">
-                </label>
-                <label>
-                    <span class="columns text-center"><p class="sign_up_mc">手 机</p></span>
-                    <input id="phone" class="columns" type="text" placeholder="请输入手机号">
-                </label>
-                <label>
-                    <span class="columns text-center"><p class="sign_up_mc">公 司</p></span>
-                    <select id="unit" class="columns">
-                        <option value="-1">请选择</option>
-                        @foreach($units as $unit)
-                            <option value="{{$unit->id}}">{{$unit->full_name}}</option>
-                        @endforeach
-                    </select>
-                </label>
-                <label>
-                    <span class="columns text-center"><p class="sign_up_mc">编 码</p></span>
-                    <input id="number" class="columns" type="text" placeholder="员工编码，例如：NMRO">
-                </label>
-                <p><a id="btn_save" type="button" class="button expanded">注册</a></p>
-                <p id="txt_warn" style="text-align:center;color:red"></p>
+        <form action="" method="post">
+
+            <div class="weui_cells_title">请填写您的注册信息</div>
+
+            <div class="weui_cells weui_cells_form weui_cells_access">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <label for="" class="weui_label">姓&emsp;名</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="name" type="text" class="weui_input" placeholder="请输入姓名">
+                    </div>
+                </div>
+
+
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <label for="" class="weui_label">手机号</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="phone" type="text" class="weui_input" placeholder="请输入手机号">
+                    </div>
+                </div>
+
+                <div class="weui_cell showActionSheet">
+                    <div class="weui_cell_hd">
+                        <label for="" class="weui_label">公&emsp;司</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="text_unit" type="text" class="weui_input" disabled placeholder="请选择公司">
+                    </div>
+                    <div class="weui_cell_ft"></div>
+                </div>
+
+                <div class="actionSheet_wrap">
+                    <div class="mask"></div>
+                    <div class="weui_actionsheet">
+                        <div class="weui_actionsheet_menu">
+                            @foreach($units as $unit)
+                                <div class="weui_actionsheet_cell  actionsheet_cancel" onclick="onUnitClick({{$unit->id}})">{{$unit->full_name}}</div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+
             </div>
-        </form>
 
+            <div class="weui_cells weui_cells_form weui_cells_access">
+                <div class="weui_cell">
+                    <div class="weui_cell_hd">
+                        <label for="" class="weui_label">工&emsp;号</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input id="number" type="text" class="weui_input" placeholder="请输入员工编码">
+                    </div>
+                </div>
+            </div>
+
+            <p id="txt_warn" style="text-align:center;color:red"></p>
+            <a id="btn_save" class="weui_btn">注&emsp;册</a>
+
+            <input type="hidden" id="unit" value="-1">
+
+        </form>
     </div>
 </div>
 
 </body>
+
 </html>
