@@ -427,7 +427,7 @@
 
             });
 
-            $("#btn_save").on('click',function () {
+            $("#edit").on('click',function () {
                 window.location.href = '/kzkt/ViewHospital?id=1';
             });
         });
