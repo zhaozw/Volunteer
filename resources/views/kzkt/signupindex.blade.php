@@ -1,26 +1,3 @@
-{{--<!DOCTYPE html>--}}
-{{--<html lang="en">--}}
-{{--<head>--}}
-    {{--<meta charset="UTF-8">--}}
-    {{--<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">--}}
-    {{--<title>空中课堂报名</title>--}}
-
-    {{--<link rel="stylesheet" href="/css/weui.min.css">--}}
-    {{--<link rel="stylesheet" href="/css/volunteer.css">--}}
-    {{--<script type="application/javascript">--}}
-        {{--function goSignup() {--}}
-            {{--window.location.href = '/kzkt/signup';--}}
-        {{--}--}}
-    {{--</script>--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<div class="container index_pic">--}}
-    {{--<img src="/image/kzkt/mainpage.png" alt="">--}}
-    {{--<a type="button" class="weui_btn" onclick="goSignup()" >报&emsp;名</a>--}}
-{{--</div>--}}
-
-{{--</body>--}}
-{{--</html>--}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,16 +7,47 @@
 
     <script type="application/javascript">
         function goDetail1() {
-            window.location.href = '/kzkt/classdetail1';
+            var id = document.getElementById('text_view').value;
+            window.location.href = '/kzkt/classdetail1?id='+id;
         }
 
         function goDetail2() {
-            window.location.href = '/kzkt/classdetail2';
+            var id = document.getElementById('text_view').value;
+            window.location.href = '/kzkt/classdetail2?id='+id;
         }
 
         function goDetail3() {
-            window.location.href = '/kzkt/classdetail3';
+            var id = document.getElementById('text_view').value;
+            window.location.href = '/kzkt/classdetail3?id='+id;
         }
+
+        $(document).ready(function() {
+            var requestUrl = '/kzkt/checkuser';
+            $.ajax({
+                type: "get",
+                dataType: "json",
+                url: requestUrl,
+                success: function (json) {
+                    if (json.result == '-1') {
+                        $('#link_sign').hide();
+                        $('#link_view').hide();
+                        $('#text_view').val('-1');
+                    }
+
+                    if (json.result == '1') {
+                        $('#link_sign').show();
+                        $('#link_view').show();
+                        $('#text_view').val('1');
+                    }
+                },
+                error: function (xhr, status, errorThrown) {
+                    alert("Sorry, there was a problem!");
+                },
+                complete: function (xhr, status) {
+//                    alert("The request is complete!");
+                }
+            });
+        });
 
     </script>
 
@@ -86,11 +94,10 @@
             <hr>
         </div>
         <div>
-            <a href="/kzkt/showflow" class="button expanded">报名方式</a>
-            <a href="/kzkt/signup" class="button expanded">2016空中课堂报名</a>
-            <a href="/kzkt/findAllRegister" class="button expanded">查看历史报名记录</a>
-
-
+            <a id="link_show" href="/kzkt/showflow" class="button expanded">报名方式</a>
+            <a id="link_sign" href="/kzkt/signup" class="button expanded" style="display: none">2016空中课堂报名</a>
+            <a id="link_view" href="/kzkt/findAllRegister" class="button expanded" style="display: none">查看历史报名记录</a>
+            <input type="hidden" id="text_view" value="-1">
         </div>
     </div>
 

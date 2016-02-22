@@ -76,6 +76,7 @@ Route::group(['prefix' => 'kzkt'], function () {
     Route::get('/viewHospital', 'KZKTController@viewHospital');
     Route::post('/addHospital', 'KZKTController@addHospital');
     Route::get('/showflow', 'KZKTController@showflow');
+    Route::get('/checkuser', 'KZKTController@checkuser');
 });
 
 Route::group(['prefix' => 'hpxt'], function () {

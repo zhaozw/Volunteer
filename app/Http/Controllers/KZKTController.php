@@ -11,6 +11,7 @@ use \App\Model\Doctor;
 use \App\Model\Hospital;
 use \App\Model\HPXTClass;
 use \App\Model\Volunteer;
+use \App\Model\RepresentDetail;
 use DB;
 use Illuminate\Support\Facades\Log;
 use Overtrue\Wechat\Js;
@@ -458,5 +459,25 @@ class KZKTController extends Controller
     function showflow(Request $request)
     {
         return view('kzkt.showflow');
+    }
+
+    function checkuser(Request $request)
+    {
+        $openid = \Session::get('logged_user');
+        $data = null;
+
+        if ($openid) {
+            $volunteer = Volunteer::where('openid', $openid['openid'])->first();
+
+            $data = RepresentDetail::where('represent_name', $volunteer->name)
+                ->where('represent_code', $volunteer->number)
+                ->first();
+        }
+
+        if ($data) {
+            return response()->json(['result' => '1']);
+        } else {
+            return response()->json(['result' => '-1']);
+        }
     }
 }

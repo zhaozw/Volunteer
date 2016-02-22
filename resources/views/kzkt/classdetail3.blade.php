@@ -67,6 +67,38 @@
         function goSignUp() {
             window.location.href = '/kzkt/signup';
         }
+
+        var request = function (paras) {
+            var url = location.href;
+            var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+            var paraObj = {}
+            for (i = 0; j = paraString[i]; i++) {
+                paraObj[j.substring(0, j.indexOf("=")).
+                        toLowerCase()] = j
+                        .substring(j.indexOf("=") + 1, j.length);
+
+            }
+            var returnValue = paraObj[paras.toLowerCase()];
+            if (typeof(returnValue) == "undefined") {
+                return "";
+            } else {
+                return returnValue;
+            }
+        }
+
+        $(document).ready(function () {
+
+            var result = request('id');
+
+            if (result == '-1') {
+                $('#p_view').hide();
+            }
+            else {
+                $('#p_view').show();
+            }
+
+        });
+
     </script>
 </head>
 
@@ -163,7 +195,7 @@
             <td>吕朝晖教授</td>
         </tr>
     </table>
-    <p class="button expanded" onclick="goSignUp();">2016空中课堂报名</p>
+    <p id="p_view" class="button expanded" onclick="goSignUp();">2016空中课堂报名</p>
     </div>
 </body>
 </html>
