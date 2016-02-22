@@ -333,7 +333,7 @@
                         <label for="" class="weui_label">医&emsp;院</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
-                        <input name="text_location2" id="text_location2" type="text" class="weui_input" disabled placeholder="请输入医院">
+                        <input name="text_location2" id="text_location2" type="text" class="weui_input" placeholder="请输入医院">
                     </div>
                     <div class="weui_cell_ft"></div>
                 </div>
