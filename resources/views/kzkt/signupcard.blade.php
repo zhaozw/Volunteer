@@ -103,7 +103,7 @@
         </div>
         <div class="weui_cell">
             <div class="weui_cell_hd qrcode">
-                <img class="img_100" src="/image/kzkt/2dcode.png" alt="">
+                <img class="img_100" src="/image/kzkt/2dcodev3.png" alt="">
             </div>
             <div class="weui_cell_bd">
                 <p>长按识别二维码</p>

@@ -255,8 +255,8 @@
                     return result;
                 }
 
-                if($("#text_hospital").val() == '-1'){
-                    document.getElementById('txt_warn').innerText = '请选择医院！';
+                if(document.getElementById('text_location2').value.length == 0){
+                    document.getElementById('txt_warn').innerText = '请输入医院！';
                     result = false;
                     return result;
                 }
@@ -266,23 +266,17 @@
                     var province = $("#text_province").val();
                     var city = $("#text_city").val();
                     var country = $("#text_country").val();
-                    var hospital = parseInt($("#text_hospital").val());
+                    var hospital = $("#text_location2").val();
 
                     document.getElementById('txt_warn').innerText = '正在提交！';
-                    var requestUrl = '/kzkt/addClassroom';
+                    var requestUrl = '/kzkt/addHospital';
                     $.ajax({
                         url: requestUrl,
                         data: {
-                            name: name,
-                            phone: phone,
-                            classType: classType,
                             province: province,
                             city: city,
                             country: country,
-                            hospital: hospital,
-                            department: department,
-                            mail: mail,
-                            oicq: oicq
+                            hospital: hospital
                         },
                         type: "post",
                         dataType: "json",
@@ -364,28 +358,28 @@
                 </div>
 
 
-                <div class="weui_cell showActionSheet">
+                <div class="weui_cell">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">医&emsp;院</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary location_select">
-                        <input name="text_location2" id="text_location2" type="text" class="weui_input" disabled placeholder="请选择医院">
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input name="text_location2" id="text_location2" type="text" class="weui_input" disabled placeholder="请输入医院">
                     </div>
                     <div class="weui_cell_ft"></div>
                 </div>
 
-                <div class="actionSheet_wrap">
-                    <div class="mask"></div>
-                    <div class="weui_actionsheet">
-                        <div id="select_hospital" class="weui_actionsheet_menu">
-                            <div class="weui_actionsheet_cell actionsheet_cancel">请选择医院</div>
-                        </div>
-                    </div>
-                </div>
+                {{--<div class="actionSheet_wrap">--}}
+                    {{--<div class="mask"></div>--}}
+                    {{--<div class="weui_actionsheet">--}}
+                        {{--<div id="select_hospital" class="weui_actionsheet_menu">--}}
+                            {{--<div class="weui_actionsheet_cell actionsheet_cancel">请选择医院</div>--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
 
             </div>
 
-            <p class="tips">为保证及时收到课程通知和课件信息，建议填写QQ号！</p>
+            <p class="tips"></p>
             <p id="txt_warn" class="warning"></p>
             {{--<label id="label" class="warning">请输入。。。。</label>--}}
             {{--<a class="weui_btn">确&emsp;认</a>--}}

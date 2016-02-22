@@ -396,7 +396,22 @@ class KZKTController extends Controller
 
     function addHospital(Request $request)
     {
+        $province = $request->input('province');
+        $city = $request->input('city');
+        $country = $request->input('country');
 
+        $hospital = Hospital::where('province', $province)
+            ->where('city', $city)
+            ->where('country', $country)
+            ->orderBy('hospital_id', 'desc');
+
+        if ($hospital) {
+
+        }
+        else {
+            $hospital = new Hospital();
+
+        }
     }
 
     function viewHospital(Request $request)
