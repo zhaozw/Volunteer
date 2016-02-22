@@ -79,10 +79,17 @@
                 var name = '迈德科技';
             }
             document.getElementById('text_unit').value = name;
+            document.getElementById('number').value = '';
             $(function () {
                 $('.mask').removeClass('weui_fade_toggle');
                 $('.mask').css("display","none");
                 $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+                if (id == '1') {
+                   $('#div_unit').hide();
+                }
+                else {
+                    $('#div_unit').show();
+                }
             });
 
         }
@@ -240,7 +247,7 @@
 
             </div>
 
-            <div class="weui_cells weui_cells_form weui_cells_access">
+            <div id="div_unit" class="weui_cells weui_cells_form weui_cells_access" style="display: none">
                 <div class="weui_cell">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">工&emsp;号</label>
