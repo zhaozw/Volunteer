@@ -20,7 +20,6 @@
         {
             font-size: 13px;
             height: 55px;
-            text-align: center;
             /* border: 1px solid #98bf21; */
             /* padding: 59px 26px 11px 0px; */
         }
@@ -28,7 +27,6 @@
         #customers th
         {
             font-size: 15px;
-            text-align: center;
             padding-top: 5px;
             padding-bottom: 4px;
             background-color: #1F1F1E;
@@ -108,10 +106,11 @@
 <div class=" large-4 large-centered columns">
     <table id="customers">
         <tr>
-            <th style="width: 15%">日期</th>
-            <th style="width: 20%">星期</th>
-            <th style="width: 40%">课程题目</th>
+            <th style="width: 25%">日期</th>
+            <th style="width: 15%">星期</th>
+            <th style="width: 35%">课程题目</th>
             <th style="width: 25%">授课专家</th>
+
         </tr>
 
         <tr>

@@ -202,7 +202,7 @@
 
         <form action="" method="post">
 
-            <div class="weui_cells_title">请填写您的注册信息</div>
+            {{--<div class="weui_cells_title">请填写您的注册信息</div>--}}
 
             <div class="weui_cells weui_cells_form weui_cells_access">
                 <div class="weui_cell">

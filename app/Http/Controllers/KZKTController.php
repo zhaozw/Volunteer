@@ -74,6 +74,7 @@ class KZKTController extends Controller
             $volunteerId = $volunteer->id;
         }
         $doctor = Doctor::where('phone', $request->input('phone'))->first();
+        $hospital = Hospital::where('id', $request->input('hospital'))->first();
 
         if ($doctor) {//医生数据已经存在时
             $kzktData = KZKTClass::where('doctor_id', $doctor->id)->first();
@@ -96,11 +97,11 @@ class KZKTController extends Controller
                 }
                 $kzktData->save();
 
-                return response()->json(['result' => $result, 'id'=>$doctor->id]);
+                return response()->json(['result' => $result, 'id'=>$doctor->id, 'hospital'=>$hospital->hospital_id]);
             }
         }
         else {
-            $hospital = Hospital::where('id', $request->input('hospital'))->first();
+
             $doctor = new Doctor();
             $doctor->name = $request->input('name');
             $doctor->phone = $request->input('phone');
@@ -126,7 +127,7 @@ class KZKTController extends Controller
             }
             $kzktData->save();
 
-            return response()->json(['result' => $result, 'id'=>$doctor->id]);
+            return response()->json(['result' => $result, 'id'=>$doctor->id, 'hospital'=>$hospital->hospital_id]);
         }
 
 

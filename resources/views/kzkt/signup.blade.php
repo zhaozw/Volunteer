@@ -415,9 +415,35 @@
                             if (json.result == '1') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '提交成功！';
-                                window.location.href = '/kzkt/viewCard?id='+json.id;
+
                                 console.log('bbb');
+                                var requestUrl = "http://docmate3.mime.org.cn:82/AppClient/RegHandler.ashx?" +
+                                        "action=wechatreg&appid=APP20150701101838";
+
+                                $.ajax({
+                                    type: "get",
+                                    url: requestUrl,
+                                    data: {
+                                        mobile: phone,
+                                        pwd: '',
+                                        hospital: json.hospital,
+                                        nickname: name
+                                    },
+                                    success: function (data) {
+                                        console.log(data);
+                                        window.location.href = '/kzkt/viewCard?id='+json.id;
+                                    },
+                                    error: function (xhr, status, errorThrown) {
+                                        alert("Sorry, there was a problem!");
+                                    },
+                                    complete: function (xhr, status) {
+
+                                    }
+                                });
+
                             }
+
+
                             if (json.result == '2') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，请在未完成报名页面进行修改';
