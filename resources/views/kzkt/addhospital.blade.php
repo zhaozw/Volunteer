@@ -128,6 +128,10 @@
                         + '-' + $('#text_country_view').val();
                 $('#text_location').val(tmp);
 
+                $('.mask').removeClass('weui_fade_toggle');
+                $('.mask').css("display","none");
+                $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
+
             });
         }
 
