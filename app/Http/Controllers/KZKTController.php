@@ -423,7 +423,7 @@ class KZKTController extends Controller
             $data->country = $hospital->country;
             $data->country_id = $hospital->country_id;
             $data->hospital = $name;
-            $data->hospital_id = $hospital->$newId;
+            $data->hospital_id = $newId;
             $data->save();
 
             return response()->json(['result' => '1']);
