@@ -85,10 +85,10 @@
                 $('.mask').css("display","none");
                 $('.weui_actionsheet').removeClass('weui_actionsheet_toggle');
                 if (id == '1') {
-                   $('#div_unit').hide();
+                   $('#div_unit').show();
                 }
                 else {
-                    $('#div_unit').show();
+                    $('#div_unit').hide();
                 }
             });
 
