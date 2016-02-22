@@ -578,12 +578,12 @@
                     </div>
                 </div>
 
-                <div class="weui_cell">
+                <div class="weui_cell" onclick="onEditClick();">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">&emsp;&emsp;</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
-                        <input onclick="onEditClick();" name="edit" id="edit" type="text" class="weui_input" disabled placeholder="无法选择，请点击此处新增医院">
+                        <input name="edit" id="edit" type="text" class="weui_input" disabled placeholder="无法选择，请点击此处新增医院">
                     </div>
                     <div class="weui_cell_ft"></div>
 
