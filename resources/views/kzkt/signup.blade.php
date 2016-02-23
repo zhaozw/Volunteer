@@ -265,18 +265,41 @@
 
 
             var x1 = $.session.get('name');
-            alert(x1);
             if (x1 != null) {
                 $("#name").val(x1);
+                $.session.remove('name');
             }
             var x2 = $.session.get('phone');
             if (x2 != null) {
                 $("#phone").val(x2);
+                $.session.remove('phone');
             }
             var x3 = $.session.get('classType');
+            if (x3 != null) {
+                if(x3=='1') {
+                    $("#select_class").val('基础班');
+                }
+                if(x3=='2') {
+                    $("#select_class").val('高级班');
+                }
+                if(x3=='3') {
+                    $("#select_class").val('精品班');
+                }
+                $("#text_class").val(x3);
+                $.session.remove('classType');
+            }
             var x4 = $.session.get('mail');
+            if (x4 != null) {
+                $("#mail").val(x4);
+                $.session.remove('mail');
+            }
             var x5 = $.session.get('oicq');
+            if (x5 != null) {
+                $("#text_qq").val(x5);
+                $.session.remove('oicq');
+            }
             var x6 = $.session.get('department');
+            $.session.remove('department');
 
 //            var requestDepartment = '/activity/kzkt/department';
 //            $.ajax({
