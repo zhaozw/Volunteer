@@ -38,8 +38,8 @@ class WechatController extends Controller
             $buttonActivity,
             $buttonPersonal->buttons([
                 new MenuItem('个人信息', 'view', url('/volunteer/show-self')),
-                new MenuItem('我的迈豆', 'view', url('/volunteer/beans')),
-                new MenuItem('迈豆商城', 'view', url('/volunteer/shop')),
+//                new MenuItem('我的迈豆', 'view', url('/volunteer/beans')),
+//                new MenuItem('迈豆商城', 'view', url('/volunteer/shop')),
                 new MenuItem('关于我们', 'view', url('/volunteer/about')),
             ]),
         ];
