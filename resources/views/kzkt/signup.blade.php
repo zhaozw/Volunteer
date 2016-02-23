@@ -299,7 +299,29 @@
                 $.session.remove('oicq');
             }
             var x6 = $.session.get('department');
-            $.session.remove('department');
+            if(x6 != null){
+                if(x6=='1') {
+                    $("#select_department").val('内分泌科');
+                }
+                if(x6=='2') {
+                    $("#select_department").val('综合内科');
+                }
+                if(x6=='3') {
+                    $("#select_department").val('全科');
+                }
+                if(x6=='4') {
+                    $("#select_department").val('神经内科');
+                }
+                if(x6=='5') {
+                    $("#select_department").val('老年科');
+                }
+                if(x6=='6') {
+                    $("#select_department").val('精品班');
+                }
+                ("#text_department").val(x6);
+                $.session.remove('department');
+            }
+
 
 //            var requestDepartment = '/activity/kzkt/department';
 //            $.ajax({
