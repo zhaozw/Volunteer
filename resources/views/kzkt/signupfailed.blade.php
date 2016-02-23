@@ -18,7 +18,7 @@
 <body>
 <div class="weui_msg">
     <div class="weui_icon_area">
-        <i class="weui_icon_msg weui_icon_info"></i>
+        <i class="weui_icon_msg weui_icon_info" style="color: #EF4F4F"></i>
 
     </div>
     <div style="margin-top: 25px">
