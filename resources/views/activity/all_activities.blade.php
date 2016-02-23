@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/css/vendor/swiper-3.3.0.min.css">
 
 </head>
-<body>
+<body style="background-color: #f5f5f5">
 
 <div class="swiper-container">
     <div class="swiper-wrapper">
