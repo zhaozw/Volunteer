@@ -190,6 +190,22 @@
         var onEditClick = function() {
             console.log('onEditClick');
             window.location.href = '/kzkt/viewHospital?id=0';
+            $(function () {
+                var name = $("#name").val();
+                var phone = $("#phone").val();
+                var classType = $("#text_class").val();
+                var mail = $("#mail").val();
+                var oicq = $("#text_qq").val();
+                var department = $("#text_department").val();
+
+                $.session.set('name', name);
+                $.session.set('phone', phone);
+                $.session.set('classType', classType);
+                $.session.set('mail', mail);
+                $.session.set('oicq', oicq);
+                $.session.set('department', department);
+
+            });
         }
 
 
@@ -246,6 +262,16 @@
                 }
             });
 
+
+            var x1 = $.session.get('name');
+            if (x1 != '') {
+                $("#name").val(x1);
+            }
+            var x2 = $.session.get('phone');
+            var x3 = $.session.get('classType');
+            var x4 = $.session.get('mail');
+            var x5 = $.session.get('oicq');
+            var x6 = $.session.get('department');
 
 //            var requestDepartment = '/activity/kzkt/department';
 //            $.ajax({
