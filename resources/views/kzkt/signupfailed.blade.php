@@ -28,7 +28,7 @@
         <p class="p">输入你的完整信息完成报名。</p>
     </div>
         
-    <div class="weui_opr_area" style="margin-top: 15px">
+    <div class="weui_opr_area" style="margin-top: 1px">
          <p class="weui_btn_area">
             <a href="/kzkt/index" class="weui_btn weui_btn_warn">确定</a>
         </p>    
