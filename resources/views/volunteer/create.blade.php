@@ -259,7 +259,7 @@
             </div>
 
             <p id="txt_warn" style="text-align:center;color:red"></p>
-            <a id="btn_save" class="weui_btn">注&emsp;册</a>
+            <a id="btn_save" class="weui_btn weui_btn_primary">注&emsp;册</a>
 
             <input type="hidden" id="unit" value="-1">
 
