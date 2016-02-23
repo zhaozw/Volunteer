@@ -6,6 +6,8 @@
     <title>个人信息</title>
 
     <link rel="stylesheet" href="/css/weui.min.css">
+    <link rel="stylesheet" href="/css/volunteer.css">
+
 <body>
 <div class="weui_msg">
         
@@ -17,7 +19,7 @@
         
     <div class="weui_opr_area">
                 <p class="weui_btn_area">
-                        <a href="/activity" class="weui_btn weui_btn_primary">关闭</a>
+                        <a href="/wdf" class="weui_btn weui_btn_primary">关闭</a>
                     </p>
             
     </div>
