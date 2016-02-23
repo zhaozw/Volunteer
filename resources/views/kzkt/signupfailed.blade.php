@@ -11,7 +11,7 @@
     .p{
         text-align: left;
         margin-left: 5%;
-        margin-top: 10px;
+        margin-top: 5px;
         color: #5A5A5A
     }
 </style>
@@ -19,6 +19,9 @@
 <div class="weui_msg">
     <div class="weui_icon_area">
         <i class="weui_icon_msg weui_icon_info"></i>
+
+    </div>
+    <div style="margin-top: 15px">
         <p class="p">非常抱歉本次报名不成功</p>
         <p class="p">因缺少医生邮箱或者其他信息</p>
         <p class="p">请在报名首页面2016空中课堂报名</p>
