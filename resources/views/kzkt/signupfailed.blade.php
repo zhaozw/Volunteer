@@ -27,11 +27,12 @@
         <p class="p"><a href="/kzkt/index">请在报名首页面2016空中课堂报名</a></p>
         <p class="p">输入你的完整信息完成报名。</p>
     </div>
-        <div class="weui_opr_area" style="padding-top: 15px;">
-                <p class="weui_btn_area">
-                        <a href="/kzkt/index" class="weui_btn weui_btn_warn">确定</a>
-                    </p>
-            </div>
+        
+    <div class="weui_opr_area" style="margin-top: 15px">
+         <p class="weui_btn_area">
+            <a href="/kzkt/index" class="weui_btn weui_btn_warn">确定</a>
+        </p>    
+    </div>
 </div>
 </body>
 </html>
