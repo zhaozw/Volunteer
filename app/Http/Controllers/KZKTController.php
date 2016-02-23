@@ -177,7 +177,7 @@ class KZKTController extends Controller
             }
             $kzktData->save();
 
-            return response()->json(['result' => $result, 'id' => $doctor->id]);
+            return response()->json(['result' => $result, 'id' => $doctor->id, 'hospital'=>$hospital->hospital_id]);
         }
         else {
             return response()->json(['result' => '-1']);

@@ -110,7 +110,7 @@
             </div>
             <div class="weui_cell_bd">
                 <a onclick="goViewCard({{$index['id']}})">
-                    <span>点击查看详情</span>
+                    {{--<span>点击查看详情</span>--}}
 
                     <p>姓名：{{$index['name']}}</p>
                     <p>班级：{{$index['className']}}</p>

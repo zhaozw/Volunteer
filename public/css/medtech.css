@@ -112,7 +112,7 @@ body {
 }
 
 .bm_sj {
-    margin-top: 5px;
+    margin-top: 0.5rem;;
 }
 
 .baoming {
@@ -148,7 +148,7 @@ body {
 .bj a img {
     width: 8%;
     float: right;
-    margin-top: -15px;
+    margin-top: -10px;
 }
 
 .btn {

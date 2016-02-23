@@ -201,11 +201,11 @@ select {
 
 .student_sign .weui_cell .weui_cell_ft img {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 5%;
   padding-left: 12px;
   border-left: 1px solid #e8e8e8;
-  height: 20px;
+  height: 18px;
 }
 
 .student_sign {

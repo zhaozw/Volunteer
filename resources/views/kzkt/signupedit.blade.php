@@ -572,6 +572,34 @@
 
                             if (json.result == '1') {
                                 document.getElementById('txt_warn').innerText = '提交成功！';
+                                var requestUrl = "http://docmate3.mime.org.cn:82/AppClient/RegHandler.ashx?" +
+                                        "action=wechatreg&appid=APP20150701101838";
+
+                                $.ajax({
+                                    type: "get",
+                                    async: false,
+                                    url : requestUrl,
+                                    dataType : "jsonp",
+                                    jsonp: "callbackparam",//服务端用于接收callback调用的function名的参数
+                                    jsonpCallback:"success_jsonpCallback",//callback的function名称
+                                    data: {
+                                        mobile: phone,
+                                        pwd: '',
+                                        hospital: json.hospital,
+                                        nickname: name
+                                    },
+                                    success: function (data) {
+                                        console.log(data);
+
+                                    },
+                                    error: function (xhr, status, errorThrown) {
+//                                        alert("Sorry, there was a problem!");
+                                    },
+                                    complete: function (xhr, status) {
+
+                                    }
+                                });
+
                                 window.location.href = '/kzkt/viewCard?id='+json.id;
                             }
                             if (json.result == '2') {

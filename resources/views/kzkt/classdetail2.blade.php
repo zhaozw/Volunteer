@@ -22,6 +22,8 @@
             height: 55px;
             /* border: 1px solid #98bf21; */
             /* padding: 59px 26px 11px 0px; */
+            border: 1px solid #AEAFAD;
+            padding: 0px 0px 0px 0px;
         }
 
         #customers th
