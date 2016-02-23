@@ -462,6 +462,11 @@ class KZKTController extends Controller
         return view('kzkt.showflow');
     }
 
+    function showfail(Request $request)
+    {
+        return view('kzkt.signupfailed');
+    }
+
     function checkuser(Request $request)
     {
         $openid = \Session::get('logged_user');
