@@ -98,8 +98,8 @@
         </div>
         <div>
             <a id="link_show" href="/kzkt/showflow" class="button expanded">报名方式</a>
-            <a id="link_sign" href="/kzkt/signup" class="button expanded" style="display: none">2016空中课堂报名</a>
-            <a id="link_view" href="/kzkt/findAllRegister" class="button expanded" style="display: none">查看历史报名记录</a>
+            <a id="link_sign" href="/kzkt/signup" class="button expanded">2016空中课堂报名</a>
+            <a id="link_view" href="/kzkt/findAllRegister" class="button expanded">查看历史报名记录</a>
             <input type="hidden" id="text_view" value="-1">
         </div>
     </div>
