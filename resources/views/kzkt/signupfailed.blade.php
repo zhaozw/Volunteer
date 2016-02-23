@@ -21,13 +21,13 @@
         <i class="weui_icon_msg weui_icon_info"></i>
 
     </div>
-    <div style="margin-top: 15px">
+    <div style="margin-top: 25px">
         <p class="p">非常抱歉本次报名不成功</p>
         <p class="p">因缺少医生邮箱或者其他信息</p>
-        <p class="p">请在报名首页面2016空中课堂报名</p>
+        <p class="p"><a href="/kzkt/index">请在报名首页面2016空中课堂报名</a></p>
         <p class="p">输入你的完整信息完成报名。</p>
     </div>
-        <div class="weui_opr_area">
+        <div class="weui_opr_area" style="padding-top: 15px;">
                 <p class="weui_btn_area">
                         <a href="/kzkt/index" class="weui_btn weui_btn_warn">确定</a>
                     </p>
