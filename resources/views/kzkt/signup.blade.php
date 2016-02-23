@@ -584,6 +584,17 @@
                     </div>
                 </div>
 
+                <div class="weui_cell" onclick="onEditClick();">
+                    <div class="weui_cell_hd">
+                        <label for="" class="weui_label">&emsp;&emsp;</label>
+                    </div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <input name="edit" id="edit" type="text" class="weui_input" disabled placeholder="无法选择，请点击此处新增医院">
+                    </div>
+                    <div class="weui_cell_ft"></div>
+
+                </div>
+
                 <div class="weui_cell showActionSheet">
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">科&emsp;室</label>
@@ -607,17 +618,6 @@
                             <div class="weui_actionsheet_cell actionsheet_cancel" onclick="onDepartmentClick('6','老年科')">老年科</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="weui_cell" onclick="onEditClick();">
-                    <div class="weui_cell_hd">
-                        <label for="" class="weui_label">&emsp;&emsp;</label>
-                    </div>
-                    <div class="weui_cell_bd weui_cell_primary">
-                        <input name="edit" id="edit" type="text" class="weui_input" disabled placeholder="无法选择，请点击此处新增医院">
-                    </div>
-                    <div class="weui_cell_ft"></div>
-
                 </div>
 
             </div>
