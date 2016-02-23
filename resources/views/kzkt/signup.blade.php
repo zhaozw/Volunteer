@@ -649,7 +649,7 @@
             <p id="txt_warn" class="warning"></p>
             {{--<label id="label" class="warning">请输入。。。。</label>--}}
             {{--<a class="weui_btn">确&emsp;认</a>--}}
-            <button id="btn_save" type="button" class="weui_btn" style="width: 90%;">确&emsp;认</button>
+            <button id="btn_save" type="button" class="weui_btn weui_btn_primary" style="width: 90%;">确&emsp;认</button>
             <input type="hidden" id="text_province">
             <input type="hidden" id="text_city">
             <input type="hidden" id="text_country">
