@@ -10,6 +10,7 @@
 
     <!-- 引入 jQuery 库 -->
     <script src="//cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="/js/jquerysession.js"></script>
 
     <script type="application/javascript">
 
@@ -264,10 +265,14 @@
 
 
             var x1 = $.session.get('name');
-            if (x1 != '') {
+            alert(x1);
+            if (x1 != null) {
                 $("#name").val(x1);
             }
             var x2 = $.session.get('phone');
+            if (x2 != null) {
+                $("#phone").val(x2);
+            }
             var x3 = $.session.get('classType');
             var x4 = $.session.get('mail');
             var x5 = $.session.get('oicq');
