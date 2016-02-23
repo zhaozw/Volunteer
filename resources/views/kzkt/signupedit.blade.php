@@ -605,7 +605,7 @@
                             if (json.result == '2') {
                                 console.log('aaa');
                                 document.getElementById('txt_warn').innerText = '邮箱未填写，需要完善；本次报名不成功，请在未完成报名页面进行修改';
-                                window.location.href = '/kzkt/index';
+                                window.location.href = '/kzkt/showfail';
                                 console.log('bbb');
                             }
                         },
