@@ -318,7 +318,7 @@
                 if(x6=='6') {
                     $("#select_department").val('精品班');
                 }
-                ("#text_department").val(x6);
+                $("#text_department").val(x6);
                 $.session.remove('department');
             }
 
