@@ -31,17 +31,17 @@
                 dataType: "json",
                 url: requestUrl,
                 success: function (json) {
-//                    if (json.result == '-1') {
-//                        $('#link_sign').hide();
-//                        $('#link_view').hide();
-//                        $('#text_view').val('-1');
-//                    }
-//
-//                    if (json.result == '1') {
-//                        $('#link_sign').show();
-//                        $('#link_view').show();
-//                        $('#text_view').val('1');
-//                    }
+                    if (json.result == '-1') {
+                        $('#link_sign').hide();
+                        $('#link_view').hide();
+                        $('#text_view').val('-1');
+                    }
+
+                    if (json.result == '1') {
+                        $('#link_sign').show();
+                        $('#link_view').show();
+                        $('#text_view').val('1');
+                    }
                 },
                 error: function (xhr, status, errorThrown) {
                     alert("Sorry, there was a problem!");
