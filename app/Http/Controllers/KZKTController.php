@@ -251,7 +251,7 @@ class KZKTController extends Controller
             $name = $doctor->name;
             $id = $doctor->id;
             $phone = $doctor->phone;
-            $time = $kzkt ->create_at;
+            $time = $kzkt ->created_at;
             $className = null;
             if ($kzkt->type == 1) {
                 $className = '基础班';
