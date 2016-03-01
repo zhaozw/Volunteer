@@ -578,7 +578,7 @@
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">课程班</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary location_select">
+                    <div class="weui_cell_bd weui_cell_primary">
                         <input name="select_class" id="select_class" type="text" class="weui_input" disabled placeholder="请选择班级">
                     </div>
                     <div class="weui_cell_ft"></div>
@@ -607,7 +607,7 @@
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">省市县</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary location_select">
+                    <div class="weui_cell_bd weui_cell_primary">
                         <input name="text_location" id="text_location" type="text" class="weui_input" disabled placeholder="请选择省市县">
                     </div>
                     <div class="weui_cell_ft"></div>
@@ -645,7 +645,7 @@
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">医&emsp;院</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary location_select">
+                    <div class="weui_cell_bd weui_cell_primary">
                         <input name="text_location2" id="text_location2" type="text" class="weui_input" disabled placeholder="请选择医院">
                     </div>
                     <div class="weui_cell_ft"></div>
@@ -675,7 +675,7 @@
                     <div class="weui_cell_hd">
                         <label for="" class="weui_label">科&emsp;室</label>
                     </div>
-                    <div class="weui_cell_bd weui_cell_primary location_select">
+                    <div class="weui_cell_bd weui_cell_primary">
                         <input name="select_department" id="select_department" type="text" class="weui_input" disabled placeholder="请选择科室">
                     </div>
                     <div class="weui_cell_ft"></div>

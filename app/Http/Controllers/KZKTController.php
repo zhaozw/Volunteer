@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\KZKTClass;
+use Hamcrest\Text\StringContains;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -251,7 +252,10 @@ class KZKTController extends Controller
             $name = $doctor->name;
             $id = $doctor->id;
             $phone = $doctor->phone;
-            $time = $kzkt ->created_at;
+            $time = (string)$kzkt ->created_at->year.'-'
+                .sprintf("%02d", $kzkt ->created_at->month).'-'
+                .sprintf("%02d", $kzkt ->created_at->day);
+
             $className = null;
             if ($kzkt->type == 1) {
                 $className = '基础班';
