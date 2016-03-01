@@ -130,25 +130,6 @@ class KZKTController extends Controller
             return response()->json(['result' => $result, 'id'=>$doctor->id, 'hospital'=>$hospital->hospital_id]);
         }
 
-
-
-//        $airClassroom = new AirClassroom();
-//        $airClassroom->name = $request->input('name');
-//        $airClassroom->phone = $request->input('phone');
-//        $airClassroom->password = substr($request->input('phone'), 5);
-//        $airClassroom->course_type = $request->input('classType');
-//        $airClassroom->province = $request->input('province');
-//        $airClassroom->city = $request->input('city');
-//        $airClassroom->country = $request->input('country');
-//        $airClassroom->hospital = $request->input('hospital');
-//        $airClassroom->department = $request->input('department');
-//        $airClassroom->title = $request->input('title');
-//        $airClassroom->mail = $request->input('mail');
-//        $airClassroom->oicq = $request->input('oicq');
-//        $airClassroom->status = 1;
-//        $airClassroom->openid = $openid['openid'];
-//        $airClassroom->save();
-//        return response()->json(['result' => '1']);
     }
 
     function updateClassroom(Request $request)
@@ -198,89 +179,6 @@ class KZKTController extends Controller
             return response()->json(['result' => '1']);
         }
     }
-
-//    function findPreRegister(Request $request)
-//    {
-//        $openid = \Session::get('logged_user');
-//        $airClassrooms = AirClassroom::where('openid', $openid['openid'])->where('status', 1)->get();
-//        $array = array();
-//        foreach ($airClassrooms as $airClassroom) {
-//            $name = $airClassroom->name;
-//            $id = $airClassroom->id;
-//            $className = null;
-//            if ($airClassroom->course_type == 1) {
-//                $className = '基础班';
-//            } else if ($airClassroom->course_type == 2) {
-//                $className = '高级班';
-//            } else {
-//                $className = '精品班';
-//            }
-//
-//            $row = array('name' => $name, 'id' => $id, 'className' => $className);
-//            array_push($array, $row);
-//        }
-//
-//        return view('kzkt.signupstudent', ['data' => $array]);
-//    }
-
-//    function findSingleRegister(Request $request)
-//    {
-//        $id = $request->input('id');
-//        $airClassroom = AirClassroom::where('id', $id)->first();
-//        if ($airClassroom) {
-//            $province = DB::select('select distinct SA_PROVINCE from bz_sys_area where SA_PRIOVINCE_ID = :id',
-//                ['id' => $airClassroom->province]);
-//            $city = DB::select('select distinct SA_CITY from bz_sys_area where SA_CITY_ID = :id',
-//                ['id' => $airClassroom->city]);
-//            $country = DB::select('select distinct SA_COUNTRY from bz_sys_area where SA_COUNTRY_ID = :id',
-//                ['id' => $airClassroom->country]);
-//            $address = $province[0]->SA_PROVINCE . '-' . $city[0]->SA_CITY . '-' . $country[0]->SA_COUNTRY;
-//            $className = null;
-//            if ($airClassroom->course_type == 1) {
-//                $className = '基础班';
-//            } else if ($airClassroom->course_type == 2) {
-//                $className = '高级班';
-//            } else {
-//                $className = '精品班';
-//            }
-//
-//            return response()->json(['result' => '1', 'data' => $airClassroom, 'address' => $address, 'className' => $className]);
-//        } else {
-//            return response()->json(['result' => '-1']);
-//        }
-//    }
-
-//    function findAllRegister(Request $request)
-//    {
-//        $openid = \Session::get('logged_user');
-//        $airClassrooms = AirClassroom::where('openid', $openid['openid'])
-//            ->where('status', 2)
-//            ->orderBy('id', 'desc')
-//            ->get();
-//
-//        $array = array();
-//        $count = 0;
-//        foreach ($airClassrooms as $airClassroom) {
-//            $count = $count + 1;
-//            $name = $airClassroom->name;
-//            $id = $airClassroom->id;
-//            $phone = $airClassroom->phone;
-//            $className = null;
-//            if ($airClassroom->course_type == 1) {
-//                $className = '基础班';
-//            } else if ($airClassroom->course_type == 2) {
-//                $className = '高级班';
-//            } else {
-//                $className = '精品班';
-//            }
-//
-//            $row = array('name' => $name, 'id' => $id, 'className' => $className, 'phone' => $phone);
-//            array_push($array, $row);
-//        }
-//
-//
-//        return view('kzkt.signupmenu', ['count'=>$count, 'data' => $array]);
-//    }
 
     function viewCard(Request $request)
     {
@@ -464,7 +362,12 @@ class KZKTController extends Controller
 
     function showfail(Request $request)
     {
-        return view('kzkt.signupfailed');
+        $appId = env('WX_APPID');
+        $secret = env('WX_SECRET');
+
+        $js = new Js($appId, $secret);
+
+        return view('kzkt.signupfailed', ['js' => $js]);
     }
 
     function checkuser(Request $request)

@@ -141,8 +141,8 @@
         wx.onMenuShareAppMessage({
             title: '空中课堂报名', // 分享标题
             desc: '学员报名账户信息', // 分享描述
-            link: 'http://volunteers.mime.org.cn/activity/kzkt/viewCard?id='+id, // 分享链接
-            imgUrl: 'http://img6.cache.netease.com/photo/0008/2016-01-31/BEMQDIV02FKJ0008.jpg', // 分享图标
+            link: 'http://volunteers.mime.org.cn/kzkt/viewCard?id='+id, // 分享链接
+            imgUrl: 'http://volunteers.mime.org.cn/image/kzkt/airclass.png', // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
             success: function () {
