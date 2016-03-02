@@ -99,10 +99,20 @@ select {
   color: #b8b8b8;
 }
 
-.student_card .weui_cell_bd a:nth-child(2) span {
+/*.student_card .weui_cell_bd a:nth-child(2) span {*/
+  /*position: absolute;*/
+  /*right: 0px;*/
+  /*top: 10px;*/
+  /*padding-left: 7%;*/
+  /*padding-right: 8%;*/
+  /*font-size: 13px;*/
+  /*color: white;*/
+/*}*/
+
+.span_ {
   position: absolute;
   right: 0px;
-  top: 10px;
+  top: 15px;
   padding-left: 7%;
   padding-right: 8%;
   font-size: 13px;
