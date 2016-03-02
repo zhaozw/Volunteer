@@ -197,7 +197,7 @@
 </head>
 
 <body class="body-gray" ontouchstart>
-<div class="container" style="margin-top:15%">
+<div class="container" style="margin-top:35%">
     <div id="sign_up">
 
         <form action="" method="post">

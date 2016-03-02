@@ -83,3 +83,65 @@ h4 small {
 .btn_bj {
     padding: 5px 15px
 }
+
+#customers
+{
+    width:100%;
+    border-collapse:collapse;
+}
+
+#customers td, #customers th
+{
+    font-size: 13px;
+    height: 55px;
+    /* text-align: center; */
+    border: 1px solid #F1F1F1;
+    padding: 0px 0px 0px 0px;
+}
+
+#customers th
+{
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 4px;
+    background-color: #10AEFF;
+    color: #ffffff;
+}
+#customers tr.alt_1 td
+{
+    color:#000000;
+    background-color:#AAD8F7
+}
+
+#customers tr.alt td
+{
+    color:#000000;
+    background-color:#CEE9FB
+}
+.tab_p{
+    color: black
+}
+.tab_p1{
+    color: #2198E8
+}
+.tab_tj{
+    width: 70%;float: left
+}
+.tab_bm{
+    width: 30%;
+    float: right
+}
+.tab_bm div{
+    border-radius: 5px;
+    margin-bottom: 0.77rem;
+    height: 80px;
+    width: 80px;
+    background-color: #10AEFF;
+}
+.tab_bm div p{
+    padding-top: 25px;
+    /* top: 25px; */
+    color: white;
+    font-size: 18px;
+    text-align: center;
+}
