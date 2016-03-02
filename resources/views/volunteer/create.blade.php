@@ -197,7 +197,7 @@
 </head>
 
 <body class="body-gray" ontouchstart>
-<div class="container" style="margin-top:35%">
+<div class="container" style="margin-top:15%">
     <div id="sign_up">
 
         <form action="" method="post">
@@ -250,7 +250,7 @@
             <div id="div_unit" class="weui_cells weui_cells_form weui_cells_access" style="display: none">
                 <div class="weui_cell">
                     <div class="weui_cell_hd">
-                        <label for="" class="weui_label">工&emsp;号</label>
+                        <label for="" class="weui_label">Initial</label>
                     </div>
                     <div class="weui_cell_bd weui_cell_primary">
                         <input id="number" type="text" class="weui_input" placeholder="请输入员工编码">
