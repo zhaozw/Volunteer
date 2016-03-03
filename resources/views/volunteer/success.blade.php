@@ -19,7 +19,7 @@
         
     <div class="weui_opr_area">
                 <p class="weui_btn_area">
-                        <a href="/wdf" class="weui_btn weui_btn_primary">关闭</a>
+                        <a href="/activity" class="weui_btn weui_btn_primary">关闭</a>
                     </p>
             
     </div>
