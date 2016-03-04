@@ -67,86 +67,86 @@
         </tr>
 
         <tr class="alt_1">
-            <td>2016/05/03</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/05/03</td>
+            <td style="text-align: center">周二</td>
             <td>认识糖尿病</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/05/17</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/05/17</td>
+            <td style="text-align: center">周二</td>
             <td>糖尿病的控制目标和治疗路径</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/06/07</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/06/07</td>
+            <td style="text-align: center">周二</td>
             <td>糖尿病的控制目标和治疗路径</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/06/21</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/06/21</td>
+            <td style="text-align: center">周二</td>
             <td>口服降糖药的降糖机制和合理选择</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/07/05</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/07/05</td>
+            <td style="text-align: center">周二</td>
             <td>胰岛素的分类和发展史</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/07/19</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/07/19</td>
+            <td style="text-align: center">周二</td>
             <td>理想的胰岛素治疗模式</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/08/02</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/08/02</td>
+            <td style="text-align: center">周二</td>
             <td>胰岛素起始治疗方案</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/08/16</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/08/16</td>
+            <td style="text-align: center">周二</td>
             <td>胰岛素优化治疗方案</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/09/06</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/09/06</td>
+            <td style="text-align: center">周二</td>
             <td>胰岛素强化治疗方案</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/09/20</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/09/20</td>
+            <td style="text-align: center">周二</td>
             <td>减少低血糖，安心达标</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
         <tr class="alt_1">
-            <td>2016/10/18</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/10/18</td>
+            <td style="text-align: center">周二</td>
             <td>糖尿病急性并发症的管理</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/11/01</td>
-            <td>周二</td>
+            <td style="text-align: center">2016/11/01</td>
+            <td style="text-align: center">周二</td>
             <td>糖尿病慢性并发症的管理</td>
-            <td>许樟荣教授</td>
+            <td style="text-align: center">许樟荣教授</td>
         </tr>
     </table>
 </div>

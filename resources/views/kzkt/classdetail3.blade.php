@@ -70,86 +70,86 @@
         </tr>
 
         <tr class="alt_1">
-            <td>2016/05/06</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/05/06</td>
+            <td style="text-align: center">周五</td>
             <td>特殊类型糖尿病的诊断与治疗（LADA，MODY）</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/05/20</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/05/20</td>
+            <td style="text-align: center">周五</td>
             <td>特殊类型糖尿病的诊断与治疗病例分析</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/06/03</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/06/03</td>
+            <td style="text-align: center">周五</td>
             <td>继发糖尿病</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/06/17</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/06/17</td>
+            <td style="text-align: center">周五</td>
             <td>继发糖尿病病例分析</td>
-            <td>杨文英教授</td>
+            <td style="text-align: center">杨文英教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/07/08</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/07/08</td>
+            <td style="text-align: center">周五</td>
             <td>妊娠糖尿病的诊疗规范</td>
-            <td>窦京涛教授</td>
+            <td style="text-align: center">窦京涛教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/07/22</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/07/22</td>
+            <td style="text-align: center">周五</td>
             <td>糖尿病国际研究进展</td>
-            <td>窦京涛教授</td>
+            <td style="text-align: center">窦京涛教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/08/05</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/08/05</td>
+            <td style="text-align: center">周五</td>
             <td>腺垂体疾病</td>
-            <td>窦京涛教授</td>
+            <td style="text-align: center">窦京涛教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/08/19</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/08/19</td>
+            <td style="text-align: center">周五</td>
             <td>腺垂体疾病病例分析</td>
-            <td>窦京涛教授</td>
+            <td style="text-align: center">窦京涛教授</td>
         </tr>
 
         <tr class="alt_1">
-            <td>2016/09/02</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/09/02</td>
+            <td style="text-align: center">周五</td>
             <td>甲状腺疾病</td>
-            <td>吕朝晖教授</td>
+            <td style="text-align: center">吕朝晖教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/09/16</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/09/16</td>
+            <td style="text-align: center">周五</td>
             <td>甲状腺疾病病例分析</td>
-            <td>吕朝晖教授</td>
+            <td style="text-align: center">吕朝晖教授</td>
         </tr>
         <tr class="alt_1">
-            <td>2016/10/14</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/10/14</td>
+            <td style="text-align: center">周五</td>
             <td>肾上腺疾病</td>
-            <td>吕朝晖教授</td>
+            <td style="text-align: center">吕朝晖教授</td>
         </tr>
 
         <tr class="alt">
-            <td>2016/10/28</td>
-            <td>周五</td>
+            <td style="text-align: center">2016/10/28</td>
+            <td style="text-align: center">周五</td>
             <td>肾上腺疾病病例分析</td>
-            <td>吕朝晖教授</td>
+            <td style="text-align: center">吕朝晖教授</td>
         </tr>
     </table>
 </div>
