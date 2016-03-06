@@ -15,7 +15,7 @@ class ActivityTableSeeder extends Seeder
         $novoId = Unit::where('short_name', 'novo_nordisk')->first()->id;
 
         DB::table('activities')->insert([
-                'title' => '千院科教',
+                'title' => '空中课堂',
                 'abstract' => '摘要',
                 'unit_id' => $novoId
         ]);
@@ -27,13 +27,25 @@ class ActivityTableSeeder extends Seeder
         ]);
 
         DB::table('activities')->insert([
-            'title' => '空中课堂',
+            'title' => '医师助手',
             'abstract' => '摘要',
             'unit_id' => $novoId
         ]);
 
         DB::table('activities')->insert([
-            'title' => 'e名医',
+            'title' => '甲状腺病例讨论',
+            'abstract' => '摘要',
+            'unit_id' => $novoId
+        ]);
+
+        DB::table('activities')->insert([
+            'title' => 'E名医下基层',
+            'abstract' => '摘要',
+            'unit_id' => $novoId
+        ]);
+
+        DB::table('activities')->insert([
+            'title' => '甲状腺公开课',
             'abstract' => '摘要',
             'unit_id' => $novoId
         ]);
