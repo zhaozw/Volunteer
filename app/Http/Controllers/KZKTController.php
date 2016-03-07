@@ -323,7 +323,7 @@ class KZKTController extends Controller
             $realId = $realId + 1;
             $temp = sprintf("%02d", $realId);//生成2位数，不足前面补0
             $newId = $arr[0] . '-' . $temp;
-            dd($newId);
+//            dd($newId);
 
             $data = new Hospital();
             $data->province = $hospital->province;
