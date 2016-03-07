@@ -313,6 +313,8 @@ class KZKTController extends Controller
             ->first();
 
         if($hospital) {
+            $arr = explode('-',$hospital->hospital_id);
+            dd($arr);
             $length = strlen($hospital->country_id);
             $strRealId = substr($hospital->hospital_id, $length);
             $realId = intval($strRealId, 10);
