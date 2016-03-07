@@ -314,13 +314,16 @@ class KZKTController extends Controller
 
         if($hospital) {
             $arr = explode('-',$hospital->hospital_id);
-            dd($arr);
-            $length = strlen($hospital->country_id);
-            $strRealId = substr($hospital->hospital_id, $length);
-            $realId = intval($strRealId, 10);
+//            dd($arr);
+
+//            $length = strlen($hospital->country_id);
+//            $strRealId = substr($hospital->hospital_id, $length);
+//            $realId = intval($strRealId, 10);
+            $realId = intval($arr[1], 10);
             $realId = $realId + 1;
-            $temp = sprintf("%03d", $realId);//生成3位数，不足前面补0
-            $newId = $hospital->country_id . $temp;
+            $temp = sprintf("%02d", $realId);//生成2位数，不足前面补0
+            $newId = $arr[0] . '-' . $temp;
+            dd($newId);
 
             $data = new Hospital();
             $data->province = $hospital->province;
