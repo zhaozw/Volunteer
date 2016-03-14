@@ -12,7 +12,7 @@
 
     <script type="application/javascript">
         function goViewCard(id) {
-            window.location.href = '/kzkt/viewCard?id='+id;
+            window.location.href = '/kzkt/viewCard?type=1&id='+id;
         }
 
         function goEdit(id) {

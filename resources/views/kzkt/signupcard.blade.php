@@ -67,6 +67,10 @@
             if(id != null) {
                 getData(id);
             }
+            var type = request("type");
+            if(type == '2'){
+                $("#show_share").hide();
+            }
 
             $("#show_share").on('click', function () {
                 $("#show_share").hide();
@@ -141,7 +145,7 @@
         wx.onMenuShareAppMessage({
             title: '空中课堂报名', // 分享标题
             desc: '学员报名账户信息', // 分享描述
-            link: 'http://volunteers.mime.org.cn/kzkt/viewCard?id='+id, // 分享链接
+            link: 'http://volunteers.mime.org.cn/kzkt/viewCard?type=2&id='+id, // 分享链接
             imgUrl: 'http://volunteers.mime.org.cn/image/kzkt/airclass.png', // 分享图标
             type: 'link', // 分享类型,music、video或link，不填默认为link
             dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
