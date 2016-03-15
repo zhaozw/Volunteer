@@ -342,10 +342,12 @@
 
                         var strHtml = "";
                         $(json.list).each(function () {
-                            var id =  this.id;
+                            var id = this.id;
                             var name = this.hospital;
-                            strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
-                            "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
+                            if (strHtml.indexOf(this.hospital) == -1) {
+                                strHtml += "<div id='ss_" + this.id + "' class='weui_actionsheet_cell actionsheet_cancel' " +
+                                "value='" + this.hospital + "' onclick='onHospitalClick(\"" + id + "\",\"" + name + "\")'>" + this.hospital + "</div>";
+                            }
                         });
 
                         if(strHtml.length == 0) {
