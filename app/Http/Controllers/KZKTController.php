@@ -388,7 +388,7 @@ class KZKTController extends Controller
             $volunteer = Volunteer::where('openid', $openid['openid'])->first();
 
             $data = RepresentDetail::where('represent_name', $volunteer->name)
-                ->where('represent_code', $volunteer->number)
+                ->where('represent_code',  strtoupper($volunteer->number))
                 ->first();
         }
 
