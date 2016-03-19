@@ -30,5 +30,6 @@ class CreateInviteNumberTablele extends Migration
     public function down()
     {
         //
+        Schema::drop('invite_number');
     }
 }
