@@ -34,6 +34,12 @@
                 {{$volunteer->unit->full_name}}
             </h4>
             <hr>
+            <hr>
+            <h4>
+                <small>员工编号</small>
+                {{$volunteer->number}}
+            </h4>
+            <hr>
             <a class="btn btn-warning" style="margin-left: 63%" href="{{url('/volunteer/edit-self')}}">修改个人信息</a>
         </div>
     </div>

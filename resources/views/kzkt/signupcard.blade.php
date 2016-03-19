@@ -48,6 +48,7 @@
                         document.getElementById('phone').innerText = json.data.phone;
                         document.getElementById('pwd').innerText = json.password;
                         document.getElementById('class_type').innerText = json.className;
+                        document.getElementById('invite').innerText = json.invite;
                     }
                 },
                 error: function (xhr, status, errorThrown) {
@@ -114,7 +115,7 @@
                 <p>学员：<label id="name2"></label></p>
                 <p>账号：<label id="phone"></label></p>
                 <p>登录密码：<label id="pwd"></label></p>
-                <p>班级邀请码：12345678</p>
+                <p>班级邀请码：<label id="invite"></label></p>
             </div>
         </div>
         <img class="img_100" src="/image/kzkt/introduce.png" alt="">

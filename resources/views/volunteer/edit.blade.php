@@ -31,12 +31,16 @@
             {{csrf_field()}}
             <div class="form-group">
                 <div class="formDiv">
-                    <input name="phone" value="{{$volunteer->phone}}" type="text" class="form-control" id="inputPhone" placeholder="请输入新的手机号">
+                    <input name="phone" value="{{$volunteer->phone}}" type="" class="form-control" id="inputPhone" placeholder="请输入新的手机号">
                     <label for="inputPassword3" class="formIcon login-field-icon"><span class="glyphicon glyphicon-phone"></span></label>
                 </div>
                 <div class="formDiv">
                     <input name="email" value="{{$volunteer->email}}" type="email" class="form-control" id="inputEmail" placeholder="请输入新的邮箱">
                     <label for="inputPassword3" class="formIcon login-field-icon"><span class="glyphicon glyphicon-envelope"></span></label>
+                </div>
+                <div class="formDiv">
+                    <input name="number" value="{{$volunteer->number}}" type="text" class="form-control" id="inputNumber" placeholder="请输入新的工号">
+                    <label for="inputPassword3" class="formIcon login-field-icon"><span class="glyphicon glyphicon-user"></span></label>
                 </div>
             </div>
             <div class="form-group">

@@ -179,6 +179,7 @@ class VolunteerController extends Controller
 
         $volunteer->phone = $request->phone;
         $volunteer->email = $request->email;
+        $volunteer->number = $request->number;
         $volunteer->save();
         return redirect('/volunteer/show-self');
     }

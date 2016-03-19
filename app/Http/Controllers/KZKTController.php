@@ -13,6 +13,7 @@ use \App\Model\Hospital;
 use \App\Model\HPXTClass;
 use \App\Model\Volunteer;
 use \App\Model\RepresentDetail;
+use \App\Model\InviteNumber;
 use DB;
 use Illuminate\Support\Facades\Log;
 use Overtrue\Wechat\Js;
@@ -88,8 +89,11 @@ class KZKTController extends Controller
                 $kzktData->doctor_id = $doctor->id;
                 $kzktData->login_number = substr($request->input('phone'), 5);
                 $kzktData->type = $request->input('classType');
+                $invite_number = InviteNumber::where('status', false)->first();
                 if ($doctor->email) {
                     $kzktData->status = true;
+                    $kzktData->invite_number = $invite_number->number;
+                    $invite_number->status = true;
                     $result = '1';
                 }
                 else {
@@ -97,6 +101,7 @@ class KZKTController extends Controller
                     $result = '2';
                 }
                 $kzktData->save();
+                $invite_number->save();
 
                 return response()->json(['result' => $result, 'id'=>$doctor->id, 'hospital'=>$hospital->hospital_id]);
             }
@@ -118,8 +123,11 @@ class KZKTController extends Controller
             $kzktData->doctor_id = $doctor->id;
             $kzktData->login_number = substr($request->input('phone'), 5);
             $kzktData->type = $request->input('classType');
+            $invite_number = InviteNumber::where('status', false)->first();
             if ($doctor->email) {
                 $kzktData->status = true;
+                $kzktData->invite_number = $invite_number->number;
+                $invite_number->status = true;
                 $result = '1';
             }
             else {
@@ -127,6 +135,7 @@ class KZKTController extends Controller
                 $result = '2';
             }
             $kzktData->save();
+            $invite_number->save();
 
             return response()->json(['result' => $result, 'id'=>$doctor->id, 'hospital'=>$hospital->hospital_id]);
         }
@@ -150,14 +159,18 @@ class KZKTController extends Controller
 
             $kzktData->login_number = substr($request->input('phone'), 5);
             $kzktData->type = $request->input('classType');
+            $invite_number = InviteNumber::where('status', false)->first();
             if ($doctor->email) {
                 $kzktData->status = true;
+                $kzktData->invite_number = $invite_number->number;
+                $invite_number->status = true;
                 $result = '1';
             } else {
                 $kzktData->status = false;
                 $result = '2';
             }
             $kzktData->save();
+            $invite_number->save();
 
             return response()->json(['result' => $result, 'id' => $doctor->id, 'hospital'=>$hospital->hospital_id]);
         }
@@ -223,7 +236,7 @@ class KZKTController extends Controller
             }
 
             return response()->json(['result' => '1', 'data' => $doctor, 'address' => $address,
-                'className' => $className, 'password' => $kzktData->login_number,
+                'className' => $className, 'password' => $kzktData->login_number, 'invite' => $kzktData->invite_number,
                 'kzktType' => $kzktData->type, 'hosp' => $hospital->id, 'province' => $province,
                 'city' => $city, 'country' => $country, 'hospital' => $hospital->hospital]);
         } else {
