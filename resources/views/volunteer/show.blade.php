@@ -34,7 +34,6 @@
                 {{$volunteer->unit->full_name}}
             </h4>
             <hr>
-            <hr>
             <h4 class="h4">
                 <small>员工编号</small>
                 {{$volunteer->number}}
