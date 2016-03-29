@@ -416,4 +416,9 @@ class KZKTController extends Controller
             }
         }
     }
+
+    function docmate(Request $request)
+    {
+        return view('kzkt.docmate');
+    }
 }
