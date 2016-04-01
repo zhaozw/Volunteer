@@ -368,7 +368,8 @@
                     return false;
                 }
 
-                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+//                var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/;
+                var myreg =/^\d{11}$/;
                 if (!myreg.test(mobile)) {
                     document.getElementById('txt_warn').innerText = '请输入有效的手机号码！';
                     document.getElementById('phone').focus();
