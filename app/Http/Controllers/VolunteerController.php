@@ -169,13 +169,13 @@ class VolunteerController extends Controller
             return redirect('home/error');
         } /*if>*/
 
-        $validator = \Validator::make($request->all(), [
-            'phone' => 'required|digits:11' . $volunteer->id,
-//            'email' => 'required|unique:volunteers,email' . $volunteer->id,
-        ]);
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        } /*if>*/
+//        $validator = \Validator::make($request->all(), [
+//            'phone' => 'required|digits:11|unique:volunteers,phone,' . $volunteer->id,
+//            'email' => 'required|email|unique:volunteers,email,' . $volunteer->id,
+//        ]);
+//        if ($validator->fails()) {
+//            return redirect()->back()->withErrors($validator)->withInput();
+//        } /*if>*/
 
         $volunteer->phone = $request->phone;
         $volunteer->email = $request->email;
