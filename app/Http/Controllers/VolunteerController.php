@@ -171,7 +171,7 @@ class VolunteerController extends Controller
 
         $validator = \Validator::make($request->all(), [
             'phone' => 'required|digits:11' . $volunteer->id,
-            'email' => 'required' . $volunteer->id,
+//            'email' => 'required|unique:volunteers,email' . $volunteer->id,
         ]);
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
